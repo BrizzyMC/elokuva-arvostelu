@@ -1,0 +1,352 @@
+[
+    {
+        "id": 1,
+        "julkaisu_vuosi": 1994,
+        "nimi": "Pulp Fiction",
+        "keskiarvo": 4.5,
+        "juoni": "Kaksi palkkamurhaajaa, nyrkkeilijä, gangsterin vaimo ja ravintolaryöstäjät kohtaavat väkivaltaisessa ja humoristisessa tarinassa."
+    },
+    {
+        "id": 2,
+        "julkaisu_vuosi": 1972,
+        "nimi": "Kummisetä",
+        "keskiarvo": 4.8,
+        "juoni": "Don Vito Corleonen mafiaperheen tarina keskittyen hänen nuorimman poikansa Michael Corleonen muutokseen."
+    },
+    {
+        "id": 3,
+        "julkaisu_vuosi": 2008,
+        "nimi": "Yön Ritari",
+        "keskiarvo": 4.7,
+        "juoni": "Batman taistelee Jokeria vastaan Gotham Cityn sielusta."
+    },
+    {
+        "id": 4,
+        "julkaisu_vuosi": 1999,
+        "nimi": "Matrix",
+        "keskiarvo": 4.4,
+        "juoni": "Tietokonehakkeri oppii salaperäiseltä kapinalliselta totuuden todellisuudesta ja ihmiskunnan taistelusta koneita vastaan."
+    },
+    {
+        "id": 5,
+        "julkaisu_vuosi": 1993,
+        "nimi": "Schindlerin lista",
+        "keskiarvo": 4.9,
+        "juoni": "Liikemies Oskar Schindler pelastaa yli tuhat juutalaista holokaustin kauhuilta palkkaamalla heidät tehtaisiinsa."
+    },
+    {
+        "id": 6,
+        "julkaisu_vuosi": 1994,
+        "nimi": "Forrest Gump",
+        "keskiarvo": 4.6,
+        "juoni": "Älyllisesti vajavainen Forrest Gump kokee sattumalta useita Yhdysvaltojen merkittäviä historiallisia tapahtumia."
+    },
+    {
+        "id": 7,
+        "julkaisu_vuosi": 2001,
+        "nimi": "Taru sormusten herrasta: Sormuksen ritarit",
+        "keskiarvo": 4.7,
+        "juoni": "Nuori hobitti lähtee vaaralliselle matkalle tuhotakseen maagisen sormuksen."
+    },
+    {
+        "id": 8,
+        "julkaisu_vuosi": 1977,
+        "nimi": "Tähtien sota",
+        "keskiarvo": 4.6,
+        "juoni": "Luke Skywalker liittyy kapinallisiin taistelussa Darth Vaderin johtamaa Imperiumia vastaan."
+    },
+    {
+        "id": 9,
+        "julkaisu_vuosi": 1991,
+        "nimi": "Uhrilampaat",
+        "keskiarvo": 4.5,
+        "juoni": "FBI-harjoittelija yrittää vangita sarjamurhaajan toisen sarjamurhaajan avulla."
+    },
+    {
+        "id": 10,
+        "julkaisu_vuosi": 2010,
+        "nimi": "Inception",
+        "keskiarvo": 4.3,
+        "juoni": "Varas, joka varastaa yrityssalaisuuksia unien kautta, saa tehtäväkseen istuttaa idean jonkun mieleen."
+    },
+    {
+        "id": 11,
+        "julkaisu_vuosi": 1957,
+        "nimi": "12 vihaista miestä",
+        "keskiarvo": 4.4,
+        "juoni": "Valamiehistön jäsen yrittää vakuuttaa 11 muuta, että syytetty saattaa olla syytön."
+    },
+    {
+        "id": 12,
+        "julkaisu_vuosi": 1997,
+        "nimi": "Titanic",
+        "keskiarvo": 4.2,
+        "juoni": "Aristokraattinen nainen rakastuu köyhään taiteilijaan Titanicin neitsytmatkalla."
+    },
+    {
+        "id": 13,
+        "julkaisu_vuosi": 1980,
+        "nimi": "Imperiumin vastaisku",
+        "keskiarvo": 4.5,
+        "juoni": "Luke Skywalker saa koulutusta Jedi-ritariksi samalla kun hänen ystävänsä joutuvat Darth Vaderin takaa-ajamiksi."
+    },
+    {
+        "id": 14,
+        "julkaisu_vuosi": 2003,
+        "nimi": "Taru sormusten herrasta: Kuninkaan paluu",
+        "keskiarvo": 4.8,
+        "juoni": "Gandalf ja Aragorn johtavat ihmisiä Sauronin armeijoita vastaan, kun Frodo ja Sam lähestyvät Tuomiovuorta."
+    },
+    {
+        "id": 15,
+        "julkaisu_vuosi": 1990,
+        "nimi": "Goodfellas - Mafiaveljekset",
+        "keskiarvo": 4.5,
+        "juoni": "Henry Hillin nousu ja tuho mafiassa 1960-1980-luvuilla."
+    },
+    {
+        "id": 16,
+        "julkaisu_vuosi": 1975,
+        "nimi": "Tappajahai",
+        "keskiarvo": 4.0,
+        "juoni": "Poliisipäällikkö, meribiologi ja vanha kalastaja yrittävät tappaa ihmisiä syövän valkohaian."
+    },
+    {
+        "id": 17,
+        "julkaisu_vuosi": 1999,
+        "nimi": "Fight Club",
+        "keskiarvo": 4.3,
+        "juoni": "Kärsimätön toimistotyöntekijä ja huoleton saippuanvalmistaja perustavat maanalaisen tappelukerhon."
+    },
+    {
+        "id": 18,
+        "julkaisu_vuosi": 1979,
+        "nimi": "Alien",
+        "keskiarvo": 4.2,
+        "juoni": "Avaruusaluksen miehistö kohtaa tappavan olion, joka käyttää ihmisiä isäntinä lisääntyäkseen."
+    },
+    {
+        "id": 19,
+        "julkaisu_vuosi": 1982,
+        "nimi": "Blade Runner",
+        "keskiarvo": 4.1,
+        "juoni": "Etsijä jäljittää ja yrittää tuhota neljä replikanttia, jotka ovat varastaneet avaruusaluksen."
+    },
+    {
+        "id": 20,
+        "julkaisu_vuosi": 1968,
+        "nimi": "2001: Avaruusseikkailu",
+        "keskiarvo": 4.3,
+        "juoni": "Ihmiskunnan evoluution tarina mystisen mustan monoliitin vaikutuksen alaisena."
+    },
+    {
+        "id": 21,
+        "julkaisu_vuosi": 2019,
+        "nimi": "Parasite",
+        "keskiarvo": 4.6,
+        "juoni": "Köyhä perhe soluttautuu rikkaan perheen palveluskuntaan, mutta asiat mutkistuvat odottamattomalla tavalla."
+    },
+    {
+        "id": 22,
+        "julkaisu_vuosi": 1946,
+        "nimi": "Ihmeellinen on elämä",
+        "keskiarvo": 4.5,
+        "juoni": "Suojelusenkeli näyttää epätoivoiselle miehelle, miltä elämä olisi, jos hän ei olisi koskaan syntynyt."
+    },
+    {
+        "id": 23,
+        "julkaisu_vuosi": 2014,
+        "nimi": "Interstellar",
+        "keskiarvo": 4.4,
+        "juoni": "Tulevaisuuden Maassa ryhmä astronautteja matkustaa madonreiän läpi etsiäkseen uutta kotia ihmiskunnalle."
+    },
+    {
+        "id": 24,
+        "julkaisu_vuosi": 1960,
+        "nimi": "Psyko",
+        "keskiarvo": 4.2,
+        "juoni": "Sihteeri piileskelee syrjäisessä motellissa, jota johtaa häiriintynyt nuori mies."
+    },
+    {
+        "id": 25,
+        "julkaisu_vuosi": 1988,
+        "nimi": "Die Hard",
+        "keskiarvo": 4.1,
+        "juoni": "Poliisi taistelee yksin terroristeja vastaan Los Angelesin pilvenpiirtäjässä."
+    },
+    {
+        "id": 26,
+        "julkaisu_vuosi": 2000,
+        "nimi": "Memento",
+        "keskiarvo": 4.3,
+        "juoni": "Mies, joka kärsii lyhytaikaisesta muistinmenetyksestä, yrittää löytää vaimonsa murhaajan."
+    },
+    {
+        "id": 27,
+        "julkaisu_vuosi": 1995,
+        "nimi": "Se7en",
+        "keskiarvo": 4.4,
+        "juoni": "Kaksi etsivää jahtaa sarjamurhaajaa, joka käyttää seitsemää kuolemansyntiä teemana murhissaan."
+    },
+    {
+        "id": 28,
+        "julkaisu_vuosi": 2007,
+        "nimi": "There Will Be Blood",
+        "keskiarvo": 4.2,
+        "juoni": "Öljynporaajan tarina 1900-luvun alun Kaliforniassa ja hänen konfliktinsa paikallisen saarnaajan kanssa."
+    },
+    {
+        "id": 29,
+        "julkaisu_vuosi": 1998,
+        "nimi": "Pelastakaa sotamies Ryan",
+        "keskiarvo": 4.5,
+        "juoni": "Toisen maailmansodan aikana joukkue sotilaita etsii sotilasta, jonka veljet ovat kaikki kuolleet."
+    },
+    {
+        "id": 30,
+        "julkaisu_vuosi": 2002,
+        "nimi": "Kaupunki jossa kuljemme",
+        "keskiarvo": 4.0,
+        "juoni": "Kolme lapsuudenystävää ajautuvat erilleen traagisen tapahtuman jälkeen, mutta kohtaavat taas myöhemmin."
+    },
+    {
+        "id": 31,
+        "julkaisu_vuosi": 1985,
+        "nimi": "Paluu tulevaisuuteen",
+        "keskiarvo": 4.2,
+        "juoni": "Teini-ikäinen poika matkustaa vahingossa aikakoneella 30 vuotta menneisyyteen."
+    },
+    {
+        "id": 32,
+        "julkaisu_vuosi": 2006,
+        "nimi": "Illuusio",
+        "keskiarvo": 4.1,
+        "juoni": "Kaksi taikuria kilpailee toisiaan vastaan Lontoossa 1800-luvun lopulla."
+    },
+    {
+        "id": 33,
+        "julkaisu_vuosi": 1984,
+        "nimi": "Terminator",
+        "keskiarvo": 4.0,
+        "juoni": "Kyborgi matkustaa vuodesta 2029 vuoteen 1984 tappaakseen naisen, jonka poika tulee johtamaan ihmisten kapinaa koneita vastaan."
+    },
+    {
+        "id": 34,
+        "julkaisu_vuosi": 2017,
+        "nimi": "Get Out",
+        "keskiarvo": 4.3,
+        "juoni": "Nuori musta mies vierailee valkoisen tyttöystävänsä vanhempien luona, mutta paljastaa synkän salaisuuden."
+    },
+    {
+        "id": 35,
+        "julkaisu_vuosi": 1940,
+        "nimi": "Piinaviikko",
+        "keskiarvo": 4.0,
+        "juoni": "Köyhtynyt kirjailija rakastuu rikkaaseen tyttöön ja muuttuu vangiksi kultaiseen häkkiin."
+    },
+    {
+        "id": 36,
+        "julkaisu_vuosi": 1976,
+        "nimi": "Taksikuski",
+        "keskiarvo": 4.2,
+        "juoni": "Unettomuudesta kärsivä ja henkisesti epävakaa Vietnam-veteraani työskentelee taksikuskina New Yorkissa."
+    },
+    {
+        "id": 37,
+        "julkaisu_vuosi": 2012,
+        "nimi": "Django Unchained",
+        "keskiarvo": 4.2,
+        "juoni": "Vapautettu orja matkustaa palkkionmetsästäjän kanssa pelastaakseen vaimonsa julmalta plantaasin omistajalta."
+    },
+    {
+        "id": 38,
+        "julkaisu_vuosi": 1954,
+        "nimi": "Kuusi kunniatonta miestä",
+        "keskiarvo": 4.3,
+        "juoni": "Kylän asukkaat palkkaavat seitsemän samuraita puolustamaan heitä ryöstäjiä vastaan."
+    },
+    {
+        "id": 39,
+        "julkaisu_vuosi": 2021,
+        "nimi": "Dyyni",
+        "keskiarvo": 4.1,
+        "juoni": "Lahjakkaan nuoren miehen on matkustettava vaarallisimmalle planeetalle universumissa varmistaakseen perheensä ja kansansa tulevaisuuden."
+    },
+    {
+        "id": 40,
+        "julkaisu_vuosi": 1986,
+        "nimi": "Aliens - Paluu",
+        "keskiarvo": 4.2,
+        "juoni": "Ellen Ripley liittyy merijalkaväen joukkoon taistelussa avaruusolioita vastaan."
+    },
+    {
+        "id": 41,
+        "julkaisu_vuosi": 2016,
+        "nimi": "La La Land",
+        "keskiarvo": 4.0,
+        "juoni": "Pianisti ja näyttelijä rakastuvat ja kamppailevat menestyäkseen Los Angelesissa."
+    },
+    {
+        "id": 42,
+        "julkaisu_vuosi": 1962,
+        "nimi": "Lawrence of Arabia",
+        "keskiarvo": 4.4,
+        "juoni": "Brittiläisen upseerin tarina, joka yhdisti arabiheimot taistelussa turkkilaisia vastaan ensimmäisen maailmansodan aikana."
+    },
+    {
+        "id": 43,
+        "julkaisu_vuosi": 2018,
+        "nimi": "Green Book",
+        "keskiarvo": 4.1,
+        "juoni": "Työväenluokkainen italialainen amerikkalainen kuljettaja vie afroamerikkalaista pianistia kiertueelle etelään 1960-luvulla."
+    },
+    {
+        "id": 44,
+        "julkaisu_vuosi": 1992,
+        "nimi": "Reservoir Dogs",
+        "keskiarvo": 4.3,
+        "juoni": "Timanttiryöstö menee pieleen, ja rikolliset epäilevät jonkun olevan poliisi."
+    },
+    {
+        "id": 45,
+        "julkaisu_vuosi": 2004,
+        "nimi": "Eternal Sunshine of the Spotless Mind",
+        "keskiarvo": 4.3,
+        "juoni": "Pari käy läpi toimenpiteen pyyhkiäkseen toisensa muistoistaan eron jälkeen."
+    },
+    {
+        "id": 46,
+        "julkaisu_vuosi": 1995,
+        "nimi": "Braveheart",
+        "keskiarvo": 4.2,
+        "juoni": "William Wallacen tarina 1200-luvun Skotlannissa ja hänen taistelunsa Englannin kuningasta vastaan."
+    },
+    {
+        "id": 47,
+        "julkaisu_vuosi": 2005,
+        "nimi": "V niin kuin verikosto",
+        "keskiarvo": 4.0,
+        "juoni": "Naamioitunut vapaustaitelija taistelee fasistista hallitusta vastaan tulevaisuuden Britanniassa."
+    },
+    {
+        "id": 48,
+        "julkaisu_vuosi": 1974,
+        "nimi": "Kummisetä osa II",
+        "keskiarvo": 4.7,
+        "juoni": "Tarina jatkaa Michael Corleonen nousua mafiaperheensä johtajaksi ja kertoo Vito Corleonen nuoruudesta."
+    },
+    {
+        "id": 49,
+        "julkaisu_vuosi": 2020,
+        "nimi": "Soul",
+        "keskiarvo": 4.2,
+        "juoni": "Muusikko, joka on menettänyt intohimonsa musiikkiin, päätyy sielujen maailmaan ja yrittää palata takaisin."
+    },
+    {
+        "id": 50,
+        "julkaisu_vuosi": 2009,
+        "nimi": "Avatar",
+        "keskiarvo": 4.0,
+        "juoni": "Halvaantunut merijalkaväen sotilas lähetetään Pandoralle, jossa hän rakastuu paikalliseen ja päätyy taistelemaan ihmisiä vastaan."
+    }
+]
