@@ -132,7 +132,7 @@ def valitse_nimi_kommentti_arvosana_tietokannasta() -> str:
     return "SELECT kayttaja_nimi, arvosana, kommentti FROM arvostelut WHERE elokuva_id = ?"
 
 
-def valitse_kayttajatiedot_tietokannasta():
+def valitse_kayttajatiedot_tietokannasta() -> str:
     """
     palauttaa sql komennon joka valitsee käyttäjänimen ja arvosteluiden määrän käyttäjätiedoista käyttäjänimen perusteella
 
