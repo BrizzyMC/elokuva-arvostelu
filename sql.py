@@ -283,7 +283,7 @@ class sql_yhteys:
         # Etsii elokuvat tietokannasta hakusanan perusteella
         self.cursor.execute( sql_komennot.etsi_elokuvia_tietokannasta(), ([hakusana,] * 2) ) # "* 2" antaa hakusanan 2 kertaa koska sql lauseella on 2 parametria
 
-        # Käy läpi elokuvat 1x1, laittaa elokuvan tiedot dict muotoo, 
+        # Käy läpi elokuvat 1x1, laittaa elokuvan tiedot dict muotoo, palauttaa list dict:ejä
         return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5]}
                     for elokuva in self.cursor.fetchall() ]
         
