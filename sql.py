@@ -261,6 +261,31 @@ class sql_yhteys:
         # Mahdollisen virheen korjaus
         except Exception as e:
             print(f"Virhe elokuvien lataamisessa: {e}")
+
+
+
+    def hae_elokuvia(self, hakusana:str) -> list:
+        """
+        Hakee elokuvia tietokannasta hakusanan perusteella, palauttaa listan jonka sisällä leffat dict muodossa -> [ { elokuva }, { elokuva } ... ]
+
+        Parametri:
+            - hakusana: Hakusana voi olla elokuvan nimi tai vuosi str muodossa
+
+        Elokuva Dict:
+            - id
+            - nimi
+            - julkaisu_vuosi
+            - keskiarvo
+            - juoni
+            - arvostelu_maara
+        """
+
+        # Etsii elokuvat tietokannasta hakusanan perusteella
+        self.cursor.execute( sql_komennot.etsi_elokuvia_tietokannasta(), ([hakusana,] * 2) ) # "* 2" antaa hakusanan 2 kertaa koska sql lauseella on 2 parametria
+
+        # Käy läpi elokuvat 1x1, laittaa elokuvan tiedot dict muotoo, 
+        return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5]}
+                    for elokuva in self.cursor.fetchall() ]
         
 
 
