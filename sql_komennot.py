@@ -41,6 +41,7 @@ def luo_kayttajat_taulukko() -> str:
     "id"                INTEGER NOT NULL,
     "kayttaja_nimi"     VARCHAR NOT NULL,
     "kayttaja_salasana" VARCHAR NOT NULL,
+    "arvostelu_maara"   INTEGER DEFAULT 0,
     PRIMARY KEY("id" AUTOINCREMENT)
     )'''
 
@@ -143,6 +144,20 @@ def valitse_kayttajatiedot_tietokannasta() -> str:
     return "SELECT kayttaja_nimi, arvostelu_maara FROM kayttajat WHERE kayttaja_nimi = ?"
 
 
+def etsi_elokuvia_tietokannasta() -> str:
+    """
+    Palauttaa sql komennon joka valitsee elokuvat tietokannasta hakusanan perusteella
+
+    Sql Parametri:
+        - hakusana 2x: Hakusana voi olla elokuvan nimi tai vuosi str muodossa
+
+    HUOM:
+        Hakusana tulee antaa kahteen kertaan!!
+    """
+
+    return "SELECT * FROM elokuvat WHERE nimi LIKE '%' || ? || '%' or julkaisu_vuosi LIKE '%' || ? || '%'"
+
+
 # * ----------------------------------------------------------------- *
 # Tietokannan päivittämis functiot
 
@@ -168,3 +183,5 @@ def paivita_kayttajan_arvostelumaara_tietokantaan() -> str:
     """
 
     return "UPDATE kayttajat SET arvostelu_maara = arvostelu_maara + 1 WHERE kayttaja_nimi = ?"
+
+
