@@ -63,7 +63,7 @@ pip install json
 ### Työnalla:
 
 > - TARKASTA VALMIIT FUNCTIOT # Vili
-> -
+> - LUO MAIN LOOP # Benjamin
 > - 
 
 ### Valmis:
