@@ -4,7 +4,7 @@
 
 ### Ohjelmasta
 
-Ohjlema käyttää **Pythonia** ja on kirjoitettu _Python 3.13.7 64-bit_ versiolla.
+Ohjelma käyttää **Pythonia** ja on kirjoitettu _Python 3.13.7 64-bit_ versiolla.
 
 kaikki projectin koodi tulisi toimia uusimmilla **Windows** ja **Linux** versioilla, mikäli virheiä löytyy tai jokin ei toimi niin avaathan ihmeessä uuden "Issue":n ja kerro mikä meni vikaan, tulemme korjaamaan sen niin pian kun vain suinkin kykenemme.
 
@@ -15,13 +15,15 @@ Tulevaisuudessa ohjelman tulisi toimia webbi pohjaisena käyttäen pythonin _Fla
 
 Projecti jäljittelee ja käyttää inspiraationa [Imdb](https://www.imdb.com/) sivua, emme toki kopioi sieltä mitään suoraan ja tämän projectin tarkoitus ei ole loukata tekiänoikeuksia, ohjelma on tehty vain harjoitusmielessä kahden opiskelian kesken.
 
+Ohjlema suoritetaan käynnistämällä "_main.py_" tiedosto, tämä aloittaa pääloopin (main loop) jossa ohjlema pyörii. HUOM: "_main.py_" tulee avata pythonilla, avatessa muista tarkistaa että sinulla on [uusin Python versio](https://www.python.org/downloads/) käytössä! Mikäli avatessa tai ohjelman kulussa koituu ongelmia niin tarkista että **Python** versiosi on ajan tasalla!
+
 ...
 
 ---
 
 ### Ohjelmassa käytetyt kirjastot
 
-Kaikki kirjastot pitäisi tulloa pythonin mukanan sitä asentaessa!
+Kaikki kirjastot pitäisi tulla pythonin mukanan sitä asentaessa!
 
 **OS**
 ```
@@ -45,40 +47,40 @@ pip install json
 
 ---
 
-### TODO:
+## TODO:
 
-> - Kirjaudu sisään "sql.py"
-> - Lisää arvostelu "sql.py"
-> - Näytä käyttäjätiedot "sql.py"
-> - Muuta käyttäjänimeä "sql.py"
-> - Lisää käyttäjä "sql.py"
-> - Listaa elokuvat "sql.py"
-> - Muuta salasana "sql.py"
-> - Poista arvostelu "sql.py"
-> - Muokkaa kommenttia "sql.py"
-> - Luo input valikko "terminaali.py"
-> - Luo uusi tietokanta jossa elokuvilla kuvat ja genret
-> - Luo tulostukset ja inputut (Kirjaudu sisään) "terminaali.py"
-> - Luo tulostukset ja inputut (Lisää arvostelu) "terminaali.py"
-> - Luo tulostukset ja inputut (Näytä käyttäjätiedot) "terminaali.py"
-> - Luo tulostukset ja inputut (Muuta käyttäjänimeä) "terminaali.py"
-> - Luo tulostukset ja inputut (Lisää käyttäjä) "terminaali.py"
-> - Luo tulostukset ja inputut (Listaa/hae elokuvat) "terminaali.py"
-> - Luo tulostukset ja inputut (Muuta salasana) "terminaali.py"
-> - Luo tulostukset ja inputut (Muokkaa kommenttia) "terminaali.py"
+**HUOM:** _Tummemmalla tekstillä on korkeampi prioriteetti!_
 
-### Työnalla:
+> - [X] **Lisää Projecti GitHubiin** <mark>Benjamin</mark>
+> - [X] **Luo Tiedostorakenne** <mark>Vili</mark>
+> - [X] **Kirjoita TODO GitHubiin** <mark>Vili</mark>
+> - [ ] **TODO:N aikataulutus** <mark>Vili & Benjamin</mark>
+> - [ ] **TARKASTA VALMIIT FUNCTIOT** <mark>Vili</mark>
+> - [ ] **LUO MAIN LOOP** <mark>Benjamin</mark>
+> - [ ] **Kirjaudu sisään** _"sql.py"_ <mark>Benjamin</mark>
+> - [ ] **Lisää arvostelu** _"sql.py"_ <mark></mark>
+> - [ ] **Näytä käyttäjätiedot** _"sql.py"_ <mark></mark>
+> - [ ] **Muuta käyttäjänimeä** _"sql.py"_ <mark></mark>
+> - [ ] **Lisää käyttäjä** _"sql.py"_ <mark></mark>
+> - [ ] **Listaa elokuvat** _"sql.py"_ <mark></mark>
+> - [ ] **Muuta salasana** _"sql.py"_ <mark></mark>
+> - [ ] **Poista arvostelu** _"sql.py"_ <mark></mark>
+> - [ ] **Muokkaa kommenttia** _"sql.py"_ <mark></mark>
+> - [ ] **Luo uusi tietokanta** _jossa elokuvilla kuvat ja genret_ <mark></mark>
+> - [ ] Luo input valikko _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Kirjaudu sisään) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Lisää arvostelu) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Näytä käyttäjätiedot) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Muuta käyttäjänimeä) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Lisää käyttäjä) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Listaa/hae elokuvat) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Muuta salasana) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputut (Muokkaa kommenttia) _"terminaali.py"_ <mark></mark>
+> - [ ] ~~Luo Flask yhteys _"Flask.py"_ <mark></mark>~~
+> - [ ] ~~Luo Verkkosivut (avaa enemmän tulevaisuudessa) <mark></mark>~~
+> - [ ] ~~Laajenna TODO Flask kirjastolle ja nettisivulle <mark></mark>~~
 
-> - TARKASTA VALMIIT FUNCTIOT # Vili
-> - LUO MAIN LOOP # Benjamin
-> - 
-
-### Valmis:
-
-> -
-> -
-> -
-
+---
 
 ## Diagrammi
 
@@ -180,6 +182,10 @@ Muokkaa kommenttia (kommentin_id:int, uusi_kommentti:str) -> mah: ValueError
 > **sql.py**
 
 Tiedosto pitää sisällään sqlite3 luokan jossa luodaan sqlite3 yhteys tietokantaan, tiedosto pitää myös sisällään kaikki functiot jotka kommunikoivat tietokannan kanssa tai käyttävät sitä.
+
+> **sql_komennot.py**
+
+Tiedostossa on ohjelman kaikki sql komennot, tämä tarkoittaa sitä että "_sql.py_" kutsuu sql käskyt "_sql_komennot_" tiedostosta. Tiedosto siis ylläpitää kaikkia sql käskyjä ja niitä pystyy helposti muokasta sieltä.
 
 > **main.py**
 
