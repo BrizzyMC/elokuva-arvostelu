@@ -1,11 +1,16 @@
 # Elokuva Arvostelu Työkalu
 
+
+
+
 ### Ohjelmasta
 
 Ohjlema käyttää kielenä _Python 3.13.7 64-bit_ versiota
 
 Ohjelma pitää yllä elokuva ja käyttäjä tietokantaa sqlite yhteyttä käyttäen.
 Ohjelmalla voi ylläpitää, muokata ja poistaa arvosteluja, kommentteja, käyttäjiä ja elokuvia.
+
+Tulevaisuudessa ohjelman tulisi toimia webbi pohjaisena käyttäen pythonin _Flask_ kirjastoa.
 
 ...
 
@@ -39,7 +44,6 @@ pip install json
 
 ### TODO:
 
-> - Luo main loop "main.py"
 > - Kirjaudu sisään "sql.py"
 > - Lisää arvostelu "sql.py"
 > - Näytä käyttäjätiedot "sql.py"
@@ -81,7 +85,7 @@ pip install json
 ## Functiot
 
 ```md
-Lisää arvostelu (elokuvan_id:int, arvosana:float, kommentti.str) -> None
+Lisää arvostelu (elokuvan_id:int, arvosana:float, kommentti:str) -> None
   ⤷Valitse elokuva id:n perusteella
     ⤷Valitse arvosana
       ⤷Kirjoita kommentti
@@ -162,8 +166,6 @@ Muokkaa kommenttia (kommentin_id:int, uusi_kommentti:str) -> mah: ValueError
 **Arvostelut**
 | Id                | Elokuva_Id | Käyttäjä_id | Arvosana | Kommentti |
 | :---------------- | :------: | :-----------: | :------: |---------: |
-| 1                 |   1      | 1             | 4.5      | Elokuv... |          |
+| 1                 |   1      | 1             | 4.5      | Elokuv... |    
 | 2                 |   2      | 2             | 3.2      | Olisin... |
 | 3                 |   3      | 3             | 2.7      | Muuten... |
-
----
