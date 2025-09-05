@@ -17,6 +17,8 @@ Projecti jäljittelee ja käyttää inspiraationa [Imdb](https://www.imdb.com/) 
 
 Ohjlema suoritetaan käynnistämällä "_main.py_" tiedosto, tämä aloittaa pääloopin (main loop) jossa ohjlema pyörii. HUOM: "_main.py_" tulee avata pythonilla, avatessa muista tarkistaa että sinulla on [uusin Python versio](https://www.python.org/downloads/) käytössä! Mikäli avatessa tai ohjelman kulussa koituu ongelmia niin tarkista että **Python** versiosi on ajan tasalla!
 
+Tietokannassa käytetty elokuvalista on luotu käyttäen [ChatGPT](https://fi.wikipedia.org/wiki/ChatGPT):tä!
+
 ...
 
 ---
