@@ -1,16 +1,19 @@
 # Elokuva Arvostelu Työkalu
 
-
-
+> IMDb harjoitus ohjelma, README pitää sisällään lyhyen kuvauksen ohjelmasta, ohjelman logiikasta, ohjelmassa käytetyistä kirjastoista, yhteensopivuudesta, functioista ja tietorakenteesta.
 
 ### Ohjelmasta
 
-Ohjlema käyttää kielenä _Python 3.13.7 64-bit_ versiota
+Ohjlema käyttää **Pythonia** ja on kirjoitettu _Python 3.13.7 64-bit_ versiolla.
+
+kaikki projectin koodi tulisi toimia uusimmilla **Windows** ja **Linux** versioilla, mikäli virheiä löytyy tai jokin ei toimi niin avaathan ihmeessä uuden "Issue":n ja kerro mikä meni vikaan, tulemme korjaamaan sen niin pian kun vain suinkin kykenemme.
 
 Ohjelma pitää yllä elokuva ja käyttäjä tietokantaa sqlite yhteyttä käyttäen.
 Ohjelmalla voi ylläpitää, muokata ja poistaa arvosteluja, kommentteja, käyttäjiä ja elokuvia.
 
-Tulevaisuudessa ohjelman tulisi toimia webbi pohjaisena käyttäen pythonin _Flask_ kirjastoa.
+Tulevaisuudessa ohjelman tulisi toimia webbi pohjaisena käyttäen pythonin _Flask_ kirjastoa, tästä lisää myöhemmin.
+
+Projecti jäljittelee ja käyttää inspiraationa [Imdb](https://www.imdb.com/) sivua, emme toki kopioi sieltä mitään suoraan ja tämän projectin tarkoitus ei ole loukata tekiänoikeuksia, ohjelma on tehty vain harjoitusmielessä kahden opiskelian kesken.
 
 ...
 
@@ -169,3 +172,32 @@ Muokkaa kommenttia (kommentin_id:int, uusi_kommentti:str) -> mah: ValueError
 | 1                 |   1      | 1             | 4.5      | Elokuv... |    
 | 2                 |   2      | 2             | 3.2      | Olisin... |
 | 3                 |   3      | 3             | 2.7      | Muuten... |
+
+---
+
+## Tiedostorakenne
+
+> **sql.py**
+
+Tiedosto pitää sisällään sqlite3 luokan jossa luodaan sqlite3 yhteys tietokantaan, tiedosto pitää myös sisällään kaikki functiot jotka kommunikoivat tietokannan kanssa tai käyttävät sitä.
+
+> **main.py**
+
+Tiedosto pitää sisällään ohjelman pääsilmukan (main loop), tässä silmukassa on kutsuttu kaikki ohjelman toiminnan kannalta tärkeät komponentit kasaan ja luotu niinsanotusti ohjelman sydän.
+
+> **terminaali.py**
+
+Tässä tiedostossa on kaikki tulostus ja input functioit jota ohjelman terminaali (beta) versio tarvitsee ennen kun saamme sen verkko muotoon (main.py saattaa pitää sisällään myös joitain tulostuksia ja input:teja.
+
+> **apu_functioit.py**
+
+Nimensä mukaan tämä tiedosto pitää sisällään vain functioita jotka on tarkoitettu avustamaan joitain toisia olennaisia functioita. Esimerkiski tiedostossa on functioit salasanan piilottaniseen yms.
+
+> **database.db**
+
+Tähän tietokanta tiedostoon tallennetaan kaikki ohjelman data, se tulee kommunikoimaan ohjelman kanssa sqlite3 yhteyden kautta. Tiedosto pitää sisällään kaikki kolme taulua ja niiden datan.
+
+---
+
+_Ohjelmaan on tulossa Flask webbipohjainen käyttöjärjestelmä, emme ole vielä suunnitelleet sitä liikkaa ja tämän takia sille ei löydy vielä functioita ja tiedostoja yms tästä README:estä. Flask käyttöjärjestelmä tulee silti käyttämään samaa logiikkaa kun tämänhetkinen versio ja noudattaa samaa diagrammi suunitelmaa. Tämä versio on tosin odotettavissa jo lähitulevaisuudessa!_
+
