@@ -57,18 +57,19 @@ pip install json
 > - [X] **Luo Tiedostorakenne** <mark>Vili</mark>
 > - [X] **Kirjoita TODO GitHubiin** <mark>Vili</mark>
 > - [ ] **TODO:N aikataulutus** <mark>Vili & Benjamin</mark>
-> - [ ] **TARKASTA VALMIIT FUNCTIOT** <mark>Vili</mark>
+> - [X] **TARKASTA VALMIIT FUNCTIOT** <mark>Vili</mark>
 > - [ ] **LUO MAIN LOOP** <mark>Benjamin</mark>
 > - [ ] **Kirjaudu sisään** _"sql.py"_ <mark>Benjamin</mark>
-> - [ ] **Lisää arvostelu** _"sql.py"_ <mark></mark>
-> - [ ] **Näytä käyttäjätiedot** _"sql.py"_ <mark></mark>
+> - [X] **Lisää arvostelu** _"sql.py"_ <mark></mark>
+> - [X] **Näytä käyttäjätiedot** _"sql.py"_ <mark></mark>
 > - [ ] **Muuta käyttäjänimeä** _"sql.py"_ <mark></mark>
-> - [ ] **Lisää käyttäjä** _"sql.py"_ <mark></mark>
-> - [ ] **Listaa elokuvat** _"sql.py"_ <mark></mark>
+> - [X] **Lisää käyttäjä** _"sql.py"_ <mark></mark>
+> - [X] **Listaa/hae elokuvat** _"sql.py"_ <mark></mark>
+> - [X] **Lataa elokuvat tietokantaan** _"sql.py"_ <mark></mark>
 > - [ ] **Muuta salasana** _"sql.py"_ <mark></mark>
 > - [ ] **Poista arvostelu** _"sql.py"_ <mark></mark>
 > - [ ] **Muokkaa kommenttia** _"sql.py"_ <mark></mark>
-> - [ ] **Luo uusi tietokanta** _jossa elokuvilla kuvat ja genret_ <mark></mark>
+> - [ ] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark></mark>
 > - [ ] Luo input valikko _"terminaali.py"_ <mark></mark>
 > - [ ] Luo tulostukset ja inputut (Kirjaudu sisään) _"terminaali.py"_ <mark></mark>
 > - [ ] Luo tulostukset ja inputut (Lisää arvostelu) _"terminaali.py"_ <mark></mark>
