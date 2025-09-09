@@ -140,7 +140,7 @@ Listaa elokuvat (hakusana:str) -> list[dict]
 ```
 
 ```md
-Muuta salasanaa (käyttäjä:id:int, uusi_salasana:str) -> None
+Muuta salasanaa (käyttäjä_id:int, uusi_salasana:str) -> None
   ⤷Uusi salasana "hash" muotoon
     ⤷Päivitetään uusi salasana tietokantaan
 ```
