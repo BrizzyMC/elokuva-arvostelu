@@ -69,11 +69,11 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **Näytä käyttäjätiedot** _"sql.py"_ <mark></mark>
 > - [ ] **Muuta käyttäjänimeä** _"sql.py"_ <mark>Vili</mark>
 > - [X] **Lisää käyttäjä** _"sql.py"_ <mark></mark>
-> - [X] **Listaa/hae elokuvat** _"sql.py"_ <mark></mark>
+> - [X] **Listaa/hae elokuvat** _"sql.py"_ <mark>Vili</mark>
 > - [X] **Lataa elokuvat tietokantaan** _"sql.py"_ <mark></mark>
 > - [ ] **Muuta salasana** _"sql.py"_ <mark></mark>
-> - [ ] **Poista arvostelu** _"sql.py"_ <mark></mark>
-> - [ ] **Muokkaa kommenttia** _"sql.py"_ <mark></mark>
+> - [ ] **Poista arvostelu** _"sql.py"_ <mark>Vili</mark>
+> - [ ] **Muokkaa kommenttia** _"sql.py"_ <mark>Vili</mark>
 > - [ ] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark></mark>
 > - [ ] Luo input valikko _"terminaali.py"_ <mark></mark>
 > - [ ] Luo tulostukset ja inputit (Kirjaudu sisään) _"terminaali.py"_ <mark></mark>
