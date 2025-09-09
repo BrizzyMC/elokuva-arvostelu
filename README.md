@@ -112,7 +112,7 @@ Näytä käyttäjätiedot (id:int) -> list[dict]
 ```
 
 ```md
-Muuta käyttäjänimeä (käyttäjä_id, nimi:str) -> mah: NameError
+Muuta käyttäjänimeä (käyttäjä_id:int, nimi:str) -> mah: NameError
   ⤷Käyttäjä antaa uuden nimen
     ⤷Onko nimi jo käytössä? Jos niin palautetaan NameError
     ⤷Uusi nimi päivitetään tietokantaan
@@ -140,7 +140,7 @@ Listaa elokuvat (hakusana:str) -> list[dict]
 ```
 
 ```md
-Muuta salasanaa (käyttäjä:id, uusi_salasana:str) -> None
+Muuta salasanaa (käyttäjä:id:int, uusi_salasana:str) -> None
   ⤷Uusi salasana "hash" muotoon
     ⤷Päivitetään uusi salasana tietokantaan
 ```
