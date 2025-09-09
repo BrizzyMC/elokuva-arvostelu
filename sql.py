@@ -39,7 +39,7 @@ class sql_yhteys:
 
 
     def __init__(self):
-        """Yhdistaa SQLite tietokantaan, Luo taulukot (jos tarve), Palauttaa cursorin ja conn"""
+        """Yhdistaa SQLite tietokantaan, Luo taulukot (jos tarve), Palauttaa cursorin ja conn."""
 
         # Luo cursorin ja conn ( luo tietokanta tiedoston jos ei olemassa )
         self.conn   = sqlite3.connect(TIETOKANTA)
@@ -57,9 +57,9 @@ class sql_yhteys:
 
 
 
-    def lisaa_kayttaja(self, nimi:str, salasana:str) -> bytes:
+    def lisaa_kayttaja(self, nimi:str, salasana:str) -> bytes or NameError:
         """
-        Functio lisää käyttäjän tietokantaan, palauttaa piilotetun salasanan bytes muodossa
+        Functio lisää käyttäjän tietokantaan, palauttaa piilotetun salasanan bytes muodossa. Jos käyttäjänimi varattu niin palauttaa NameError.
 
         Parametrit:
             - nimi: käyttäjän nimi str muodossa
@@ -75,7 +75,7 @@ class sql_yhteys:
         # Tarkastaa onko nimi varattu
         for i in nimet.fetchall():
             if i[0] == nimi:
-                return "Nimi on jo otettu"
+                return NameError
         
         # Lisää käyttäjän tietokantaan
         self.cursor.execute( sql_komennot.luo_kayttaja_tietokantaan(), (nimi, hashed_salasana) )
@@ -83,16 +83,13 @@ class sql_yhteys:
         # Tallentaa mahdolliset muutokset
         self.conn.commit()
 
-        #clear_terminal()
-        print("Kayttaja lisätty")
-
         return hashed_salasana
     
 
 
     def kirjaudu(self, kayttaja_nimi:str, salasana:str) -> int:
         """
-        Functio etsii kirjautumis tietoihin vastaavan käyttäjän, palauttaa käyttäjän id:n int muodossa
+        Functio etsii kirjautumis tietoihin vastaavan käyttäjän, palauttaa käyttäjän id:n int muodossa.
 
         Parametrit:
             - kayttaja_nimi: käyttäjän nimi str muodossa
@@ -106,7 +103,7 @@ class sql_yhteys:
     
     
 
-    def lisaa_arvostelu(self, elokuva_id:int, arvosana:float, kayttaja_nimi:str, kommentti:str="") -> bool:
+    def lisaa_arvostelu(self, elokuva_id:int, arvosana:float, kayttaja_id:int, kommentti:str="") -> bool:
         """
         Lisää elokuvalle arvostelu ja päivittää elokuvan keskiarvon sekä käyttäjän arvostelumäärän.
 
@@ -115,7 +112,7 @@ class sql_yhteys:
         Parametrit:
             - elokuva_id: arvosteltavan elokuvan id int muodossa
             - arvosana: annettava arvosana float muodossa (0-5)
-            - kayttajan_nimi: Käyttäjän joka kommentoi nimi str muodossa
+            - kayttajan_id: Käyttäjän joka kommentoi id int muodossa
             - kommentti: mahdollinen kommentti elokuvalle str muodossa (voi jättää tyhjäksi)
         """
 
@@ -139,10 +136,10 @@ class sql_yhteys:
         self.cursor.execute( sql_komennot.paivita_keskiarvo_maara_tietokantaan(), (uusi_keskiarvo, uusi_arvostelu_maara, elokuva_id) )
         
         # Lisää arvostelun
-        self.cursor.execute( sql_komennot.lisaa_arvostelu_tietokantaan(), (elokuva_id, kayttaja_nimi, arvosana, kommentti) )
+        self.cursor.execute( sql_komennot.lisaa_arvostelu_tietokantaan(), (elokuva_id, kayttaja_id, arvosana, kommentti) )
         
         # Päivittää käyttäjän arvostelumäärän
-        self.cursor.execute( sql_komennot.paivita_kayttajan_arvostelumaara_tietokantaan(), (kayttaja_nimi,) )
+        self.cursor.execute( sql_komennot.paivita_kayttajan_arvostelumaara_tietokantaan(), (kayttaja_id,) )
         
         self.conn.commit() # Tallentaa mahdolliset muutokset
 
@@ -153,7 +150,7 @@ class sql_yhteys:
 
     def elokuvan_arvostelut(self, elokuva_id:int) -> list:
         """
-        Etsii elokuvien arvostelut id:n perusteella, palauttaa arvostelut listassa
+        Etsii elokuvien arvostelut id:n perusteella, palauttaa arvostelut listassa.
 
         parametrit:
             - elokuva_id: Elokuvan id int muodossa, jonka arvostelut halutaan tietää
@@ -164,24 +161,8 @@ class sql_yhteys:
 
         return arvostelut
         
-        # Kommentoitu koska ei tulosteta
-        '''
-        if not arvostelut:
-            print("Elokuvalla ei ole vielä arvosteluja.")
-            return
-
-        print("\nArvostelut:")
-            for arvostelu in arvostelut:
-                kayttaja, arvosana, kommentti = arvostelu
-                print(f"Käyttäjä: {kayttaja}")
-                print(f"Arvosana: {arvosana}")
-                if kommentti:
-                    print(f"Kommentti: {kommentti}")
-                print("-" * 30)
-        '''
         
     
-
     def sulje_yhteys(self) -> None:
         """
         Sulkee sql yhteyden tietokantaan, ei palauta mitään
@@ -193,42 +174,45 @@ class sql_yhteys:
 
     
 
-    def kayttajan_tiedot(self, kayttaja_nimi:str) -> list:
+    def kayttajan_tiedot(self, kayttaja_id:int, arvostelut:bool=False) -> list[dict]:
         """
-        Näyttää käyttäjän tiedot ja arvostelumäärän.
+        Palauttaa dict:in listan sisällä käyttäjän tiedoista, jos arvostelut = True niin palauttaa myös käyttäjän arvostelut listassa
+
+        Parametrit:
+            - kayttaja_id: Käyttäjän id int muodossa jonka tiedot halutaan tulostaa
+            - arvostelut: Jos True (bool) niin palauttaa myös käyttäjän arvostelut dict muodossa
+
+        Dict Arvot:
+            - nimi (str)
+            - arvostelu_maara (int)
+            - arvostelut (list)
+                - id (int)
+                - elokuvan_id (int)
+                - kayttaja_id (int)
+                - arvosana (float)
+                - kommentti (str)
+        
+        Esimerkki Palautus:
+            - [{'nimi': 'jarppi', 'arvostelu_maara': 1, 'arvostelut': False}]
+            - [{'nimi': 'jarppi', 'arvostelu_maara': 1, 'arvostelut': [{'id': 1, 'elokuvan_id': 2, 'kayttaja_id': 1, 'arvosana': 5.0, 'kommentti': 'ihan ok leffa, ite ihan fiilasin'}]}]
         """
 
-        kayttaja = self.cursor.execute( sql_komennot.valitse_kayttajatiedot_tietokannasta(), (kayttaja_nimi,) ).fetchone()
+        # haetaan kayttäjätiedot tietokannasta
+        kayttaja = self.cursor.execute( sql_komennot.valitse_kayttajatiedot_tietokannasta(), (kayttaja_id,) ).fetchone()
 
-        return kayttaja
-        
-        '''
-        if not kayttaja:
-            print("Käyttäjää ei löytynyt")
-            return
-        
-        
-        arvostelut = self.cursor.execute("""
-            SELECT e.nimi, a.arvosana, a.kommentti 
-            FROM arvostelut a 
-            JOIN elokuvat e ON a.elokuva_id = e.id 
-            WHERE a.kayttaja_nimi = ?
-        """, (kayttaja_nimi,)).fetchall()
-        
-        
-        print(f"\nKäyttäjä: {kayttaja[0]}")
-        print(f"Arvosteluja jätetty: {kayttaja[1]}")
-        
         if arvostelut:
-            print("\nJätetyt arvostelut:")
-            for arvostelu in arvostelut:
-                elokuva_nimi, arvosana, kommentti = arvostelu
-                print(f"Elokuva: {elokuva_nimi}")
-                print(f"Arvosana: {arvosana}")
-                if kommentti:
-                    print(f"Kommentti: {kommentti}")
-                print("-" * 30)
-        '''
+            kayttajan_arvostelut = self.cursor.execute( sql_komennot.valitse_kayttajan_arvostelut_tietokannasta(), (kayttaja_id,) ).fetchall()
+
+            arvostelut = []
+
+            print(kayttajan_arvostelut)
+            for arvostelu in kayttajan_arvostelut:
+                arvostelut.append({'id':arvostelu[0], 'elokuvan_id':arvostelu[1], 'kayttaja_id':arvostelu[2], 'arvosana':arvostelu[3], 'kommentti':arvostelu[4]})
+                
+
+        kayttaja = {'nimi':kayttaja[0], 'arvostelu_maara':kayttaja[1], 'arvostelut':arvostelut}
+
+        return [kayttaja]
     
 
 
@@ -264,7 +248,7 @@ class sql_yhteys:
 
 
 
-    def hae_elokuvia(self, hakusana:str) -> list:
+    def hae_elokuvia(self, hakusana:str='') -> list[dict]:
         """
         Hakee elokuvia tietokannasta hakusanan perusteella, palauttaa listan jonka sisällä leffat dict muodossa -> [ { elokuva }, { elokuva } ... ]
 
@@ -290,18 +274,23 @@ class sql_yhteys:
 
 
 if __name__ == '__main__':
-    #yhteys = sql_yhteys()
+    yhteys = sql_yhteys()
+
+
+    #print(yhteys.hae_elokuvia('täH'))
 
     #yhteys.lataa_elokuvat_tietokantaan('elokuvat.json')
 
-    #yhteys.lisaa_kayttaja('pekka', 'pekka123')
+    #yhteys.lisaa_kayttaja('heikki', 'pekka123')
 
     #print(hash_salasana('pekka123'))
 
     #print( yhteys.kirjaudu('pekka', 'pekka123' ) )
 
-    #yhteys.lisaa_arvostelu(2, 5, 'pekka', 'ihan ok leffa, ite ihan fiilasin')
+    #yhteys.lisaa_arvostelu(2, 5, 3, 'i love it')
 
     #yhteys.sulje_yhteys()
+
+    print( yhteys.kayttajan_tiedot(1, True) )
 
     pass
