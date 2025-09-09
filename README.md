@@ -27,6 +27,9 @@ Tietokannassa käytetty elokuvalista on luotu käyttäen [ChatGPT](https://fi.wi
 
 Kaikki kirjastot pitäisi tulla pythonin mukanan sitä asentaessa!
 
+_Jos sinulla ei ole python asennettu niin asenna se [täältä](https://www.python.org/downloads/)!_
+
+
 **OS**
 ```
 pip install os-sys
