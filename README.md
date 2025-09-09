@@ -53,6 +53,8 @@ pip install json
 
 **HUOM:** _Tummemmalla tekstillä on korkeampi prioriteetti!_
 
+Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wFk8KuKETYkIi0l3o9yxAkqSImYfiwekOqQYw/edit?usp=sharing)! ⏰
+
 > - [X] **Lisää Projecti GitHubiin** <mark>Benjamin</mark>
 > - [X] **Luo Tiedostorakenne** <mark>Vili</mark>
 > - [X] **Kirjoita TODO GitHubiin** <mark>Vili</mark>
@@ -71,14 +73,14 @@ pip install json
 > - [ ] **Muokkaa kommenttia** _"sql.py"_ <mark></mark>
 > - [ ] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark></mark>
 > - [ ] Luo input valikko _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Kirjaudu sisään) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Lisää arvostelu) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Näytä käyttäjätiedot) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Muuta käyttäjänimeä) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Lisää käyttäjä) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Listaa/hae elokuvat) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Muuta salasana) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputut (Muokkaa kommenttia) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Kirjaudu sisään) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Lisää arvostelu) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Näytä käyttäjätiedot) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Muuta käyttäjänimeä) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Lisää käyttäjä) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Listaa/hae elokuvat) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Muuta salasana) _"terminaali.py"_ <mark></mark>
+> - [ ] Luo tulostukset ja inputit (Muokkaa kommenttia) _"terminaali.py"_ <mark></mark>
 > - [ ] ~~Luo Flask yhteys _"Flask.py"_ <mark></mark>~~
 > - [ ] ~~Luo Verkkosivut (avaa enemmän tulevaisuudessa) <mark></mark>~~
 > - [ ] ~~Laajenna TODO Flask kirjastolle ja nettisivulle <mark></mark>~~
@@ -198,7 +200,7 @@ Tiedosto pitää sisällään ohjelman pääsilmukan (main loop), tässä silmuk
 
 Tässä tiedostossa on kaikki tulostus ja input functioit jota ohjelman terminaali (beta) versio tarvitsee ennen kun saamme sen verkko muotoon (main.py saattaa pitää sisällään myös joitain tulostuksia ja input:teja.
 
-> **apu_functioit.py**
+> **apu_functiot.py**
 
 Nimensä mukaan tämä tiedosto pitää sisällään vain functioita jotka on tarkoitettu avustamaan joitain toisia olennaisia functioita. Esimerkiski tiedostossa on functioit salasanan piilottaniseen yms.
 
