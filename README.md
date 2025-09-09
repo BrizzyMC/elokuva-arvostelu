@@ -61,13 +61,13 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **Lisää Projecti GitHubiin** <mark>Benjamin</mark>
 > - [X] **Luo Tiedostorakenne** <mark>Vili</mark>
 > - [X] **Kirjoita TODO GitHubiin** <mark>Vili</mark>
-> - [ ] **TODO:N aikataulutus** <mark>Vili & Benjamin</mark>
+> - [X] **TODO:N aikataulutus** <mark>Vili & Benjamin</mark>
 > - [X] **TARKASTA VALMIIT FUNCTIOT** <mark>Vili</mark>
 > - [ ] **LUO MAIN LOOP** <mark>Benjamin</mark>
 > - [ ] **Kirjaudu sisään** _"sql.py"_ <mark>Benjamin</mark>
 > - [X] **Lisää arvostelu** _"sql.py"_ <mark></mark>
 > - [X] **Näytä käyttäjätiedot** _"sql.py"_ <mark></mark>
-> - [ ] **Muuta käyttäjänimeä** _"sql.py"_ <mark></mark>
+> - [ ] **Muuta käyttäjänimeä** _"sql.py"_ <mark>Vili</mark>
 > - [X] **Lisää käyttäjä** _"sql.py"_ <mark></mark>
 > - [X] **Listaa/hae elokuvat** _"sql.py"_ <mark></mark>
 > - [X] **Lataa elokuvat tietokantaan** _"sql.py"_ <mark></mark>
