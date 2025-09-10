@@ -168,6 +168,28 @@ def etsi_elokuvia_tietokannasta() -> str:
     return "SELECT * FROM elokuvat WHERE nimi LIKE '%' || ? || '%' or julkaisu_vuosi LIKE '%' || ? || '%'"
 
 
+def etsi_kayttaja_nimen_perusteella() -> str:
+    """
+    Palauttaa komennon jolla haetaan käyttäjänimeä tietokannasta
+
+    Sql Parametri:
+        - kayttaja_nimi: Kayttajanimi mitä haetaan tietokannasta
+    """
+
+    return "SELECT kayttaja_nimi FROM kayttajat WHERE kayttaja_nimi = (?)"
+
+
+def valitse_arvostelu_id_perusteella() -> str:
+    """
+    Palauttaa sql komennon joka valitsee arvostelun id:n perusteella
+
+    Sql Parametri:
+        - id: Aalittavan arvostelun id (int muodossa)
+    """
+
+    return "SELECT * FROM arvostelut WHERE id = (?)"
+
+
 # * ----------------------------------------------------------------- *
 # Tietokannan päivittämis functiot
 
@@ -194,4 +216,53 @@ def paivita_kayttajan_arvostelumaara_tietokantaan() -> str:
 
     return "UPDATE kayttajat SET arvostelu_maara = arvostelu_maara + 1 WHERE id = ?"
 
+
+def paivita_kayttajanimi() -> str:
+    """
+    Palauttaa sql komennon joka päivittää käyttäjän salasanan käyttäjä id:n perusteella
+
+    Sql Parametrit:
+        - kayttaja_id: Kayttäjän id jonka nimeä halutaan muokata (int muodossa)
+        - uusi_kayttajanimi: Uusi haluttu käyttäjänimi (str muodossa)
+    """
+
+    return "UPDATE kayttajat SET kayttaja_nimi = (?) WHERE id = (?)"
+
+
+def paivita_kommentti() -> str:
+    """
+    Palauttaa sql komennon joka päivittää kommentin id:n perusteella
+
+    Sql Parametrit:
+        - arvostelun id: Muokattava kommentti valitaan arvostelu id:n perusteella (int muodossa)
+        - uusi_kommentti: Uusi kommentti jolla vanha korvataan (str muodossa)
+    """
+
+    return "UPDATE arvostelut SET kommentti = (?) WHERE id = (?)"
+
+
+def paivita_salasana() -> str:
+    """
+    Palauttaa sql komennon joka päivittää uuden salasanan tietokantaa id:n perusteella
+
+    Sql Parametrit:
+        - kayttaja_id: Käyttäjän id jonka salasanaa halutaan muokata (int muodossa)
+        - uusi_salasana: Uusi salasana joka päivitetään tietokantaan (str muodossa)
+    """
+
+    return "UPDATE kayttaja SET salasana = (?) WHERE id = (?)"
+
+
+# * ----------------------------------------------------------------- *
+# Tietokannasta poistamis functiot
+
+def poista_arvostelu() -> str:
+    """
+    Palauttaa sql komennon joka poistaa arvostelun tietokannasta id:n perusteella
+    
+    Sql Parametri:
+        - id: Poistettavan arvostelun id (int muodossa)
+    """
+
+    return "DELETE FROM arvostelut WHERE id = (?)"
 
