@@ -256,12 +256,12 @@ class sql_yhteys:
             - hakusana: Hakusana voi olla elokuvan nimi tai vuosi str muodossa
 
         Elokuva Dict:
-            - id
-            - nimi
-            - julkaisu_vuosi
-            - keskiarvo
-            - juoni
-            - arvostelu_maara
+            - id (int)
+            - nimi (str)
+            - julkaisu_vuosi (int)
+            - keskiarvo (float)
+            - juoni (str)
+            - arvostelu_maara (int)
         """
 
         # Etsii elokuvat tietokannasta hakusanan perusteella
@@ -270,7 +270,102 @@ class sql_yhteys:
         # Käy läpi elokuvat 1x1, laittaa elokuvan tiedot dict muotoo, palauttaa list dict:ejä
         return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5]}
                     for elokuva in self.cursor.fetchall() ]
+
+
+    
+    def muuta_kayttajanimea(self, kayttaja_id:int, uusi_kayttajanimi:str) -> None or NameError:
+        """
+        Ottaa kaäyytäjän id:n ja uuden käyttäjänimen, jos käyttäjänimi on varattu niin palauttaa NameError, jos kaikki menee oikein niin päivittää uuden käyttäjänimen tietokantaan
+
+        Parametrit:
+            - kayttaja_id: Kayttäjän id jonka nimeä halutaan muokata (int muodossa)
+            - uusi_kayttajanimi: Uusi haluttu käyttäjänimi (str muodossa)
+        """
         
+        # Etsitään löytyykö nimi jo tietokannasta
+        self.cursor.execute( sql_komennot.etsi_kayttaja_nimen_perusteella, (uusi_kayttajanimi,) )
+
+        # Jos nimi löytyy niin palautetaan NameError
+        if self.cursor.fetchall():
+            return NameError
+
+        # Jos nimi ei löydy niin päivitetään uusi nimi tietokantaan
+        self.cursor.execute( sql_komennot.paivita_kayttajanimi(), (uusi_kayttajanimi, kayttaja_id,) )
+
+        self.conn.commit() # Tallentaa muutokset
+
+
+
+    def poista_arvostelu(self, arvostelu_id:int) -> None or ValueError:
+        """
+        Poistaa arvostelun tietokannasta id:n perusteella, jos poistettavaa arvostelua ei löydy niin palauttaa ValueError
+
+        Parametri:
+            - arvostelu_id: Poistettavan arvostelun id (int muodossa)
+        """
+
+        # Tarkistaa onko arvostelua tietokannassa
+        self.cursor.execute( sql_komennot.valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
+        
+        # Jos arvostelua ei ole tietokannassa niin palautta ValueError
+        if not self.cursor.fetchall():
+            return ValueError
+
+        # Poistaa arvostelun tietokannasta
+        self.cursor.execute( sql_komennot.poista_arvostelu(), (arvostelu_id,) )
+
+        self.conn.commit() # Tallentaa muutokset
+
+
+
+    def muokkaa_kommenttia(self, arvostelun_id:int, uusi_kommentti:str) -> None or ValueError:
+        """
+        Päivittää arvostelun kommentin id:n perusteella tietokantaan, jos id:tä ei löydy nii palauttaa ValueError
+        
+        Parametrit:
+            - arvostelun_id: Arvostelun id jonka kommenttia halutaan muokata (int muodossa)
+            - uusi_kommentti: Uusi kommentti joka päivitetään tietokantaan (str muodossa)
+        """
+
+        # Tarkistaa onko arvostelua tietokannassa
+        self.cursor.execute( sql_komennot.valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
+
+        # Jos arvostelua ei ole tietokannassa niin palautta ValueError
+        if not self.cursor.fetchall():
+            return ValueError
+
+        # Päivittää uuden kommentin tietokantaan
+        self.cursor.execute( sql_komennot.paivita_kommentti(), (uusi_kommentti, arvostelun_id,) )
+
+        self.conn.commit() # Tallentaa muutokset
+
+
+
+    def muuta_salasanaa(self, kayttaja_id:int, uusi_salasana:str) -> None or ValueError:
+        """
+        Päivittää salasanan tietokantaan käyttäjä id:n perusteella, jos id:tä ei löydy niin palauttaa ValueError
+        
+        Parametrit:
+            - kayttaja_id: Käyttäjän id jonka salasanaa halutaan muokata (int muodossa)
+            - uusi_salasana: Uusi salasana joka päivitetään tietokantaan (str muodossa)
+        """
+
+        # Tarkistaa onko kayttäjää olemassa
+        self.cursor.execute( sql_komennot.valitse_kayttajatiedot_tietokannasta(), (kayttaja_id,) )
+
+        # Jos käyttäjää ei ole niin palautetaan ValueError
+        if not self.cursor.fetchall():
+            return ValueError
+
+        # Piilottaa salasanan "hash" muotoon
+        uusi_salasana = hash_salasana(uusi_salasana)
+
+        # Päivittää salasanan tietokantaan
+        self.cursor.execute( sql_komennot.paivita_salasana(), (uusi_salasana, kayttaja_id,) )
+
+        self.conn.commit() # Tallentaa muutokset
+
+
 
 
 if __name__ == '__main__':
@@ -291,6 +386,8 @@ if __name__ == '__main__':
 
     #yhteys.sulje_yhteys()
 
-    print( yhteys.kayttajan_tiedot(1, True) )
+    #print( yhteys.kayttajan_tiedot(1, True) )
+
+    yhteys.poista_arvostelu(200)
 
     pass
