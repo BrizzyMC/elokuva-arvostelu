@@ -1,8 +1,17 @@
 """
-Tämä tiedosto sisältää sql functioita jotka palauttavat sql komentoja, sql komennot ovat siis täällä jotta niitä olisi helpompi ylläpitää, tarkistaa ja muokata
+=================================================================
 
-Kaikki functiot tiedostossa ovat pelkästään sql komentoja, ne ovat täällä apu functioina sql.py tiedostolle
-# TODO kirjoita lisää kommenttia!!!
+Nimi:       sql_komennot.py
+kuvaus:     Tämä tiedosto pitää sisällään pelkästään functioita
+            jotka palauttavat sql komennon str muodossa.
+            Tiedostoon on kasattu apufunctioita "sql.py"
+            tiedostolle.
+
+Tekiä:      Viljam Vänskä
+Päivämäärä: 11.9.2025
+Versio:     1.0
+
+=================================================================
 """
 
 # Taulukoiden luonti functiot
@@ -27,7 +36,7 @@ def luo_arvostelu_taulukko() -> str:
     return '''CREATE TABLE IF NOT EXISTS "arvostelut" (
     "id"                INTEGER NOT NULL,
     "elokuva_id"        INTEGER NOT NULL,
-    "kayttaja_nimi"     VARCHAR NOT NULL,
+    "kayttaja_id"       INTEGER NOT NULL,
     "arvosana"          FLOAT NOT NULL,
     "kommentti"         VARCHAR,
     PRIMARY KEY("id" AUTOINCREMENT)
@@ -66,12 +75,12 @@ def lisaa_arvostelu_tietokantaan() -> str:
 
     Sql Parametrit:
         - elokuva_id: Elokuvan id id muodossa johonka arvostelu linkitetään
-        - kayttaja_nimi: Käyttäjän joka arvostelee id int muodossa
+        - kayttaja_id: Käyttäjän joka arvostelee id int muodossa
         - arvosana: annettu arvosana float muodossa
         - kommentti: mahdollinen kommentti str muodossa
     """
 
-    return "INSERT INTO arvostelut (elokuva_id, kayttaja_nimi, arvosana, kommentti) VALUES (?, ?, ?, ?)"
+    return "INSERT INTO arvostelut (elokuva_id, kayttaja_id, arvosana, kommentti) VALUES (?, ?, ?, ?)"
 
 
 def lisää_elokuva_tietokantaan() -> str:
@@ -132,16 +141,26 @@ def valitse_nimi_kommentti_arvosana_tietokannasta() -> str:
 
     return "SELECT kayttaja_nimi, arvosana, kommentti FROM arvostelut WHERE elokuva_id = ?"
 
+def valitse_kayttajan_arvostelut_tietokannasta() -> str:
+    """
+    Palauttaa sql komennon joka valitsee arvosanat käyttäjä id:n perusteella
+
+    Sql Parametri:
+        - kayttaja_id: Käyttäjän id int muodossa jonka arvosanat halutaan palauttaa
+    """
+
+    return "SELECT * FROM arvostelut WHERE kayttaja_id = (?)"
+
 
 def valitse_kayttajatiedot_tietokannasta() -> str:
     """
-    palauttaa sql komennon joka valitsee käyttäjänimen ja arvosteluiden määrän käyttäjätiedoista käyttäjänimen perusteella
+    palauttaa sql komennon joka valitsee käyttäjänimen ja arvosteluiden määrän käyttäjätiedoista käyttäjän id:n perusteella
 
     Sql Parametri:
-        - kayttaja_nimi: Valittavan käyttäjän käyttäjänimi str muodossa
+        - id: Valittavan käyttäjän käyttäjä id int muodossa
     """
 
-    return "SELECT kayttaja_nimi, arvostelu_maara FROM kayttajat WHERE kayttaja_nimi = ?"
+    return "SELECT kayttaja_nimi, arvostelu_maara FROM kayttajat WHERE id = (?)"
 
 
 def etsi_elokuvia_tietokannasta() -> str:
@@ -156,6 +175,28 @@ def etsi_elokuvia_tietokannasta() -> str:
     """
 
     return "SELECT * FROM elokuvat WHERE nimi LIKE '%' || ? || '%' or julkaisu_vuosi LIKE '%' || ? || '%'"
+
+
+def etsi_kayttaja_nimen_perusteella() -> str:
+    """
+    Palauttaa komennon jolla haetaan käyttäjänimeä tietokannasta
+
+    Sql Parametri:
+        - kayttaja_nimi: Kayttajanimi mitä haetaan tietokannasta
+    """
+
+    return "SELECT kayttaja_nimi FROM kayttajat WHERE kayttaja_nimi = (?)"
+
+
+def valitse_arvostelu_id_perusteella() -> str:
+    """
+    Palauttaa sql komennon joka valitsee arvostelun id:n perusteella
+
+    Sql Parametri:
+        - id: Aalittavan arvostelun id (int muodossa)
+    """
+
+    return "SELECT * FROM arvostelut WHERE id = (?)"
 
 
 # * ----------------------------------------------------------------- *
@@ -179,9 +220,58 @@ def paivita_kayttajan_arvostelumaara_tietokantaan() -> str:
     Palauttaa sql komennon joka päivittää käyttäjän arvostelu määrää käyttäjänimen perusteella
 
     Sql Parametri:
-        - kayttaja_nimi: Käyttäjän nimi jonka tietoja halutaan muokata str muodossa
+        - kayttaja_id: Käyttäjän id jonka tietoja halutaan muokata int muodossa
     """
 
-    return "UPDATE kayttajat SET arvostelu_maara = arvostelu_maara + 1 WHERE kayttaja_nimi = ?"
+    return "UPDATE kayttajat SET arvostelu_maara = arvostelu_maara + 1 WHERE id = ?"
 
+
+def paivita_kayttajanimi() -> str:
+    """
+    Palauttaa sql komennon joka päivittää käyttäjän salasanan käyttäjä id:n perusteella
+
+    Sql Parametrit:
+        - kayttaja_id: Kayttäjän id jonka nimeä halutaan muokata (int muodossa)
+        - uusi_kayttajanimi: Uusi haluttu käyttäjänimi (str muodossa)
+    """
+
+    return "UPDATE kayttajat SET kayttaja_nimi = (?) WHERE id = (?)"
+
+
+def paivita_kommentti() -> str:
+    """
+    Palauttaa sql komennon joka päivittää kommentin id:n perusteella
+
+    Sql Parametrit:
+        - arvostelun id: Muokattava kommentti valitaan arvostelu id:n perusteella (int muodossa)
+        - uusi_kommentti: Uusi kommentti jolla vanha korvataan (str muodossa)
+    """
+
+    return "UPDATE arvostelut SET kommentti = (?) WHERE id = (?)"
+
+
+def paivita_salasana() -> str:
+    """
+    Palauttaa sql komennon joka päivittää uuden salasanan tietokantaa id:n perusteella
+
+    Sql Parametrit:
+        - kayttaja_id: Käyttäjän id jonka salasanaa halutaan muokata (int muodossa)
+        - uusi_salasana: Uusi salasana joka päivitetään tietokantaan (str muodossa)
+    """
+
+    return "UPDATE kayttaja SET salasana = (?) WHERE id = (?)"
+
+
+# * ----------------------------------------------------------------- *
+# Tietokannasta poistamis functiot
+
+def poista_arvostelu() -> str:
+    """
+    Palauttaa sql komennon joka poistaa arvostelun tietokannasta id:n perusteella
+    
+    Sql Parametri:
+        - id: Poistettavan arvostelun id (int muodossa)
+    """
+
+    return "DELETE FROM arvostelut WHERE id = (?)"
 
