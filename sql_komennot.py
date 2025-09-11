@@ -1,8 +1,17 @@
 """
-Tämä tiedosto sisältää sql functioita jotka palauttavat sql komentoja, sql komennot ovat siis täällä jotta niitä olisi helpompi ylläpitää, tarkistaa ja muokata
+=================================================================
 
-Kaikki functiot tiedostossa ovat pelkästään sql komentoja, ne ovat täällä apu functioina sql.py tiedostolle
-# TODO kirjoita lisää kommenttia!!!
+Nimi:       sql_komennot.py
+kuvaus:     Tämä tiedosto pitää sisällään pelkästään functioita
+            jotka palauttavat sql komennon str muodossa.
+            Tiedostoon on kasattu apufunctioita "sql.py"
+            tiedostolle.
+
+Tekiä:      Viljam Vänskä
+Päivämäärä: 11.9.2025
+Versio:     1.0
+
+=================================================================
 """
 
 # Taulukoiden luonti functiot
