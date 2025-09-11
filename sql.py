@@ -1,9 +1,17 @@
 """
-Tänne tiedostoon tulee sql yhteys ja sitä vahvasti käyttävät komennot (sql komennot eri tiedostossa!).
-Tämä tiedosto pitää sisällään class olion joka luo, ylläpitää ja sulkee sql tietokanta yhteyden.
+=================================================================
 
-ESIMERKKI:
-    # TODO JATKA KOMMENTTEJA!!!
+Nimi:       sql.py
+kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
+            käyttävät komennot (sql komennot eri tiedostossa!).
+            Tämä tiedosto pitää sisällään class olion joka luo,
+            ylläpitää ja sulkee sql tietokanta yhteyden.
+
+Tekiä:      Viljam Vänskä & Benjamin
+Päivämäärä: 11.9.2025
+Versio:     1.0
+
+=================================================================
 """
 
 
@@ -16,7 +24,7 @@ import json         # Kutsuu json kirjaston tiedoston lukua varten (vain "lataa_
 
 import sql_komennot # Kutsuu sql komennot, sql_komennot tiedostosta
 
-from apu_functiot import hash_salasana # Apu functio salasanan piilottamiseen
+from apu_functiot import hash_salasana, vertaa_salasana # Apu functiot salasanan piilottamiseen ja vertaamiseen
 
 # * ------------------------------------------------------------------------------ *
 
@@ -75,7 +83,7 @@ class sql_yhteys:
         # Tarkastaa onko nimi varattu
         for i in nimet.fetchall():
             if i[0] == nimi:
-                return NameError
+                raise NameError('Käyttäjänimi on varattu!')
         
         # Lisää käyttäjän tietokantaan
         self.cursor.execute( sql_komennot.luo_kayttaja_tietokantaan(), (nimi, hashed_salasana) )
@@ -87,19 +95,35 @@ class sql_yhteys:
     
 
 
-    def kirjaudu(self, kayttaja_nimi:str, salasana:str) -> int:
+    def kirjaudu(self, kayttaja_nimi: str, salasana: str) -> int or TypeError or ValueError:
         """
-        Functio etsii kirjautumis tietoihin vastaavan käyttäjän, palauttaa käyttäjän id:n int muodossa.
+        Tarkistaa käyttäjän kirjautumistiedot ja palauttaa käyttäjän ID:n.
 
         Parametrit:
-            - kayttaja_nimi: käyttäjän nimi str muodossa
-            - salasana: käyttäjän salasana str muodossa
-        """
-        # Etsii
-        nimet = self.cursor.execute( sql_komennot.valitse_kayttaja_kirjautumistiedoilla_tietokannasta(), (kayttaja_nimi, salasana) )
-        nimet = nimet.fetchall()
+            kayttaja_nimi: Käyttäjän nimi
+            salasana: Käyttäjän salasana
 
-        return int(nimet)
+        Palauttaa:
+            Käyttäjän ID jos kirjautuminen onnistuu
+            
+        Raises:
+            ValueError: Jos kirjautuminen epäonnistuu
+        """
+        # Hakee käyttäjän tiedot nimen perusteella
+        kayttaja = self.cursor.execute("SELECT id, kayttaja_salasana FROM kayttajat WHERE kayttaja_nimi = ?", (kayttaja_nimi,)).fetchone()
+        
+        # jos käyttäjää ei löytynyt
+        if not kayttaja:
+            raise TypeError("Käyttäjää ei löytynyt")
+        
+        kayttaja_id, tallennettu_salasana = kayttaja
+        
+        # Tarkistaa salasanan ja palauttaa ID:n jos onnistui
+        if vertaa_salasana(salasana, tallennettu_salasana):
+            return int(kayttaja_id)
+        else:
+            raise ValueError("Väärä salasana")
+
     
     
 
@@ -193,8 +217,10 @@ class sql_yhteys:
                 - kommentti (str)
         
         Esimerkki Palautus:
-            - [{'nimi': 'jarppi', 'arvostelu_maara': 1, 'arvostelut': False}]
-            - [{'nimi': 'jarppi', 'arvostelu_maara': 1, 'arvostelut': [{'id': 1, 'elokuvan_id': 2, 'kayttaja_id': 1, 'arvosana': 5.0, 'kommentti': 'ihan ok leffa, ite ihan fiilasin'}]}]
+            > arvostelu = False:
+            --> [{'nimi': 'jarppi', 'arvostelu_maara': 1, 'arvostelut': False}]
+            > arvostelu = True
+            --> [{'nimi': 'jarppi', 'arvostelu_maara': 1, 'arvostelut': [{'id': 1, 'elokuvan_id': 2, 'kayttaja_id': 1, 'arvosana': 5.0, 'kommentti': 'ihan ok leffa, ite ihan fiilasin'}]}]
         """
 
         # haetaan kayttäjätiedot tietokannasta
@@ -287,7 +313,7 @@ class sql_yhteys:
 
         # Jos nimi löytyy niin palautetaan NameError
         if self.cursor.fetchall():
-            return NameError
+            raise NameError('Käyttäjänimi on varattu!')
 
         # Jos nimi ei löydy niin päivitetään uusi nimi tietokantaan
         self.cursor.execute( sql_komennot.paivita_kayttajanimi(), (uusi_kayttajanimi, kayttaja_id,) )
@@ -309,7 +335,7 @@ class sql_yhteys:
         
         # Jos arvostelua ei ole tietokannassa niin palautta ValueError
         if not self.cursor.fetchall():
-            return ValueError
+            raise ValueError('Arvostelua ei löytynyt!')
 
         # Poistaa arvostelun tietokannasta
         self.cursor.execute( sql_komennot.poista_arvostelu(), (arvostelu_id,) )
@@ -332,7 +358,7 @@ class sql_yhteys:
 
         # Jos arvostelua ei ole tietokannassa niin palautta ValueError
         if not self.cursor.fetchall():
-            return ValueError
+            raise ValueError('Arvostelua ei löytynyt!')
 
         # Päivittää uuden kommentin tietokantaan
         self.cursor.execute( sql_komennot.paivita_kommentti(), (uusi_kommentti, arvostelun_id,) )
@@ -355,7 +381,7 @@ class sql_yhteys:
 
         # Jos käyttäjää ei ole niin palautetaan ValueError
         if not self.cursor.fetchall():
-            return ValueError
+            raise ValueError('Käyttäjää ei löytynyt!')
 
         # Piilottaa salasanan "hash" muotoon
         uusi_salasana = hash_salasana(uusi_salasana)
