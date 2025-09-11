@@ -78,7 +78,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] Luo input valikko _"terminaali.py"_ <mark></mark>
 > - [X] Luo tulostukset ja inputit (Kirjaudu sisään) _"terminaali.py"_ <mark></mark>
 > - [ ] Luo tulostukset ja inputit (Lisää arvostelu) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputit (Näytä käyttäjätiedot) _"terminaali.py"_ <mark></mark>
+> - [X] Luo tulostukset ja inputit (Näytä käyttäjätiedot) _"terminaali.py"_ <mark></mark>
 > - [ ] Luo tulostukset ja inputit (Muuta käyttäjänimeä) _"terminaali.py"_ <mark></mark>
 > - [X] Luo tulostukset ja inputit (Lisää käyttäjä) _"terminaali.py"_ <mark></mark>
 > - [X] Luo tulostukset ja inputit (Listaa/hae elokuvat) _"terminaali.py"_ <mark></mark>
