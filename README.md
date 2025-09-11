@@ -64,7 +64,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **TODO:N aikataulutus** <mark>Vili & Benjamin</mark>
 > - [X] **TARKASTA VALMIIT FUNCTIOT** <mark>Vili</mark>
 > - [ ] **LUO MAIN LOOP** <mark>Benjamin</mark>
-> - [ ] **Kirjaudu sisään** _"sql.py"_ <mark>Benjamin</mark>
+> - [X] **Kirjaudu sisään** _"sql.py"_ <mark>Benjamin</mark>
 > - [X] **Lisää arvostelu** _"sql.py"_ <mark></mark>
 > - [X] **Näytä käyttäjätiedot** _"sql.py"_ <mark></mark>
 > - [X] **Muuta käyttäjänimeä** _"sql.py"_ <mark>Vili</mark>
