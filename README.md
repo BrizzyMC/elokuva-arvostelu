@@ -77,13 +77,13 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [ ] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark></mark>
 > - [X] Luo input valikko _"terminaali.py"_ <mark></mark>
 > - [X] Luo tulostukset ja inputit (Kirjaudu sisään) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputit (Lisää arvostelu) _"terminaali.py"_ <mark></mark>
+> - [X] Luo tulostukset ja inputit (Lisää arvostelu) _"terminaali.py"_ <mark></mark>
 > - [X] Luo tulostukset ja inputit (Näytä käyttäjätiedot) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputit (Muuta käyttäjänimeä) _"terminaali.py"_ <mark></mark>
+> - [X] Luo tulostukset ja inputit (Muuta käyttäjänimeä) _"terminaali.py"_ <mark></mark>
 > - [X] Luo tulostukset ja inputit (Lisää käyttäjä) _"terminaali.py"_ <mark></mark>
 > - [X] Luo tulostukset ja inputit (Listaa/hae elokuvat) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputit (Muuta salasana) _"terminaali.py"_ <mark></mark>
-> - [ ] Luo tulostukset ja inputit (Muokkaa kommenttia) _"terminaali.py"_ <mark></mark>
+> - [X] Luo tulostukset ja inputit (Muuta salasana) _"terminaali.py"_ <mark></mark>
+> - [X] Luo tulostukset ja inputit (Muokkaa kommenttia) _"terminaali.py"_ <mark></mark>
 > - [ ] ~~Luo Flask yhteys _"Flask.py"_ <mark></mark>~~
 > - [ ] ~~Luo Verkkosivut (avaa enemmän tulevaisuudessa) <mark></mark>~~
 > - [ ] ~~Laajenna TODO Flask kirjastolle ja nettisivulle <mark></mark>~~
