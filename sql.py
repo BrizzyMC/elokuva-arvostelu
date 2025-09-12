@@ -8,8 +8,8 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
             ylläpitää ja sulkee sql tietokanta yhteyden.
 
 Tekiä:      Viljam Vänskä & Benjamin
-Päivämäärä: 11.9.2025
-Versio:     1.0
+Päivämäärä: 12.9.2025
+Versio:     1.1
 
 =================================================================
 """
@@ -40,9 +40,44 @@ class sql_yhteys:
     """
     Luokka luo yhteyden ".db" tietokantaan käyttäen sqlite3 kirjastoa, jos tietokantaa ei ole olemassa niin se luodaan olion luonti prosessissa automaattisesti.
 
-    Luokka hallinnoi elokuvia ja käyttäjie koskevaa koodia.
+    Luokalla hallinnoidaan käyttäjien, elokuvien ja arvosteluiden dataa sqlite3 kirjastoa käyttäen. 
 
-    #TODO KOMMENTOI KUN TIEDÄT LISÄÄ!!!
+    Pitää sisällään:
+        - lisaa_kayttaja
+            -> Lisätään uusi käyttäjä tietokantaan, palautetaan käyttäjän id.
+
+        - kirjaudu
+            -> Kirjataan olemassa oleva käyttäjä tietokantaan ja palautetaan käyttäjän id.
+
+        - lisaa_arvostelu
+            -> Lisätään arvostelu tietokantaan ja linkitetään se elokuvaan käyttäen elokuvan id:tä.
+
+        - elokuvan_arvostelut
+            -> Palauttaa listan elokuvat arvosteluista.
+
+        - sulje_yhteys
+            -> Sulkee sqlite3 yhteyden tietokantaan (ohjelman lopussa).
+
+        - kayttajan_tiedot
+            -> Palauttaa käyttäjän tiedot dict muodossa.
+
+        - lataa_elokuvat_tietokantaan
+            -> Lataa elokuvat tietokantaan json tiedostosta.
+
+        - hae_elokuvia
+            -> Hakee elokuvia tietokannasta niiden nimen ja vuosiluvun perusteella, palauttaa listan elokuvista.
+
+        - muuta_kayttajanimea
+            -> Muokkaa käyttäjän nimeä tietokannassa.
+
+        - poista_arvostelu
+            -> Poistaa arvostelun tietokannasta.
+
+        - muokkaa_kommenttia
+            -> Muokkaa olemassa olevan arvostelun kommenttia (vain kommenttia) tietokannasta.
+
+        - muuta_salasanaa
+            -> Antaa käyttäjän vaihtaa salasanaa tietokannasta.
     """
 
 
