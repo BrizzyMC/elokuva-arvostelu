@@ -164,10 +164,12 @@ def tulosta_kayttajatiedot(sql_yhteys:object, kayttajan_id:int) -> None:
     __puhdista_naytto()
 
     # Etsitään käyttäjätiedot tietokannasta
-    kayttaja = sql_yhteys.kayttajan_tiedot(self, kayttajan_id)
+    kayttaja = sql_yhteys.kayttajan_tiedot(kayttajan_id)
 
     # Tulostetaan käyttäjätiedot
     print(kayttaja)
+
+    input('Paina enter jatkaaksesi...')
 
 
 
@@ -233,11 +235,11 @@ def lisaa_arvostelu(sql_yhteys:object, kayttajan_id:int, elokuvan_id:int) -> Non
     __puhdista_naytto()
 
     # Käytttäjä antaa arvostelut
-    arvosana  = input('Anna arvosana: ') # arvosana --> float
+    arvosana  = input('Anna arvosana: ') # arvosana --> int
     kommentti = input('Anna kommentti: ')
 
     # Lisää kommentin tietokantaan
-    sql_yhteys.lisaa_arvostelu(elokuvan_id, arvosana, kayttajan_id, kommentti)
+    sql_yhteys.lisaa_arvostelu(elokuvan_id, int(arvosana), kayttajan_id, kommentti)
 
 
 
