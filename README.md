@@ -63,7 +63,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **Kirjoita TODO GitHubiin** <mark>Vili</mark>
 > - [X] **TODO:N aikataulutus** <mark>Vili & Benjamin</mark>
 > - [X] **TARKASTA VALMIIT FUNCTIOT** <mark>Vili</mark>
-> - [ ] **LUO MAIN LOOP** <mark>Benjamin</mark>
+> - [X] **LUO MAIN LOOP** <mark>Benjamin</mark>
 > - [X] **Kirjaudu sisään** _"sql.py"_ <mark>Benjamin</mark>
 > - [X] **Lisää arvostelu** _"sql.py"_ <mark></mark>
 > - [X] **Näytä käyttäjätiedot** _"sql.py"_ <mark></mark>
@@ -74,7 +74,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **Muuta salasana** _"sql.py"_ <mark></mark>
 > - [X] **Poista arvostelu** _"sql.py"_ <mark>Vili</mark>
 > - [X] **Muokkaa kommenttia** _"sql.py"_ <mark>Vili</mark>
-> - [ ] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark></mark>
+> - [ ] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark>Benjamin</mark>
 > - [X] Luo input valikko _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Kirjaudu sisään) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Lisää arvostelu) _"terminaali.py"_ <mark>Vili</mark>
@@ -84,9 +84,10 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] Luo tulostukset ja inputit (Listaa/hae elokuvat) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Muuta salasana) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Muokkaa kommenttia) _"terminaali.py"_ <mark>Vili</mark>
-> - [ ] ~~Luo Flask yhteys _"Flask.py"_ <mark></mark>~~
-> - [ ] ~~Luo Verkkosivut (avaa enemmän tulevaisuudessa) <mark></mark>~~
-> - [ ] ~~Laajenna TODO Flask kirjastolle ja nettisivulle <mark></mark>~~
+> - [ ] **Luo Flask yhteys** _"flask.py"_ <mark>Vili</mark>
+> - [ ] **Luo testi Flask sivut** _"flask.py"_ <mark>Vili</mark>
+> - [ ] **Luo Verkkosivut** (avaa enemmän tulevaisuudessa) <mark>Vili</mark>
+> - [ ] TODO Flask kirjastolle ja nettisivulle <mark></mark>
 
 ---
 
