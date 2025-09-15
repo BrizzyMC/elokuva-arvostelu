@@ -297,8 +297,9 @@ class sql_yhteys:
                 for elokuva in elokuvat:
                     
                     # Lisätään elokuva tietokantaan
+                    # TODO Tällä hetkellä lisää vain yhden genren kolmesta
                     self.cursor.execute( sql_komennot.lisää_elokuva_tietokantaan(), (elokuva["id"], elokuva["julkaisu_vuosi"], elokuva["nimi"], 
-                        elokuva["keskiarvo"], elokuva["juoni"]) )
+                        elokuva["keskiarvo"], elokuva["juoni"], elokuva["genret"][0], elokuva["kuva"]) )
 
             self.conn.commit() # Tallentaa mahdolliset muutokset
             print("Elokuvat ladattu tietokantaan!")
@@ -329,7 +330,7 @@ class sql_yhteys:
         self.cursor.execute( sql_komennot.etsi_elokuvia_tietokannasta(), ([hakusana,] * 2) ) # "* 2" antaa hakusanan 2 kertaa koska sql lauseella on 2 parametria
 
         # Käy läpi elokuvat 1x1, laittaa elokuvan tiedot dict muotoo, palauttaa list dict:ejä
-        return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5]}
+        return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5], "genret":elokuva[6], "kuva":elokuva[7]}
                     for elokuva in self.cursor.fetchall() ]
 
 

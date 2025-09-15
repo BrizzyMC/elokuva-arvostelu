@@ -22,6 +22,7 @@ if __name__ == '__main__':
 
     # Luodaan tietokanta yhteys
     tietokanta = sql_yhteys()
+    tietokanta.lataa_elokuvat_tietokantaan("elokuvat.json")
 
     # Käyttäjä kirjautuu sisään, varastoidaan käyttäjän id int muodossa
     kayttajan_id = terminaali.kirjautuminen(tietokanta)

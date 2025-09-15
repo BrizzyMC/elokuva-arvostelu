@@ -4,349 +4,449 @@
         "julkaisu_vuosi": 1994,
         "nimi": "Pulp Fiction",
         "keskiarvo": 4.5,
-        "juoni": "Kaksi palkkamurhaajaa, nyrkkeilijä, gangsterin vaimo ja ravintolaryöstäjät kohtaavat väkivaltaisessa ja humoristisessa tarinassa."
+        "juoni": "Kaksi palkkamurhaajaa, nyrkkeilijä, gangsterin vaimo ja ravintolaryöstäjät kohtaavat väkivaltaisessa ja humoristisessa tarinassa.",
+        "genret": ["Krimi", "Draama", "Komedia"],
+        "kuva": "https://www.imdb.com/title/tt0110912/mediaviewer/rm3692005633"
     },
     {
         "id": 2,
         "julkaisu_vuosi": 1972,
         "nimi": "Kummisetä",
         "keskiarvo": 4.8,
-        "juoni": "Don Vito Corleonen mafiaperheen tarina keskittyen hänen nuorimman poikansa Michael Corleonen muutokseen."
+        "juoni": "Don Vito Corleonen mafiaperheen tarina keskittyen hänen nuorimman poikansa Michael Corleonen muutokseen.",
+        "genret": ["Draama", "Krimi"],
+        "kuva": "https://www.imdb.com/title/tt0068646/mediaviewer/rm746868224"
     },
     {
         "id": 3,
         "julkaisu_vuosi": 2008,
         "nimi": "Yön Ritari",
         "keskiarvo": 4.7,
-        "juoni": "Batman taistelee Jokeria vastaan Gotham Cityn sielusta."
+        "juoni": "Batman taistelee Jokeria vastaan Gotham Cityn sielusta.",
+        "genret": ["Toiminta", "Trilleri", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0468569/mediaviewer/rm4023877632"
     },
     {
         "id": 4,
         "julkaisu_vuosi": 1999,
         "nimi": "Matrix",
         "keskiarvo": 4.4,
-        "juoni": "Tietokonehakkeri oppii salaperäiseltä kapinalliselta totuuden todellisuudesta ja ihmiskunnan taistelusta koneita vastaan."
+        "juoni": "Tietokonehakkeri oppii salaperäiseltä kapinalliselta totuuden todellisuudesta ja ihmiskunnan taistelusta koneita vastaan.",
+        "genret": ["Scifi", "Toiminta", "Trilleri"],
+        "kuva": "https://www.imdb.com/title/tt0133093/mediaviewer/rm525547776"
     },
     {
         "id": 5,
         "julkaisu_vuosi": 1993,
         "nimi": "Schindlerin lista",
         "keskiarvo": 4.9,
-        "juoni": "Liikemies Oskar Schindler pelastaa yli tuhat juutalaista holokaustin kauhuilta palkkaamalla heidät tehtaisiinsa."
+        "juoni": "Liikemies Oskar Schindler pelastaa yli tuhat juutalaista holokaustin kauhuilta palkkaamalla heidät tehtaisiinsa.",
+        "genret": ["Draama", "Historia"],
+        "kuva": "https://www.imdb.com/title/tt0108052/mediaviewer/rm1010568960"
     },
     {
         "id": 6,
         "julkaisu_vuosi": 1994,
         "nimi": "Forrest Gump",
         "keskiarvo": 4.6,
-        "juoni": "Älyllisesti vajavainen Forrest Gump kokee sattumalta useita Yhdysvaltojen merkittäviä historiallisia tapahtumia."
+        "juoni": "Älyllisesti vajavainen Forrest Gump kokee sattumalta useita Yhdysvaltojen merkittäviä historiallisia tapahtumia.",
+        "genret": ["Draama", "Komedia", "Romantiikka"],
+        "kuva": "https://www.imdb.com/title/tt0109830/mediaviewer/rm1775783936"
     },
     {
         "id": 7,
         "julkaisu_vuosi": 2001,
         "nimi": "Taru sormusten herrasta: Sormuksen ritarit",
         "keskiarvo": 4.7,
-        "juoni": "Nuori hobitti lähtee vaaralliselle matkalle tuhotakseen maagisen sormuksen."
+        "juoni": "Nuori hobitti lähtee vaaralliselle matkalle tuhotakseen maagisen sormuksen.",
+        "genret": ["Fantasia", "Seikkailu", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0120737/mediaviewer/rm1010568960"
     },
     {
         "id": 8,
         "julkaisu_vuosi": 1977,
         "nimi": "Tähtien sota",
         "keskiarvo": 4.6,
-        "juoni": "Luke Skywalker liittyy kapinallisiin taistelussa Darth Vaderin johtamaa Imperiumia vastaan."
+        "juoni": "Luke Skywalker liittyy kapinallisiin taistelussa Darth Vaderin johtamaa Imperiumia vastaan.",
+        "genret": ["Scifi", "Seikkailu"],
+        "kuva": "https://www.imdb.com/title/tt0076759/mediaviewer/rm1010568960"
     },
     {
         "id": 9,
         "julkaisu_vuosi": 1991,
         "nimi": "Uhrilampaat",
         "keskiarvo": 4.5,
-        "juoni": "FBI-harjoittelija yrittää vangita sarjamurhaajan toisen sarjamurhaajan avulla."
+        "juoni": "FBI-harjoittelija yrittää vangita sarjamurhaajan toisen sarjamurhaajan avulla.",
+        "genret": ["Trilleri", "Draama", "Mysteeri"],
+        "kuva": "https://www.imdb.com/title/tt0102926/mediaviewer/rm1010568960"
     },
     {
         "id": 10,
         "julkaisu_vuosi": 2010,
         "nimi": "Inception",
         "keskiarvo": 4.3,
-        "juoni": "Varas, joka varastaa yrityssalaisuuksia unien kautta, saa tehtäväkseen istuttaa idean jonkun mieleen."
+        "juoni": "Varas, joka varastaa yrityssalaisuuksia unien kautta, saa tehtäväkseen istuttaa idean jonkun mieleen.",
+        "genret": ["Scifi", "Trilleri", "Toiminta"],
+        "kuva": "https://www.imdb.com/title/tt1375666/mediaviewer/rm1010568960"
     },
     {
         "id": 11,
         "julkaisu_vuosi": 1957,
         "nimi": "12 vihaista miestä",
         "keskiarvo": 4.4,
-        "juoni": "Valamiehistön jäsen yrittää vakuuttaa 11 muuta, että syytetty saattaa olla syytön."
+        "juoni": "Valamiehistön jäsen yrittää vakuuttaa 11 muuta, että syytetty saattaa olla syytön.",
+        "genret": ["Draama", "Oikeudellinen"],
+        "kuva": "https://www.imdb.com/title/tt0050083/mediaviewer/rm1010568960"
     },
     {
         "id": 12,
         "julkaisu_vuosi": 1997,
         "nimi": "Titanic",
         "keskiarvo": 4.2,
-        "juoni": "Aristokraattinen nainen rakastuu köyhään taiteilijaan Titanicin neitsytmatkalla."
+        "juoni": "Aristokraattinen nainen rakastuu köyhään taiteilijaan Titanicin neitsytmatkalla.",
+        "genret": ["Romantiikka", "Draama", "Historia"],
+        "kuva": "https://www.imdb.com/title/tt0120338/mediaviewer/rm1010568960"
     },
     {
         "id": 13,
         "julkaisu_vuosi": 1980,
         "nimi": "Imperiumin vastaisku",
         "keskiarvo": 4.5,
-        "juoni": "Luke Skywalker saa koulutusta Jedi-ritariksi samalla kun hänen ystävänsä joutuvat Darth Vaderin takaa-ajamiksi."
+        "juoni": "Luke Skywalker saa koulutusta Jedi-ritariksi samalla kun hänen ystävänsä joutuvat Darth Vaderin takaa-ajamiksi.",
+        "genret": ["Scifi", "Seikkailu"],
+        "kuva": "https://www.imdb.com/title/tt0080684/mediaviewer/rm1010568960"
     },
     {
         "id": 14,
         "julkaisu_vuosi": 2003,
         "nimi": "Taru sormusten herrasta: Kuninkaan paluu",
         "keskiarvo": 4.8,
-        "juoni": "Gandalf ja Aragorn johtavat ihmisiä Sauronin armeijoita vastaan, kun Frodo ja Sam lähestyvät Tuomiovuorta."
+        "juoni": "Gandalf ja Aragorn johtavat ihmisiä Sauronin armeijoita vastaan, kun Frodo ja Sam lähestyvät Tuomiovuorta.",
+        "genret": ["Fantasia", "Seikkailu", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0167260/mediaviewer/rm1010568960"
     },
     {
         "id": 15,
         "julkaisu_vuosi": 1990,
         "nimi": "Goodfellas - Mafiaveljekset",
         "keskiarvo": 4.5,
-        "juoni": "Henry Hillin nousu ja tuho mafiassa 1960-1980-luvuilla."
+        "juoni": "Henry Hillin nousu ja tuho mafiassa 1960-1980-luvuilla.",
+        "genret": ["Draama", "Krimi"],
+        "kuva": "https://www.imdb.com/title/tt0099685/mediaviewer/rm1010568960"
     },
     {
         "id": 16,
         "julkaisu_vuosi": 1975,
         "nimi": "Tappajahai",
         "keskiarvo": 4.0,
-        "juoni": "Poliisipäällikkö, meribiologi ja vanha kalastaja yrittävät tappaa ihmisiä syövän valkohaian."
+        "juoni": "Poliisipäällikkö, meribiologi ja vanha kalastaja yrittävät tappaa ihmisiä syövän valkohaian.",
+        "genret": ["Trilleri", "Jännitys"],
+        "kuva": "https://www.imdb.com/title/tt0073195/mediaviewer/rm1010568960"
     },
     {
         "id": 17,
         "julkaisu_vuosi": 1999,
         "nimi": "Fight Club",
         "keskiarvo": 4.3,
-        "juoni": "Kärsimätön toimistotyöntekijä ja huoleton saippuanvalmistaja perustavat maanalaisen tappelukerhon."
+        "juoni": "Kärsimätön toimistotyöntekijä ja huoleton saippuanvalmistaja perustavat maanalaisen tappelukerhon.",
+        "genret": ["Draama", "Trilleri"],
+        "kuva": "https://www.imdb.com/title/tt0137523/mediaviewer/rm1010568960"
     },
     {
         "id": 18,
         "julkaisu_vuosi": 1979,
         "nimi": "Alien",
         "keskiarvo": 4.2,
-        "juoni": "Avaruusaluksen miehistö kohtaa tappavan olion, joka käyttää ihmisiä isäntinä lisääntyäkseen."
+        "juoni": "Avaruusaluksen miehistö kohtaa tappavan olion, joka käyttää ihmisiä isäntinä lisääntyäkseen.",
+        "genret": ["Horror", "Scifi", "Jännitys"],
+        "kuva": "https://www.imdb.com/title/tt0078748/mediaviewer/rm1010568960"
     },
     {
         "id": 19,
         "julkaisu_vuosi": 1982,
         "nimi": "Blade Runner",
         "keskiarvo": 4.1,
-        "juoni": "Etsijä jäljittää ja yrittää tuhota neljä replikanttia, jotka ovat varastaneet avaruusaluksen."
+        "juoni": "Etsijä jäljittää ja yrittää tuhota neljä replikanttia, jotka ovat varastaneet avaruusaluksen.",
+        "genret": ["Scifi", "Noir", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0083658/mediaviewer/rm1010568960"
     },
     {
         "id": 20,
         "julkaisu_vuosi": 1968,
         "nimi": "2001: Avaruusseikkailu",
         "keskiarvo": 4.3,
-        "juoni": "Ihmiskunnan evoluution tarina mystisen mustan monoliitin vaikutuksen alaisena."
+        "juoni": "Ihmiskunnan evoluution tarina mystisen mustan monoliitin vaikutuksen alaisena.",
+        "genret": ["Scifi", "Seikkailu"],
+        "kuva": "https://www.imdb.com/title/tt0062622/mediaviewer/rm1010568960"
     },
     {
         "id": 21,
         "julkaisu_vuosi": 2019,
         "nimi": "Parasite",
         "keskiarvo": 4.6,
-        "juoni": "Köyhä perhe soluttautuu rikkaan perheen palveluskuntaan, mutta asiat mutkistuvat odottamattomalla tavalla."
+        "juoni": "Köyhä perhe soluttautuu rikkaan perheen palveluskuntaan, mutta asiat mutkistuvat odottamattomalla tavalla.",
+        "genret": ["Draama", "Trilleri", "Mustakomedia"],
+        "kuva": "https://www.imdb.com/title/tt6751668/mediaviewer/rm1010568960"
     },
     {
         "id": 22,
         "julkaisu_vuosi": 1946,
         "nimi": "Ihmeellinen on elämä",
         "keskiarvo": 4.5,
-        "juoni": "Suojelusenkeli näyttää epätoivoiselle miehelle, miltä elämä olisi, jos hän ei olisi koskaan syntynyt."
+        "juoni": "Suojelusenkeli näyttää epätoivoiselle miehelle, miltä elämä olisi, jos hän ei olisi koskaan syntynyt.",
+        "genret": ["Draama", "Fantasia"],
+        "kuva": "https://www.imdb.com/title/tt0038650/mediaviewer/rm1010568960"
     },
     {
         "id": 23,
         "julkaisu_vuosi": 2014,
         "nimi": "Interstellar",
         "keskiarvo": 4.4,
-        "juoni": "Tulevaisuuden Maassa ryhmä astronautteja matkustaa madonreiän läpi etsiäkseen uutta kotia ihmiskunnalle."
+        "juoni": "Tulevaisuuden Maassa ryhmä astronautteja matkustaa madonreiän läpi etsiäkseen uutta kotia ihmiskunnalle.",
+        "genret": ["Scifi", "Seikkailu", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0816692/mediaviewer/rm1010568960"
     },
     {
         "id": 24,
         "julkaisu_vuosi": 1960,
         "nimi": "Psyko",
         "keskiarvo": 4.2,
-        "juoni": "Sihteeri piileskelee syrjäisessä motellissa, jota johtaa häiriintynyt nuori mies."
+        "juoni": "Sihteeri piileskelee syrjäisessä motellissa, jota johtaa häiriintynyt nuori mies.",
+        "genret": ["Horror", "Trilleri"],
+        "kuva": "https://www.imdb.com/title/tt0054215/mediaviewer/rm1010568960"
     },
     {
         "id": 25,
         "julkaisu_vuosi": 1988,
         "nimi": "Die Hard",
         "keskiarvo": 4.1,
-        "juoni": "Poliisi taistelee yksin terroristeja vastaan Los Angelesin pilvenpiirtäjässä."
+        "juoni": "Poliisi taistelee yksin terroristeja vastaan Los Angelesin pilvenpiirtäjässä.",
+        "genret": ["Toiminta", "Trilleri"],
+        "kuva": "https://www.imdb.com/title/tt0095016/mediaviewer/rm1010568960"
     },
     {
         "id": 26,
         "julkaisu_vuosi": 2000,
         "nimi": "Memento",
         "keskiarvo": 4.3,
-        "juoni": "Mies, joka kärsii lyhytaikaisesta muistinmenetyksestä, yrittää löytää vaimonsa murhaajan."
+        "juoni": "Mies, joka kärsii lyhytaikaisesta muistinmenetyksestä, yrittää löytää vaimonsa murhaajan.",
+        "genret": ["Trilleri", "Mysteeri", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0209144/mediaviewer/rm1010568960"
     },
     {
         "id": 27,
         "julkaisu_vuosi": 1995,
         "nimi": "Se7en",
         "keskiarvo": 4.4,
-        "juoni": "Kaksi etsivää jahtaa sarjamurhaajaa, joka käyttää seitsemää kuolemansyntiä teemana murhissaan."
+        "juoni": "Kaksi etsivää jahtaa sarjamurhaajaa, joka käyttää seitsemää kuolemansyntiä teemana murhissaan.",
+        "genret": ["Trilleri", "Draama", "Mysteeri"],
+        "kuva": "https://www.imdb.com/title/tt0114369/mediaviewer/rm1010568960"
     },
     {
         "id": 28,
         "julkaisu_vuosi": 2007,
         "nimi": "There Will Be Blood",
         "keskiarvo": 4.2,
-        "juoni": "Öljynporaajan tarina 1900-luvun alun Kaliforniassa ja hänen konfliktinsa paikallisen saarnaajan kanssa."
+        "juoni": "Öljynporaajan tarina 1900-luvun alun Kaliforniassa ja hänen konfliktinsa paikallisen saarnaajan kanssa.",
+        "genret": ["Draama", "Historia"],
+        "kuva": "https://www.imdb.com/title/tt0469494/mediaviewer/rm1010568960"
     },
     {
         "id": 29,
         "julkaisu_vuosi": 1998,
         "nimi": "Pelastakaa sotamies Ryan",
         "keskiarvo": 4.5,
-        "juoni": "Toisen maailmansodan aikana joukkue sotilaita etsii sotilasta, jonka veljet ovat kaikki kuolleet."
+        "juoni": "Toisen maailmansodan aikana joukkue sotilaita etsii sotilasta, jonka veljet ovat kaikki kuolleet.",
+        "genret": ["Sota", "Draama", "Toiminta"],
+        "kuva": "https://www.imdb.com/title/tt0120815/mediaviewer/rm1010568960"
     },
     {
         "id": 30,
         "julkaisu_vuosi": 2002,
         "nimi": "Kaupunki jossa kuljemme",
         "keskiarvo": 4.0,
-        "juoni": "Kolme lapsuudenystävää ajautuvat erilleen traagisen tapahtuman jälkeen, mutta kohtaavat taas myöhemmin."
+        "juoni": "Kolme lapsuudenystävää ajautuvat erilleen traagisen tapahtuman jälkeen, mutta kohtaavat taas myöhemmin.",
+        "genret": ["Draama"],
+        "kuva": "https://www.imdb.com/title/tt0300051/mediaviewer/rm1010568960"
     },
     {
         "id": 31,
         "julkaisu_vuosi": 1985,
         "nimi": "Paluu tulevaisuuteen",
         "keskiarvo": 4.2,
-        "juoni": "Teini-ikäinen poika matkustaa vahingossa aikakoneella 30 vuotta menneisyyteen."
+        "juoni": "Teini-ikäinen poika matkustaa vahingossa aikakoneella 30 vuotta menneisyyteen.",
+        "genret": ["Scifi", "Komedia", "Seikkailu"],
+        "kuva": "https://www.imdb.com/title/tt0088763/mediaviewer/rm1010568960"
     },
     {
         "id": 32,
         "julkaisu_vuosi": 2006,
         "nimi": "Illuusio",
         "keskiarvo": 4.1,
-        "juoni": "Kaksi taikuria kilpailee toisiaan vastaan Lontoossa 1800-luvun lopulla."
+        "juoni": "Kaksi taikuria kilpailee toisiaan vastaan Lontoossa 1800-luvun lopulla.",
+        "genret": ["Draama", "Mysteeri"],
+        "kuva": "https://www.imdb.com/title/tt0434409/mediaviewer/rm1010568960"
     },
     {
         "id": 33,
         "julkaisu_vuosi": 1984,
         "nimi": "Terminator",
         "keskiarvo": 4.0,
-        "juoni": "Kyborgi matkustaa vuodesta 2029 vuoteen 1984 tappaakseen naisen, jonka poika tulee johtamaan ihmisten kapinaa koneita vastaan."
+        "juoni": "Kyborgi matkustaa vuodesta 2029 vuoteen 1984 tappaakseen naisen, jonka poika tulee johtamaan ihmisten kapinaa koneita vastaan.",
+        "genret": ["Scifi", "Toiminta"],
+        "kuva": "https://www.imdb.com/title/tt0088247/mediaviewer/rm1010568960"
     },
     {
         "id": 34,
         "julkaisu_vuosi": 2017,
         "nimi": "Get Out",
         "keskiarvo": 4.3,
-        "juoni": "Nuori musta mies vierailee valkoisen tyttöystävänsä vanhempien luona, mutta paljastaa synkän salaisuuden."
+        "juoni": "Nuori musta mies vierailee valkoisen tyttöystävänsä vanhempien luona, mutta paljastaa synkän salaisuuden.",
+        "genret": ["Horror", "Trilleri", "Mustakomedia"],
+        "kuva": "https://www.imdb.com/title/tt5052448/mediaviewer/rm1010568960"
     },
     {
         "id": 35,
         "julkaisu_vuosi": 1940,
         "nimi": "Piinaviikko",
         "keskiarvo": 4.0,
-        "juoni": "Köyhtynyt kirjailija rakastuu rikkaaseen tyttöön ja muuttuu vangiksi kultaiseen häkkiin."
+        "juoni": "Köyhtynyt kirjailija rakastuu rikkaaseen tyttöön ja muuttuu vangiksi kultaiseen häkkiin.",
+        "genret": ["Draama", "Romantiikka"],
+        "kuva": "https://www.imdb.com/title/tt0032599/mediaviewer/rm1010568960"
     },
     {
         "id": 36,
         "julkaisu_vuosi": 1976,
         "nimi": "Taksikuski",
         "keskiarvo": 4.2,
-        "juoni": "Unettomuudesta kärsivä ja henkisesti epävakaa Vietnam-veteraani työskentelee taksikuskina New Yorkissa."
+        "juoni": "Unettomuudesta kärsivä ja henkisesti epävakaa Vietnam-veteraani työskentelee taksikuskina New Yorkissa.",
+        "genret": ["Draama", "Krimi"],
+        "kuva": "https://www.imdb.com/title/tt0074616/mediaviewer/rm1010568960"
     },
     {
         "id": 37,
         "julkaisu_vuosi": 2012,
         "nimi": "Django Unchained",
         "keskiarvo": 4.2,
-        "juoni": "Vapautettu orja matkustaa palkkionmetsästäjän kanssa pelastaakseen vaimonsa julmalta plantaasin omistajalta."
+        "juoni": "Vapautettu orja matkustaa palkkionmetsästäjän kanssa pelastaakseen vaimonsa julmalta plantaasin omistajalta.",
+        "genret": ["Draama", "Seikkailu", "Western"],
+        "kuva": "https://www.imdb.com/title/tt1853728/mediaviewer/rm1010568960"
     },
     {
         "id": 38,
         "julkaisu_vuosi": 1954,
         "nimi": "Kuusi kunniatonta miestä",
         "keskiarvo": 4.3,
-        "juoni": "Kylän asukkaat palkkaavat seitsemän samuraita puolustamaan heitä ryöstäjiä vastaan."
+        "juoni": "Kylän asukkaat palkkaavat seitsemän samuraita puolustamaan heitä ryöstäjiä vastaan.",
+        "genret": ["Seikkailu", "Toiminta", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0047478/mediaviewer/rm1010568960"
     },
     {
         "id": 39,
         "julkaisu_vuosi": 2021,
         "nimi": "Dyyni",
         "keskiarvo": 4.1,
-        "juoni": "Lahjakkaan nuoren miehen on matkustettava vaarallisimmalle planeetalle universumissa varmistaakseen perheensä ja kansansa tulevaisuuden."
+        "juoni": "Lahjakkaan nuoren miehen on matkustettava vaarallisimmalle planeetalle universumissa varmistaakseen perheensä ja kansansa tulevaisuuden.",
+        "genret": ["Scifi", "Fantasia", "Seikkailu"],
+        "kuva": "https://www.imdb.com/title/tt0903624/mediaviewer/rm1010568960"
     },
     {
         "id": 40,
         "julkaisu_vuosi": 1986,
         "nimi": "Aliens - Paluu",
         "keskiarvo": 4.2,
-        "juoni": "Ellen Ripley liittyy merijalkaväen joukkoon taistelussa avaruusolioita vastaan."
+        "juoni": "Ellen Ripley liittyy merijalkaväen joukkoon taistelussa avaruusolioita vastaan.",
+        "genret": ["Toiminta", "Scifi", "Horror"],
+        "kuva": "https://www.imdb.com/title/tt0090605/mediaviewer/rm1010568960"
     },
     {
         "id": 41,
         "julkaisu_vuosi": 2016,
         "nimi": "La La Land",
         "keskiarvo": 4.0,
-        "juoni": "Pianisti ja näyttelijä rakastuvat ja kamppailevat menestyäkseen Los Angelesissa."
+        "juoni": "Pianisti ja näyttelijä rakastuvat ja kamppailevat menestyäkseen Los Angelesissa.",
+        "genret": ["Musikaali", "Romantiikka", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt3783958/mediaviewer/rm1010568960"
     },
     {
         "id": 42,
         "julkaisu_vuosi": 1962,
         "nimi": "Lawrence of Arabia",
         "keskiarvo": 4.4,
-        "juoni": "Brittiläisen upseerin tarina, joka yhdisti arabiheimot taistelussa turkkilaisia vastaan ensimmäisen maailmansodan aikana."
+        "juoni": "Brittiläisen upseerin tarina, joka yhdisti arabiheimot taistelussa turkkilaisia vastaan ensimmäisen maailmansodan aikana.",
+        "genret": ["Historia", "Seikkailu", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0049823/mediaviewer/rm1010568960"
     },
     {
         "id": 43,
         "julkaisu_vuosi": 2018,
         "nimi": "Green Book",
         "keskiarvo": 4.1,
-        "juoni": "Työväenluokkainen italialainen amerikkalainen kuljettaja vie afroamerikkalaista pianistia kiertueelle etelään 1960-luvulla."
+        "juoni": "Työväenluokkainen italialainen amerikkalainen kuljettaja vie afroamerikkalaista pianistia kiertueelle etelään 1960-luvulla.",
+        "genret": ["Draama", "Komedia"],
+        "kuva": "https://www.imdb.com/title/tt6220804/mediaviewer/rm1010568960"
     },
     {
         "id": 44,
         "julkaisu_vuosi": 1992,
         "nimi": "Reservoir Dogs",
         "keskiarvo": 4.3,
-        "juoni": "Timanttiryöstö menee pieleen, ja rikolliset epäilevät jonkun olevan poliisi."
+        "juoni": "Timanttiryöstö menee pieleen, ja rikolliset epäilevät jonkun olevan poliisi.",
+        "genret": ["Krimi", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0105236/mediaviewer/rm1010568960"
     },
     {
         "id": 45,
         "julkaisu_vuosi": 2004,
         "nimi": "Eternal Sunshine of the Spotless Mind",
         "keskiarvo": 4.3,
-        "juoni": "Pari käy läpi toimenpiteen pyyhkiäkseen toisensa muistoistaan eron jälkeen."
+        "juoni": "Pari käy läpi toimenpiteen pyyhkiäkseen toisensa muistoistaan eron jälkeen.",
+        "genret": ["Romantiikka", "Scifi", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0338013/mediaviewer/rm1010568960"
     },
     {
         "id": 46,
         "julkaisu_vuosi": 1995,
         "nimi": "Braveheart",
         "keskiarvo": 4.2,
-        "juoni": "William Wallacen tarina 1200-luvun Skotlannissa ja hänen taistelunsa Englannin kuningasta vastaan."
+        "juoni": "William Wallacen tarina 1200-luvun Skotlannissa ja hänen taistelunsa Englannin kuningasta vastaan.",
+        "genret": ["Historia", "Toiminta", "Draama"],
+        "kuva": "https://www.imdb.com/title/tt0112573/mediaviewer/rm1010568960"
     },
     {
         "id": 47,
         "julkaisu_vuosi": 2005,
         "nimi": "V niin kuin verikosto",
         "keskiarvo": 4.0,
-        "juoni": "Naamioitunut vapaustaitelija taistelee fasistista hallitusta vastaan tulevaisuuden Britanniassa."
+        "juoni": "Naamioitunut vapaustaitelija taistelee fasistista hallitusta vastaan tulevaisuuden Britanniassa.",
+        "genret": ["Draama", "Toiminta", "Poliittinen"],
+        "kuva": "https://www.imdb.com/title/tt0434409/mediaviewer/rm1010568960"
     },
     {
         "id": 48,
         "julkaisu_vuosi": 1974,
         "nimi": "Kummisetä osa II",
         "keskiarvo": 4.7,
-        "juoni": "Tarina jatkaa Michael Corleonen nousua mafiaperheensä johtajaksi ja kertoo Vito Corleonen nuoruudesta."
+        "juoni": "Tarina jatkaa Michael Corleonen nousua mafiaperheensä johtajaksi ja kertoo Vito Corleonen nuoruudesta.",
+        "genret": ["Draama", "Krimi", "Historia"],
+        "kuva": "https://www.imdb.com/title/tt0071562/mediaviewer/rm1010568960"
     },
     {
         "id": 49,
         "julkaisu_vuosi": 2020,
         "nimi": "Soul",
         "keskiarvo": 4.2,
-        "juoni": "Muusikko, joka on menettänyt intohimonsa musiikkiin, päätyy sielujen maailmaan ja yrittää palata takaisin."
+        "juoni": "Muusikko, joka on menettänyt intohimonsa musiikkiin, päätyy sielujen maailmaan ja yrittää palata takaisin.",
+        "genret": ["Animaatio", "Draama", "Perhe"],
+        "kuva": "https://www.imdb.com/title/tt2948372/mediaviewer/rm1010568960"
     },
     {
         "id": 50,
         "julkaisu_vuosi": 2009,
         "nimi": "Avatar",
         "keskiarvo": 4.0,
-        "juoni": "Halvaantunut merijalkaväen sotilas lähetetään Pandoralle, jossa hän rakastuu paikalliseen ja päätyy taistelemaan ihmisiä vastaan."
+        "juoni": "Halvaantunut merijalkaväen sotilas lähetetään Pandoralle, jossa hän rakastuu paikalliseen ja päätyy taistelemaan ihmisiä vastaan.",
+        "genret": ["Scifi", "Seikkailu", "Fantasia"],
+        "kuva": "https://www.imdb.com/title/tt0499549/mediaviewer/rm2864126464"
     }
 ]
