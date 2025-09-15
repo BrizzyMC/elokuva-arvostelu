@@ -74,7 +74,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **Muuta salasana** _"sql.py"_ <mark></mark>
 > - [X] **Poista arvostelu** _"sql.py"_ <mark>Vili</mark>
 > - [X] **Muokkaa kommenttia** _"sql.py"_ <mark>Vili</mark>
-> - [ ] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark>Benjamin</mark>
+> - [X] **Luo uudet taulukot** _jossa elokuvilla kuvat ja genret_ <mark>Benjamin</mark>
 > - [X] Luo input valikko _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Kirjaudu sisään) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Lisää arvostelu) _"terminaali.py"_ <mark>Vili</mark>
