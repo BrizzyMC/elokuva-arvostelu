@@ -214,5 +214,4 @@ Tähän tietokanta tiedostoon tallennetaan kaikki ohjelman data, se tulee kommun
 
 ---
 
-_Ohjelmaan on tulossa Flask webbipohjainen käyttöjärjestelmä, emme ole vielä suunnitelleet sitä liikkaa ja tämän takia sille ei löydy vielä functioita ja tiedostoja yms tästä README:estä. Flask käyttöjärjestelmä tulee silti käyttämään samaa logiikkaa kun tämänhetkinen versio ja noudattaa samaa diagrammi suunitelmaa. Tämä versio on tosin odotettavissa jo lähitulevaisuudessa!_
 
