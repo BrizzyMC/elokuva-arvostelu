@@ -162,7 +162,7 @@ class sql_yhteys:
     
     
 
-    def lisaa_arvostelu(self, elokuva_id:int, arvosana:float, kayttaja_id:int, kommentti:str="") -> bool:
+    def lisaa_arvostelu(self, elokuva_id:int, arvosana:int, kayttaja_id:int, kommentti:str="") -> bool:
         """
         Lisää elokuvalle arvostelu ja päivittää elokuvan keskiarvon sekä käyttäjän arvostelumäärän.
 
@@ -170,7 +170,7 @@ class sql_yhteys:
 
         Parametrit:
             - elokuva_id: arvosteltavan elokuvan id int muodossa
-            - arvosana: annettava arvosana float muodossa (0-5)
+            - arvosana: annettava arvosana int muodossa (0-5)
             - kayttajan_id: Käyttäjän joka kommentoi id int muodossa
             - kommentti: mahdollinen kommentti elokuvalle str muodossa (voi jättää tyhjäksi)
         """
