@@ -50,6 +50,16 @@ pip install hashlib
 pip install json
 ```
 
+**Flask**
+```
+pip install flask
+```
+
+**python-dotenv**
+```
+pip install python-dotenv
+```
+
 ---
 
 ## TODO:
