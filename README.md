@@ -81,7 +81,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] Luo tulostukset ja inputit (Näytä käyttäjätiedot) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Muuta käyttäjänimeä) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Lisää käyttäjä) _"terminaali.py"_ <mark>Vili</mark>
-> - [X] Luo tulostukset ja inputit (Listaa/hae elokuvat) _"terminaali.py"_ <mark><Vili/mark>
+> - [X] Luo tulostukset ja inputit (Listaa/hae elokuvat) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Muuta salasana) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Muokkaa kommenttia) _"terminaali.py"_ <mark>Vili</mark>
 > - [ ] ~~Luo Flask yhteys _"Flask.py"_ <mark></mark>~~
