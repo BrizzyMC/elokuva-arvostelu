@@ -60,6 +60,11 @@ pip install flask
 pip install python-dotenv
 ```
 
+**Flask Socketio**
+```
+pip install flask-socketio
+```
+
 ---
 
 ## TODO:
