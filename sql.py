@@ -85,7 +85,7 @@ class sql_yhteys:
         """Yhdistaa SQLite tietokantaan, Luo taulukot (jos tarve), Palauttaa cursorin ja conn."""
 
         # Luo cursorin ja conn ( luo tietokanta tiedoston jos ei olemassa )
-        self.conn   = sqlite3.connect(TIETOKANTA)
+        self.conn   = sqlite3.connect(TIETOKANTA, check_same_thread=False)
         self.cursor = self.conn.cursor()
 
 
@@ -344,7 +344,7 @@ class sql_yhteys:
         """
         
         # Etsitään löytyykö nimi jo tietokannasta
-        self.cursor.execute( sql_komennot.etsi_kayttaja_nimen_perusteella, (uusi_kayttajanimi,) )
+        self.cursor.execute( sql_komennot.etsi_kayttaja_nimen_perusteella(), (uusi_kayttajanimi,) )
 
         # Jos nimi löytyy niin palautetaan NameError
         if self.cursor.fetchall():
