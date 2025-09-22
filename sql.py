@@ -8,8 +8,8 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
             ylläpitää ja sulkee sql tietokanta yhteyden.
 
 Tekiä:      Viljam Vänskä & Benjamin
-Päivämäärä: 12.9.2025
-Versio:     1.1
+Päivämäärä: 22.9.2025
+Versio:     1.2
 
 =================================================================
 """
