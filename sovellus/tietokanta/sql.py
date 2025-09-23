@@ -9,7 +9,7 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
 
 Tekiä:      Viljam Vänskä & Benjamin
 Päivämäärä: 23.9.2025
-Versio:     1.2
+Versio:     1.3
 
 =================================================================
 """
@@ -94,6 +94,11 @@ class sql_yhteys:
         self.cursor.execute( luo_elokuva_taulukko()   ) # Luo elokuva taulukon tietokantaan   (mikäli ei ole olemassa)
 
         self.cursor.execute( luo_kayttajat_taulukko() ) # Luo käyttäjät taulukon tietokantaan (mikäli ei ole olemassa)
+
+
+        # Tarkistaa onko tietokannassa elokuvia, jos ei niin ne lisätään
+        if self.cursor.execute("SELECT COUNT(*) FROM elokuvat").fetchone()[0] == 0:
+            self.lataa_elokuvat_tietokantaan('elokuvat.json')
 
 
         self.conn.commit() # Tallentaa mahdolliset muutokset
@@ -297,8 +302,9 @@ class sql_yhteys:
                 for elokuva in elokuvat:
                     
                     # Lisätään elokuva tietokantaan
+                    # TODO Tällä hetkellä lisää vain yhden genren kolmesta
                     self.cursor.execute( lisää_elokuva_tietokantaan(), (elokuva["id"], elokuva["julkaisu_vuosi"], elokuva["nimi"], 
-                        elokuva["keskiarvo"], elokuva["juoni"]) )
+                        elokuva["keskiarvo"], elokuva["juoni"], elokuva["genret"][0], elokuva["kuva"]) )
 
             self.conn.commit() # Tallentaa mahdolliset muutokset
             print("Elokuvat ladattu tietokantaan!")
@@ -329,7 +335,7 @@ class sql_yhteys:
         self.cursor.execute( etsi_elokuvia_tietokannasta(), ([hakusana,] * 2) ) # "* 2" antaa hakusanan 2 kertaa koska sql lauseella on 2 parametria
 
         # Käy läpi elokuvat 1x1, laittaa elokuvan tiedot dict muotoo, palauttaa list dict:ejä
-        return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5]}
+        return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5], "genret":elokuva[6], "kuva":elokuva[7]}
                     for elokuva in self.cursor.fetchall() ]
 
 
@@ -344,7 +350,7 @@ class sql_yhteys:
         """
         
         # Etsitään löytyykö nimi jo tietokannasta
-        self.cursor.execute( etsi_kayttaja_nimen_perusteella(), (uusi_kayttajanimi,) )
+        self.cursor.execute( etsi_kayttaja_nimen_perusteella, (uusi_kayttajanimi,) )
 
         # Jos nimi löytyy niin palautetaan NameError
         if self.cursor.fetchall():
@@ -428,27 +434,3 @@ class sql_yhteys:
 
 
 
-
-if __name__ == '__main__':
-    yhteys = sql_yhteys()
-
-
-    #print(yhteys.hae_elokuvia('täH'))
-
-    #yhteys.lataa_elokuvat_tietokantaan('elokuvat.json')
-
-    #yhteys.lisaa_kayttaja('heikki', 'pekka123')
-
-    #print(hash_salasana('pekka123'))
-
-    #print( yhteys.kirjaudu('pekka', 'pekka123' ) )
-
-    #yhteys.lisaa_arvostelu(2, 5, 3, 'i love it')
-
-    #yhteys.sulje_yhteys()
-
-    #print( yhteys.kayttajan_tiedot(1, True) )
-
-    yhteys.poista_arvostelu(200)
-
-    pass
