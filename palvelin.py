@@ -14,6 +14,7 @@ Versio:     1.0
 """
 
 from flask import Flask
+from dotenv import load_dotenv
 from sovellus import rekistoroi_blueprintit
 
 
@@ -32,8 +33,22 @@ def luo_sovellus() -> object:
 
 
 
-if __name__ == '__main__':
+def kaynnista_palvelin(debug:bool=False):
+    """
+    Functio lataa ".env" tiedoston configuroinnin, luo Flask sovelluksen ja käynnistää Flask palvelimen
+
+    Parametri:
+        - debug: True/False (bool)
+    """
+
+    load_dotenv()
     sovellus = luo_sovellus()
-    sovellus.run(debug=True)
+    sovellus.run(debug=debug)
+
+
+
+
+if __name__ == '__main__':
+    kaynnista_palvelin(debug=True)
 
 
