@@ -1,9 +1,9 @@
 """
 =================================================================
 
-Nimi:       apu_functiot.py
-kuvaus:     Tiedosto sisältää sekalaisia apufunctioita functioille
-            Jotka sijaitsevat joissain toisissa tiedostoissa.
+Nimi:       hash_salasana.py
+kuvaus:     Tiedosto sisältää salasanan piilotus ja vertaus
+            algorytmin joka käyttää hashlibs kirjastoa.
 
 Tekiä:      Benjamin
 Päivämäärä: 11.9.2025
@@ -12,7 +12,7 @@ Versio:     1.0
 =================================================================
 """
 
-import os       # TODO kirjoita kommentti
+import os
 import hashlib  # hashlib salasanan piilottamiseen (hash_salasana)
 
 def hash_salasana(salasana: str) -> bytes:
