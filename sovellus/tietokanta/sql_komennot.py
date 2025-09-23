@@ -26,6 +26,8 @@ def luo_elokuva_taulukko() -> str:
     "keskiarvo"         FLOAT,
     "juoni"             VARCHAR,
     "arvostelu_maara"   INT,
+    "genret"            LIST,
+    "kuva"              VARCHAR,
     PRIMARY KEY("id" AUTOINCREMENT)
     )'''
 
@@ -88,15 +90,17 @@ def lisää_elokuva_tietokantaan() -> str:
     Functio palauttaa sql komennon joka lisää elokuvan tietokantaan
 
     Sql Parametrit:
-        - id: elokuvan id int muodossa
+        - id: Elokuvan id int muodossa
         - julkaisu_vuosi. Minä vuonna elokuva on julkaistu int muodossa
         - nimi: Elokuvan nimi str muodossa
         - keskiarvo: Elokuvan keskiarvo float muodossa
         - juoni: Kuvaus elokuvan juonesta str muodossa
+        - genret: Lista jossa on genret str muodossa
+        - kuva: Linkki kuvaan str muodossa
     """
 
-    return """INSERT OR IGNORE INTO elokuvat (id, julkaisu_vuosi, nimi, keskiarvo, juoni) 
-                                                VALUES (?, ?, ?, ?, ?)"""
+    return """INSERT OR IGNORE INTO elokuvat (id, julkaisu_vuosi, nimi, keskiarvo, juoni, genret, kuva) 
+                                                VALUES (?, ?, ?, ?, ?, ?, ?)"""
 
 
 # * ----------------------------------------------------------------- *
@@ -274,4 +278,3 @@ def poista_arvostelu() -> str:
     """
 
     return "DELETE FROM arvostelut WHERE id = (?)"
-
