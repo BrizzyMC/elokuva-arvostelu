@@ -8,7 +8,7 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
             ylläpitää ja sulkee sql tietokanta yhteyden.
 
 Tekiä:      Viljam Vänskä & Benjamin
-Päivämäärä: 22.9.2025
+Päivämäärä: 23.9.2025
 Versio:     1.2
 
 =================================================================
@@ -22,9 +22,9 @@ import sqlite3      # Kutsuu sqlite3 kirjaston (joka on projektin pää tietokan
 
 import json         # Kutsuu json kirjaston tiedoston lukua varten (vain "lataa_elokuvat_tietokantaan" käyttää kirjastoa)
 
-import sql_komennot # Kutsuu sql komennot, sql_komennot tiedostosta
+from .sql_komennot import * # Kutsuu sql komennot, sql_komennot tiedostosta
 
-from apu_functiot import hash_salasana, vertaa_salasana # Apu functiot salasanan piilottamiseen ja vertaamiseen
+from .hash_salasana import hash_salasana, vertaa_salasana # Apu functiot salasanan piilottamiseen ja vertaamiseen
 
 # * ------------------------------------------------------------------------------ *
 
@@ -89,11 +89,11 @@ class sql_yhteys:
         self.cursor = self.conn.cursor()
 
 
-        self.cursor.execute( sql_komennot.luo_arvostelu_taulukko() ) # Luo arvostelu taulukon tietokantaan (mikäli ei ole olemassa)
+        self.cursor.execute( luo_arvostelu_taulukko() ) # Luo arvostelu taulukon tietokantaan (mikäli ei ole olemassa)
 
-        self.cursor.execute( sql_komennot.luo_elokuva_taulukko()   ) # Luo elokuva taulukon tietokantaan   (mikäli ei ole olemassa)
+        self.cursor.execute( luo_elokuva_taulukko()   ) # Luo elokuva taulukon tietokantaan   (mikäli ei ole olemassa)
 
-        self.cursor.execute( sql_komennot.luo_kayttajat_taulukko() ) # Luo käyttäjät taulukon tietokantaan (mikäli ei ole olemassa)
+        self.cursor.execute( luo_kayttajat_taulukko() ) # Luo käyttäjät taulukon tietokantaan (mikäli ei ole olemassa)
 
 
         self.conn.commit() # Tallentaa mahdolliset muutokset
@@ -113,7 +113,7 @@ class sql_yhteys:
         hashed_salasana = hash_salasana(salasana)
 
         # Valitsee nimet tietokannasta
-        nimet = self.cursor.execute( sql_komennot.valitse_kayttajanimi_tietokannasta() )
+        nimet = self.cursor.execute( valitse_kayttajanimi_tietokannasta() )
 
         # Tarkastaa onko nimi varattu
         for i in nimet.fetchall():
@@ -121,7 +121,7 @@ class sql_yhteys:
                 raise NameError('Käyttäjänimi on varattu!')
         
         # Lisää käyttäjän tietokantaan
-        self.cursor.execute( sql_komennot.luo_kayttaja_tietokantaan(), (nimi, hashed_salasana) )
+        self.cursor.execute( luo_kayttaja_tietokantaan(), (nimi, hashed_salasana) )
 
         # Tallentaa mahdolliset muutokset
         self.conn.commit()
@@ -176,7 +176,7 @@ class sql_yhteys:
         """
 
         # Hakee keskiarvon ja arvostelujen määrän id:n perusteella
-        elokuva = self.cursor.execute( sql_komennot.valitse_keskiarvo_ja_maara_tietokannasta(), (elokuva_id,) ).fetchone()
+        elokuva = self.cursor.execute( valitse_keskiarvo_ja_maara_tietokannasta(), (elokuva_id,) ).fetchone()
         
         # Tarkistaa löytyykö elokuvaa
         if not elokuva:
@@ -192,13 +192,13 @@ class sql_yhteys:
         uusi_keskiarvo = ((vanha_keskiarvo * arvostelu_maara) + arvosana) / uusi_arvostelu_maara
         
         # Päivittää elokuvan keskiarvon ja arvostelujen määrän
-        self.cursor.execute( sql_komennot.paivita_keskiarvo_maara_tietokantaan(), (uusi_keskiarvo, uusi_arvostelu_maara, elokuva_id) )
+        self.cursor.execute( paivita_keskiarvo_maara_tietokantaan(), (uusi_keskiarvo, uusi_arvostelu_maara, elokuva_id) )
         
         # Lisää arvostelun
-        self.cursor.execute( sql_komennot.lisaa_arvostelu_tietokantaan(), (elokuva_id, kayttaja_id, arvosana, kommentti) )
+        self.cursor.execute( lisaa_arvostelu_tietokantaan(), (elokuva_id, kayttaja_id, arvosana, kommentti) )
         
         # Päivittää käyttäjän arvostelumäärän
-        self.cursor.execute( sql_komennot.paivita_kayttajan_arvostelumaara_tietokantaan(), (kayttaja_id,) )
+        self.cursor.execute( paivita_kayttajan_arvostelumaara_tietokantaan(), (kayttaja_id,) )
         
         self.conn.commit() # Tallentaa mahdolliset muutokset
 
@@ -216,7 +216,7 @@ class sql_yhteys:
         """
 
         # hakee arvostelut
-        arvostelut = self.cursor.execute( sql_komennot.valitse_nimi_kommentti_arvosana_tietokannasta(), (elokuva_id,) ).fetchall()
+        arvostelut = self.cursor.execute( valitse_nimi_kommentti_arvosana_tietokannasta(), (elokuva_id,) ).fetchall()
 
         return arvostelut
         
@@ -259,10 +259,10 @@ class sql_yhteys:
         """
 
         # haetaan kayttäjätiedot tietokannasta
-        kayttaja = self.cursor.execute( sql_komennot.valitse_kayttajatiedot_tietokannasta(), (kayttaja_id,) ).fetchone()
+        kayttaja = self.cursor.execute( valitse_kayttajatiedot_tietokannasta(), (kayttaja_id,) ).fetchone()
 
         if arvostelut:
-            kayttajan_arvostelut = self.cursor.execute( sql_komennot.valitse_kayttajan_arvostelut_tietokannasta(), (kayttaja_id,) ).fetchall()
+            kayttajan_arvostelut = self.cursor.execute( valitse_kayttajan_arvostelut_tietokannasta(), (kayttaja_id,) ).fetchall()
 
             arvostelut = []
 
@@ -297,7 +297,7 @@ class sql_yhteys:
                 for elokuva in elokuvat:
                     
                     # Lisätään elokuva tietokantaan
-                    self.cursor.execute( sql_komennot.lisää_elokuva_tietokantaan(), (elokuva["id"], elokuva["julkaisu_vuosi"], elokuva["nimi"], 
+                    self.cursor.execute( lisää_elokuva_tietokantaan(), (elokuva["id"], elokuva["julkaisu_vuosi"], elokuva["nimi"], 
                         elokuva["keskiarvo"], elokuva["juoni"]) )
 
             self.conn.commit() # Tallentaa mahdolliset muutokset
@@ -326,7 +326,7 @@ class sql_yhteys:
         """
 
         # Etsii elokuvat tietokannasta hakusanan perusteella
-        self.cursor.execute( sql_komennot.etsi_elokuvia_tietokannasta(), ([hakusana,] * 2) ) # "* 2" antaa hakusanan 2 kertaa koska sql lauseella on 2 parametria
+        self.cursor.execute( etsi_elokuvia_tietokannasta(), ([hakusana,] * 2) ) # "* 2" antaa hakusanan 2 kertaa koska sql lauseella on 2 parametria
 
         # Käy läpi elokuvat 1x1, laittaa elokuvan tiedot dict muotoo, palauttaa list dict:ejä
         return [ {'id':elokuva[0], 'nimi':elokuva[1], 'julkaisu_vuosi':elokuva[2], 'keskiarvo':elokuva[3], 'juoni':elokuva[4], 'arvostelu_maara':elokuva[5]}
@@ -344,14 +344,14 @@ class sql_yhteys:
         """
         
         # Etsitään löytyykö nimi jo tietokannasta
-        self.cursor.execute( sql_komennot.etsi_kayttaja_nimen_perusteella(), (uusi_kayttajanimi,) )
+        self.cursor.execute( etsi_kayttaja_nimen_perusteella(), (uusi_kayttajanimi,) )
 
         # Jos nimi löytyy niin palautetaan NameError
         if self.cursor.fetchall():
             raise NameError('Käyttäjänimi on varattu!')
 
         # Jos nimi ei löydy niin päivitetään uusi nimi tietokantaan
-        self.cursor.execute( sql_komennot.paivita_kayttajanimi(), (uusi_kayttajanimi, kayttaja_id,) )
+        self.cursor.execute( paivita_kayttajanimi(), (uusi_kayttajanimi, kayttaja_id,) )
 
         self.conn.commit() # Tallentaa muutokset
 
@@ -366,14 +366,14 @@ class sql_yhteys:
         """
 
         # Tarkistaa onko arvostelua tietokannassa
-        self.cursor.execute( sql_komennot.valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
+        self.cursor.execute( valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
         
         # Jos arvostelua ei ole tietokannassa niin palautta ValueError
         if not self.cursor.fetchall():
             raise ValueError('Arvostelua ei löytynyt!')
 
         # Poistaa arvostelun tietokannasta
-        self.cursor.execute( sql_komennot.poista_arvostelu(), (arvostelu_id,) )
+        self.cursor.execute( poista_arvostelu(), (arvostelu_id,) )
 
         self.conn.commit() # Tallentaa muutokset
 
@@ -389,14 +389,14 @@ class sql_yhteys:
         """
 
         # Tarkistaa onko arvostelua tietokannassa
-        self.cursor.execute( sql_komennot.valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
+        self.cursor.execute( valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
 
         # Jos arvostelua ei ole tietokannassa niin palautta ValueError
         if not self.cursor.fetchall():
             raise ValueError('Arvostelua ei löytynyt!')
 
         # Päivittää uuden kommentin tietokantaan
-        self.cursor.execute( sql_komennot.paivita_kommentti(), (uusi_kommentti, arvostelun_id,) )
+        self.cursor.execute( paivita_kommentti(), (uusi_kommentti, arvostelun_id,) )
 
         self.conn.commit() # Tallentaa muutokset
 
@@ -412,7 +412,7 @@ class sql_yhteys:
         """
 
         # Tarkistaa onko kayttäjää olemassa
-        self.cursor.execute( sql_komennot.valitse_kayttajatiedot_tietokannasta(), (kayttaja_id,) )
+        self.cursor.execute( valitse_kayttajatiedot_tietokannasta(), (kayttaja_id,) )
 
         # Jos käyttäjää ei ole niin palautetaan ValueError
         if not self.cursor.fetchall():
@@ -422,7 +422,7 @@ class sql_yhteys:
         uusi_salasana = hash_salasana(uusi_salasana)
 
         # Päivittää salasanan tietokantaan
-        self.cursor.execute( sql_komennot.paivita_salasana(), (uusi_salasana, kayttaja_id,) )
+        self.cursor.execute( paivita_salasana(), (uusi_salasana, kayttaja_id,) )
 
         self.conn.commit() # Tallentaa muutokset
 
