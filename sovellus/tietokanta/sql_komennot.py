@@ -263,7 +263,7 @@ def paivita_salasana() -> str:
         - uusi_salasana: Uusi salasana joka päivitetään tietokantaan (str muodossa)
     """
 
-    return "UPDATE kayttaja SET salasana = (?) WHERE id = (?)"
+    return "UPDATE kayttajat SET kayttaja_salasana = (?) WHERE id = (?)"
 
 
 # * ----------------------------------------------------------------- *
