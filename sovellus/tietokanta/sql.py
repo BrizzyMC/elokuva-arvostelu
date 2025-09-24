@@ -9,7 +9,7 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
 
 Tekiä:      Viljam Vänskä & Benjamin
 Päivämäärä: 23.9.2025
-Versio:     1.3
+Versio:     1.2
 
 =================================================================
 """
@@ -350,7 +350,7 @@ class sql_yhteys:
         """
         
         # Etsitään löytyykö nimi jo tietokannasta
-        self.cursor.execute( etsi_kayttaja_nimen_perusteella, (uusi_kayttajanimi,) )
+        self.cursor.execute( etsi_kayttaja_nimen_perusteella(), (uusi_kayttajanimi,) )
 
         # Jos nimi löytyy niin palautetaan NameError
         if self.cursor.fetchall():
