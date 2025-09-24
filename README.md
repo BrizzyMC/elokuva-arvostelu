@@ -98,8 +98,8 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] Luo tulostukset ja inputit (Listaa/hae elokuvat) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Muuta salasana) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] Luo tulostukset ja inputit (Muokkaa kommenttia) _"terminaali.py"_ <mark>Vili</mark>
-> - [ ] **Luo Flask yhteys** _"flask.py"_ <mark>Vili</mark>
-> - [ ] **Luo testi Flask sivut** _"flask.py"_ <mark>Vili</mark>
+> - [X] **Luo Flask yhteys** _"flask.py"_ <mark>Vili</mark>
+> - [X] **Luo testi Flask sivut** _"flask.py"_ <mark>Vili</mark>
 > - [ ] **Luo Verkkosivut** (avaa enemmän tulevaisuudessa) <mark>Vili</mark>
 > - [ ] **Suunnittele nettisivut** _(figma:lla?)_ <mark></mark>
 > - [ ] TODO Flask kirjastolle ja nettisivulle <mark></mark>
