@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 23.9.2025
+Päivämäärä: 24.9.2025
 Versio:     1.0
 
 =================================================================
@@ -29,14 +29,15 @@ def luo_kayttaja():
     """
     POST /luo_käyttäjä/luodaan
     ---
-    
+    Luo käyttäjän ja ohjaa kotisivulle
     """
 
     if request.method == 'POST':
         kayttaja = request.form['kayttaja']
         salasana = request.form['salasana']
+
         try:
-            print(__tietokanta.lisaa_kayttaja(kayttaja, salasana))
+            __tietokanta.lisaa_kayttaja(kayttaja, salasana)
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
         except NameError:
@@ -49,21 +50,22 @@ def kirjaudu():
     """
     POST /kirjaudu/kirjataan_sisaan
     ---
-
+    Kirjaa käyttäjän sisään ja ohjaa kotisivulle
     """
 
     if request.method == 'POST':
         kayttaja = request.form['kayttaja']
         salasana = request.form['salasana']
+
         try:
-            print(__tietokanta.kirjaudu(kayttaja, salasana))
+            __tietokanta.kirjaudu(kayttaja, salasana)
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
         except ValueError:
-            return redirect(url_for('Sivut.kirjaudu'))
+            return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
         except TypeError:
-            return redirect(url_for('Sivut.kirjaudu'))
+            return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
 
 
@@ -72,12 +74,16 @@ def hae():
     """
     POST /haku
     ---
+    Hakee elokuvia hakusanan perusteella
 
+    Palauttaa:
+        - Löytyneet elokuvat
     """
 
     if request.method == 'POST':
         hakusana = request.form['hakusana']
         elokuvat = __tietokanta.hae_elokuvia(hakusana)
+
         return elokuvat
 
 
@@ -87,12 +93,16 @@ def kayttaja_tiedot():
     """
     POST /kayttaja_tiedot
     ---
+    Hakee käyttäjätietoja käyttäjä id:n perusteella
 
+    Palauttaa:
+        - Käyttäjän tiedot
     """
 
     if request.method == 'POST':
         kayttaja_id = request.form['kayttajatiedot']
         tiedot = __tietokanta.kayttajan_tiedot(int(kayttaja_id))
+
         return tiedot
 
 
@@ -102,7 +112,10 @@ def paivita_nimi_salasana(kayttaja_id:int=1):
     """
     POST /paivita_kayttajaa
     ---
+    Päivittää nimen, salasanan ja ohjaa kotisivulle
 
+    HUOM:
+        - Jos kenttä on tyhjä niin se jätetään huomiotta
     """
 
     if request.method == 'POST':
@@ -115,14 +128,47 @@ def paivita_nimi_salasana(kayttaja_id:int=1):
         if uusi_salasana:
             __tietokanta.muuta_salasanaa(kayttaja_id, uusi_nimi)
 
-        return redirect(url_for('Sivut.kirjaudu'))
+        return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
 
 
+@rajapinta.route('/lisää_arvostelu', methods=['POST'])
 def lisaa_arvostelu():
-    # coming soon, tulossa pian, odota vain, se tulee, hetki vielä
-    pass
-    
+    """
+    POST /lisää_arvostelu
+    ---
+    Lisää arvostelun tietokantaan
+    """
+
+    if request.method == 'POST':
+        arvosana  = request.form['arvosana']
+        kommentti = request.form['kommentti']
+
+        __tietokanta.lisaa_arvostelu(1, int(arvosana), 1, kommentti)
+
+    return [arvosana, kommentti]
+
+
+
+def muokkaa_kommentti():
+    """
+    POST /muokkaa_kommenttia
+    ---
+    Muokkaa kommenttia
+    """
+
+    if request.method == 'POST':
+        kommentti = request.form['kommentti']
+
+        try:
+            __tietokanta.muokkaa_kommenttia(1, kommentti)
+
+        except ValueError:
+            redirect(url_for('Sivut.muokkaa_kommenttia'))
+
+    return [kommentti]
+
+
 
 
             
