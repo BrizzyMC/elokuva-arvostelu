@@ -101,7 +101,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **Luo Flask yhteys** _"flask.py"_ <mark>Vili</mark>
 > - [X] **Luo testi Flask sivut** _"flask.py"_ <mark>Vili</mark>
 > - [ ] **Luo Verkkosivut** (avaa enemmän tulevaisuudessa) <mark>Vili</mark>
-> - [ ] **Suunnittele nettisivut** _(figma:lla?)_ <mark></mark>
+> - [ ] **Suunnittele nettisivut** _(figma:lla?)_ <mark>Benjamin</mark>
 > - [ ] TODO Flask kirjastolle ja nettisivulle <mark></mark>
 
 ---
