@@ -4,11 +4,19 @@
 Nimi:       sivut.py
 kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             hallinnan, eli functioita jotka määräävät reitit
-            Flask html sivuihin.
+            Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 23.9.2025
+Päivämäärä: 25.9.2025
 Versio:     1.0
+
+Sisältää reitit:
+    - /                   -> #TODO
+    - /kirjaudu           -> kirjaudu.html
+    - /luo_käyttäjä       -> luo_kayttaja.html
+    - /koti/<nimi>        -> koti.html (parametri: käyttäjän nimi)
+    - /arvostele          -> arvostelu.html
+    - /muokkaa_kommenttia -> muokkaa_kommenttia.html
 
 =================================================================
 """
@@ -22,24 +30,43 @@ sivut = Blueprint('Sivut', __name__)
 
 # > ------------ [ Sivun Lataus Functiot ] ------------------------ <
 
-# Aloitus sivu
 @sivut.route('/')
 def aloitus():
-    return render_template('muuta_tietoja.html')
+    """Renderöi sivun johon käyttäjä yhdistää ensimmäisenä"""
+    return render_template('arvostelu.html')
 
-# Kirjautumis sivu
+
 @sivut.route('/kirjaudu')
 def kirjaudu_sisaan():
+    """Renderöi kirjautumis sivun"""     
     return render_template('kirjaudu.html')
 
-# Käyttäjän luonti sivu
+
 @sivut.route('/luo_käyttäjä')
 def uusi_kayttaja():
+    """Renderöi käyttäjän luonti sivun"""     
     return render_template('luo_kayttaja.html')
 
-# kotisivu
+
 @sivut.route('/koti/<nimi>')
-def koti(nimi):
+def koti(nimi:str):
+    """Renderöi kotisivun
+
+    Parametri:
+        - nimi: käyttäjän nimi (str)
+    """     
     return render_template('koti.html')
+
+
+@sivut.route('/arvostele')
+def arvostele():
+    """Renderöi arvostelu sivun"""     
+    return render_template('arvostelu.html')
+
+
+@sivut.route('/muokkaa_kommenttia')
+def muokkaa_kommenttia():
+    """Renderöi kommentin muokkaus sivun"""     
+    return render_template('muokkaa_kommenttia.html')
 
     
