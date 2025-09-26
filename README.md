@@ -100,9 +100,28 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] Luo tulostukset ja inputit (Muokkaa kommenttia) _"terminaali.py"_ <mark>Vili</mark>
 > - [X] **Luo Flask yhteys** _"flask.py"_ <mark>Vili</mark>
 > - [X] **Luo testi Flask sivut** _"flask.py"_ <mark>Vili</mark>
-> - [ ] **Luo Verkkosivut** (avaa enemmän tulevaisuudessa) <mark>Vili</mark>
+
+### Perjantai 26.9
 > - [ ] **Suunnittele nettisivut** _(figma:lla?)_ <mark>Benjamin</mark>
-> - [ ] TODO Flask kirjastolle ja nettisivulle <mark></mark>
+> - [X] TODO Flask kirjastolle ja nettisivulle <mark></mark>
+
+### Maanatai 29.9
+> - [ ] kirjautumis/käyttäjänluonti sivu  <mark>Vili</mark>
+> - [ ] kotisivu <mark>Vili</mark>
+> - [ ] Haku sivu <mark>Benjamin</mark>
+
+### Tiistai 30.9
+Tehdään edelliset valmiiksi
+
+### Keskiviikko 1.10
+> - [ ] Elokuva tiedot/arvostelut sivu <mark>Vili</mark>
+
+### Torstai 2.10
+> - [ ] Profiili sivu <mark>Vili</mark>
+> - [ ] Käyttäjätietojen muokkaus sivu <mark>Vili</mark>
+
+### Perjantai 3.10
+Ohjelman katsaus
 
 ---
 
