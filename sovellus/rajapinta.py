@@ -7,13 +7,13 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 24.9.2025
-Versio:     1.0
+Päivämäärä: 26.9.2025
+Versio:     1.1
 
 =================================================================
 """
 
-from flask import redirect, url_for, request, Blueprint
+from flask import redirect, url_for, request, Blueprint, session
 from .tietokanta.sql import sql_yhteys
 
 
@@ -23,6 +23,25 @@ rajapinta = Blueprint('rajapinta', __name__)
 
 
 # > ------------ [ Toiminto Functiot ] ------------------------ <
+
+@rajapinta.route('/')
+def tarkista_kirjautuminen():
+    """
+    Tarkistaa onko käyttäjä kirjautunut sisään, tieto hankitaan sessiota käyttäen
+    
+    Vaihtoehdot:
+        - Kyllä: Ohjataan kotisivulle
+        - Ei: Ohjataan käyttäjän luontiin
+    """
+    if session.get('kayttaja_id'):
+        kayttaja_nimi = __tietokanta.kayttajan_tiedot(session['kayttaja_id'])[0]['nimi']
+        print(kayttaja_nimi)
+        return redirect(url_for('Sivut.koti', nimi=kayttaja_nimi))
+        
+    else:
+        return redirect(url_for('Sivut.uusi_kayttaja'))
+
+
 
 @rajapinta.route('/luo_käyttäjä/luodaan', methods=['POST'])
 def luo_kayttaja():
@@ -38,6 +57,9 @@ def luo_kayttaja():
 
         try:
             __tietokanta.lisaa_kayttaja(kayttaja, salasana)
+            session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana) # Käyttäjä kirjataan sisään ja id tallennetaan sessioon
+            session['nimi'] = kayttaja
+
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
         except NameError:
@@ -58,7 +80,9 @@ def kirjaudu():
         salasana = request.form['salasana']
 
         try:
-            __tietokanta.kirjaudu(kayttaja, salasana)
+            session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana)
+            session['nimi'] = kayttaja
+            
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
         except ValueError:
@@ -150,6 +174,7 @@ def lisaa_arvostelu():
 
 
 
+@rajapinta.route('/muokkaa_kommenttia', methods=['POST'])
 def muokkaa_kommentti():
     """
     POST /muokkaa_kommenttia
