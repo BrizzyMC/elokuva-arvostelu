@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 25.9.2025
+Päivämäärä: 26.9.2025
 Versio:     1.1
 
 =================================================================
@@ -58,6 +58,8 @@ def luo_kayttaja():
         try:
             __tietokanta.lisaa_kayttaja(kayttaja, salasana)
             session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana) # Käyttäjä kirjataan sisään ja id tallennetaan sessioon
+            session['nimi'] = kayttaja
+
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
         except NameError:
