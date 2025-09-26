@@ -27,12 +27,13 @@ sivut = Blueprint('Sivut', __name__)
 
 
 
-def tarkista_henkilo(nimi:str):
+def tarkista_henkilo(nimi:str, palauta):
     """
     Tarkistaa onko henkilö se keneksi koittaa kirjautua
     
-    Parametri:
+    Parametrit:
         - nimi: Nimi jolla koitetaan kirjautua sisään
+        - palauta: Palauttaa annetun komennon
     
     Ohjaa (jos henkilö on):
         - Aito: Ohjaa haetulle sivulle
@@ -46,6 +47,9 @@ def tarkista_henkilo(nimi:str):
     # Käyttäjä yrittää päästä toisen käyttäjälle
     if session['nimi'] != nimi:
         abort(403)
+    
+    else:
+        return palauta
 
 
 
@@ -65,14 +69,13 @@ def uusi_kayttaja():
 
 @sivut.route('/koti/<nimi>')
 def koti(nimi:str):
-    tarkista_henkilo(nimi)
     """Renderöi kotisivun
 
     Parametri:
         - nimi: käyttäjän nimi (str)
     """
-    
-    return render_template('koti.html')
+
+    return tarkista_henkilo(nimi, render_template('koti.html'))
 
 
 @sivut.route('/arvostele')
