@@ -194,6 +194,24 @@ def muokkaa_kommentti():
     return [kommentti]
 
 
+@rajapinta.route('/kirjaudu_ulos', methods=['POST'])
+def kirjaudu_ulos():
+    """
+    POST /kirjaudu_ulos
+    ---
+    Kirjaa käyttäjän ulos ja ohjaa kirjautumis sivulle
+
+    Ohjaa:
+        - Kirjautumis sivu
+    """
+
+    if request.method == 'POST':
+        session.pop('nimi')
+        session.pop('kayttaja_id')
+
+        return redirect(url_for('Sivut.kirjaudu_sisaan'))
+
+
 
 
             
