@@ -8,7 +8,7 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
             ylläpitää ja sulkee sql tietokanta yhteyden.
 
 Tekiä:      Viljam Vänskä & Benjamin
-Päivämäärä: 23.9.2025
+Päivämäärä: 26.9.2025
 Versio:     1.2
 
 =================================================================
@@ -31,7 +31,7 @@ from .hash_salasana import hash_salasana, vertaa_salasana # Apu functiot salasan
 
 
 # Määritetään tiedosto mitä tietokanta käyttää, muuttujan tulisi olla tietokannan nimi (EI SAA MUUTTUA OHJELMAN AIKANA) ja loppua ".db"
-TIETOKANTA = 'database.db'
+TIETOKANTA = 'sovellus/tietokanta/database.db'
 
 
 
@@ -98,7 +98,7 @@ class sql_yhteys:
 
         # Tarkistaa onko tietokannassa elokuvia, jos ei niin ne lisätään
         if self.cursor.execute("SELECT COUNT(*) FROM elokuvat").fetchone()[0] == 0:
-            self.lataa_elokuvat_tietokantaan('elokuvat.json')
+            self.lataa_elokuvat_tietokantaan('sovellus/tietokanta/elokuvat.json')
 
 
         self.conn.commit() # Tallentaa mahdolliset muutokset
