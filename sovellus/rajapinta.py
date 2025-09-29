@@ -39,7 +39,7 @@ def tarkista_kirjautuminen():
         return redirect(url_for('Sivut.koti', nimi=kayttaja_nimi))
         
     else:
-        return redirect(url_for('Sivut.uusi_kayttaja'))
+        return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
 
 
