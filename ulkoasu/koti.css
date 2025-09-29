@@ -1,0 +1,32 @@
+/*Tiedostossa on kotisivun */
+
+body {
+    margin: 0;
+}
+
+.navigointi {
+    position: sticky;
+    overflow: hidden;
+    background-color: green;
+    height: 4vw;
+}
+
+.navigointi a {
+    float: left;
+    padding: 1vw 22px;
+    font-size: 1.2vw;
+}
+
+.profiili {
+    display: flex;
+    float: right;
+    padding: 1vw 22px;
+    font-size: 1.2vw;
+    background: url('profiili_kuva.png');
+    border-radius: 40px;
+    width: 2vw;
+    height: 2vw;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
