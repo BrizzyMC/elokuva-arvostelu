@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kotisivu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
 </head>
 <body>
+    <div class="navigointi">
+        <a>a</a>
+        <a>b</a>
+        <a><button class="profiili"></button></a>
+    </div>
     <form action = "http://localhost:5000/haku" method = "post">
         <p>Hae Elokuvia</p>
         <p><input type="text" name="hakusana"/></p>
@@ -16,10 +22,5 @@
         <p><input type="text" name="kayttajatiedot"></p>
         <p><input type="submit" value="submit"></p>
     </form>
-    <form action = "http://localhost:5000/kirjaudu_ulos" method = "post">
-        <p>kirjaudu_ulos</p>
-        <p><input type = "submit" value = "submit"/></p>
-    </form>
-
 </body>
 </html>
