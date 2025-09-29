@@ -1,58 +1,32 @@
-/*Tiedostossa on asettelu "kirjaudu.html" tiedostolle, sen laatikoille ja elementeille.*/
+/*Tiedostossa on kotisivun */
 
 body {
-    background-color: rgb(206, 206, 206);
+    margin: 0;
 }
 
-
-.laatikko {
-    display: inline-block;
-    place-content: center;
-    margin-left: 10%;
-    margin-top: 5%;
-    background: rgb(255, 255, 255);
-    height: 40vw;
-    width: 35vw;
-    border-radius: 25px;
-    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+.navigointi {
+    position: sticky;
+    overflow: hidden;
+    background-color: green;
+    height: 4vw;
 }
 
-
-p {
-    text-align: center;
-    margin-top: 3vw;
-}
-
-
-h1 {
-    text-align: center;
-    margin-top: -10vw;
-    margin-bottom: 7vw;
-    color: rgb(24, 119, 242);
-}
-
-
-input[type=text], input[type=password] {
-    border-radius: 5px;
-    height: 2.1vw;
-    width: 17vw;
+.navigointi a {
+    float: left;
+    padding: 1vw 22px;
     font-size: 1.2vw;
 }
 
-
-input[type=submit] {
-    margin-top: 3vw;
-    background-color: rgb(24, 119, 242);
-    color: rgb(255, 255, 255);
-    height: 2.5vw;
-    width: 17vw;
-    border-radius: 5px;
-    outline: none;
-    font-size: 1.5vw;
+.profiili {
+    display: flex;
+    float: right;
+    padding: 1vw 22px;
+    font-size: 1.2vw;
+    background: url('profiili_kuva.png');
+    border-radius: 40px;
+    width: 2vw;
+    height: 2vw;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
-
-input[type=submit]:hover {
-    cursor: pointer;
-    background-color: rgb(31, 126, 252);
-}
-
