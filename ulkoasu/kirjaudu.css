@@ -1,0 +1,58 @@
+/*Tiedostossa on asettelu "kirjaudu.html" tiedostolle, sen laatikoille ja elementeille.*/
+
+body {
+    background-color: rgb(206, 206, 206);
+}
+
+
+.laatikko {
+    display: inline-block;
+    place-content: center;
+    margin-left: 10%;
+    margin-top: 5%;
+    background: rgb(255, 255, 255);
+    height: 40vw;
+    width: 35vw;
+    border-radius: 25px;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+}
+
+
+p {
+    text-align: center;
+    margin-top: 3vw;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: -10vw;
+    margin-bottom: 7vw;
+    color: rgb(24, 119, 242);
+}
+
+
+input[type=text], input[type=password] {
+    border-radius: 5px;
+    height: 2.1vw;
+    width: 17vw;
+    font-size: 1.2vw;
+}
+
+
+input[type=submit] {
+    margin-top: 3vw;
+    background-color: rgb(24, 119, 242);
+    color: rgb(255, 255, 255);
+    height: 2.5vw;
+    width: 17vw;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.5vw;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    background-color: rgb(31, 126, 252);
+}
+
