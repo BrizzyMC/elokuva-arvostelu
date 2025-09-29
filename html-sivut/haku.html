@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ulkoasu/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<!-- vaihda action -->
+
+    <div class="takaisin_nappi">
+        <a href="koti.html">
+        <button>Takaisin</button>
+        </a>
+        
+    </div>
+
+    <form class="topnav" action="http://localhost:5000/haku" method = "post">
+        <p><input type = "text" name = "etsi" placeholder="Hae.." /></p>
+        <button type ="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <div class="lista1">
+        <select name="haku_valinta" id="lista1">
+            <option value="Elokuvat">Elokuvat</option>
+            <option value="Käyttäjät">käyttäjät</option>
+
+        </select>
+
+</body>
+</html>
