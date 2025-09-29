@@ -106,7 +106,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] TODO Flask kirjastolle ja nettisivulle <mark></mark>
 
 ### Maanatai 29.9
-> - [ ] kirjautumis/käyttäjänluonti sivu  <mark>Vili</mark>
+> - [X] kirjautumis/käyttäjänluonti sivu  <mark>Vili</mark>
 > - [ ] kotisivu <mark>Vili</mark>
 > - [ ] Haku sivu <mark>Benjamin</mark>
 
