@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kirjaudu Sisään</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='kirjaudu.css') }}">
 </head>
 <body>
+    <div class="laatikko">
     <form action = "http://localhost:5000/kirjaudu/kirjataan_sisaan" method = "post">
-        <p>Kirjaudu sisään</p>
-        <p><input type = "text" name = "kayttaja" /></p>
-        <p><input type = "password" name = "salasana"/></p>
-        <p><input type = "submit" value = "submit"/></p>
+        <h1>Kirjaudu Sisään</h1>
+        <p><input type = "text" name = "kayttaja" placeholder="Nimi"/></p>
+        <p><input type = "password" name = "salasana" placeholder="Salasana"/></p>
+        <p><input type = "submit" value = "Kirjaudu"/></p>
     </form>
+    </div>
+    <div class="laatikko">
+    <form action = "http://localhost:5000/luo_käyttäjä/luodaan" method = "post">
+        <h1>Luo Käyttäjä</h1>
+        <p><input type = "text" name = "kayttaja" placeholder="Nimi"/></p>
+        <p><input type = "password" name = "salasana" placeholder="Salasana"/></p>
+        <p><input type = "submit" value = "Luo käyttäjä"/></p>
+        </form>
+    </div>
 </body>
 </html>
