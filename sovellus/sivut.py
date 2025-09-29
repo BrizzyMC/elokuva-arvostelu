@@ -12,7 +12,6 @@ Versio:     1.0
 
 Sisältää reitit:
     - /kirjaudu           -> kirjaudu.html
-    - /luo_käyttäjä       -> luo_kayttaja.html
     - /koti/<nimi>        -> koti.html (parametri: käyttäjän nimi)
     - /arvostele          -> arvostelu.html
     - /muokkaa_kommenttia -> muokkaa_kommenttia.html
@@ -42,7 +41,7 @@ def tarkista_henkilo(nimi:str, palauta):
     
     # Käyttäjä ei ole kirjautunut sisään
     if 'nimi' not in session:
-        return redirect(url_for('Sivut.uusi_kayttaja'))
+        return redirect(url_for('Sivut.kirjaudu_sisaan'))
     
     # Käyttäjä yrittää päästä toisen käyttäjälle
     if session['nimi'] != nimi:
@@ -59,12 +58,6 @@ def tarkista_henkilo(nimi:str, palauta):
 def kirjaudu_sisaan():
     """Renderöi kirjautumis sivun"""
     return render_template('kirjaudu.html')
-
-
-@sivut.route('/luo_käyttäjä')
-def uusi_kayttaja():
-    """Renderöi käyttäjän luonti sivun"""
-    return render_template('luo_kayttaja.html')
 
 
 @sivut.route('/koti/<nimi>')
