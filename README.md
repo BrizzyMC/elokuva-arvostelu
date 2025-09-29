@@ -102,7 +102,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] **Luo testi Flask sivut** _"flask.py"_ <mark>Vili</mark>
 
 ### Perjantai 26.9
-> - [ ] **Suunnittele nettisivut** _(figma:lla?)_ <mark>Benjamin</mark>
+> - [X] **Suunnittele nettisivut** _(figma:lla?)_ <mark>Benjamin</mark>
 > - [X] TODO Flask kirjastolle ja nettisivulle <mark></mark>
 
 ### Maanatai 29.9
