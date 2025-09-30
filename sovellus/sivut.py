@@ -68,7 +68,7 @@ def koti(nimi:str):
         - nimi: käyttäjän nimi (str)
     """
 
-    return tarkista_henkilo(nimi, render_template('koti.html'))
+    return tarkista_henkilo(nimi, render_template('koti.html', nimi=nimi))
 
 
 @sivut.route('/arvostele')
