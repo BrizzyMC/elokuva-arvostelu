@@ -43,7 +43,7 @@ def tarkista_kirjautuminen():
 
 
 
-@rajapinta.route('/luo_käyttäjä/luodaan', methods=['POST'])
+@rajapinta.route('/kirjaudu/luodaan_kayttaja', methods=['POST'])
 def luo_kayttaja():
     """
     POST /luo_käyttäjä/luodaan
