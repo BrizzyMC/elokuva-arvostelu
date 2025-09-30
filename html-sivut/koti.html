@@ -8,19 +8,20 @@
 </head>
 <body>
     <div class="navigointi">
-        <a>a</a>
-        <a>b</a>
-        <a><button class="profiili"></button></a>
+        <div class="napit">
+            <button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button>
+            <button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button>
+        </div>
+        <a><div class="pudotusvalikko">
+            <button class="pudotus"><img class="logo" src="{{ url_for('static', filename='profiili_kuva.png') }}"></button>
+            <div class="pudotusvalikko-sisalto">
+            <form action = "/arvostelut" method = "post"><input type="submit" value="Arvostelut"></form>
+            <form action = "/muokkaa_kommenttia" method = "post"><input type="submit" value="Vaihda Nimi"></form>
+            <form action = "/muokkaa_kommenttia" method = "post"><input type="submit" value="Vaihda Salasana"></form>
+            <form action = "/kirjaudu_ulos" method = "post"><input type="submit" value="kirjaudu Ulos"></form>
+            </div>
+        </div></a>
+        <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
-    <form action = "http://localhost:5000/haku" method = "post">
-        <p>Hae Elokuvia</p>
-        <p><input type="text" name="hakusana"/></p>
-        <p><input type="submit" value="submit"/></p>
-    </form>
-    <form action = "http://localhost:5000/kayttaja_tiedot" method = "post">
-        <p>Hae Käyttäjätietoja</p>
-        <p><input type="text" name="kayttajatiedot"></p>
-        <p><input type="submit" value="submit"></p>
-    </form>
 </body>
 </html>
