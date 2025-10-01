@@ -107,7 +107,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 
 ### Maanatai 29.9
 > - [X] kirjautumis/käyttäjänluonti sivu  <mark>Vili</mark>
-> - [ ] kotisivu <mark>Vili</mark>
+> - [X] kotisivu <mark>Vili</mark>
 > - [ ] Haku sivu <mark>Benjamin</mark>
 
 ### Tiistai 30.9
