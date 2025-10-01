@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 26.9.2025
+Päivämäärä: 1.10.2025
 Versio:     1.1
 
 =================================================================
@@ -162,15 +162,19 @@ def lisaa_arvostelu():
     POST /lisää_arvostelu
     ---
     Lisää arvostelun tietokantaan
+    
+    Ohjaa:
+        - Takaisin elokuva tietojen sivulle
     """
 
     if request.method == 'POST':
         arvosana  = request.form['arvosana']
         kommentti = request.form['kommentti']
+        elokuvan_id = request.form['_elokuvan_id']
 
-        __tietokanta.lisaa_arvostelu(1, int(arvosana), 1, kommentti)
+        __tietokanta.lisaa_arvostelu(elokuvan_id, int(arvosana), session['kayttaja_id'], kommentti)
 
-    return [arvosana, kommentti]
+        return laheta_elokuvan_tiedot(elokuvan_id)
 
 
 
@@ -194,6 +198,7 @@ def muokkaa_kommentti():
     return [kommentti]
 
 
+
 @rajapinta.route('/kirjaudu_ulos', methods=['POST'])
 def kirjaudu_ulos():
     """
@@ -212,6 +217,35 @@ def kirjaudu_ulos():
         return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
 
+
+@rajapinta.route('/lähetä_elokuvan_tiedot', methods=['POST'])
+def laheta_elokuvan_tiedot(elokuvan_id:int=None):
+    """
+    POST /lähetä_elokuvan_tiedot
+    ---
+    Lähettää elokuvan nimen (str) ja loput tiedot (dict) sivun lataus functiolle
+
+    Ohjaa:
+        - Elokuvan tiedot sivu
+    """
+
+    if request.method == 'POST':
+        if not elokuvan_id:
+            elokuvan_id = request.form['elokuvan_id']
+            
+        # Hankkii elokuvan tiedot dict muodossa
+        elokuva = __tietokanta.elokuva_id_dict(elokuvan_id)
+        
+        # Laitetaan arvostelut listaan
+        arvostelut = __tietokanta.elokuvan_arvostelut(elokuvan_id)
+        arvostelut_lista = []
+        for arvostelu in arvostelut:
+            nimi = __tietokanta.kayttajan_tiedot(arvostelu[0])[0]['nimi']
+            arvostelut_lista.append({'nimi':nimi, 'arvosana':arvostelu[1], 'kommentti':arvostelu[2]})
+            
+        session['arvostelut'] =  arvostelut_lista
+
+        return redirect(url_for('Sivut.elokuvan_tiedot', kayttaja_nimi=session['nimi'], **elokuva))
 
 
             
