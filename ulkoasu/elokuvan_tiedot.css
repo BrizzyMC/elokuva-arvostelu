@@ -1,0 +1,96 @@
+.elokuva {
+    display: grid;
+    margin-left: 10%;
+    margin-top: 3%;
+    place-content: center;
+    background: rgb(255, 255, 255);
+    height: 40vw;
+    width: 80%;
+    border-radius: 25px;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.tiedot {
+    display: grid;
+    margin-left: 10%;
+    margin-top: 3%;
+    place-content: center;
+    background: rgb(107, 107, 107);
+    height: 19vw;
+    width: 80%;
+    border-radius: 25px;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a;
+    color: white;
+    text-align: center;
+    font-size: 1vw;
+}
+
+h3 {
+    margin-bottom: -1vw;
+    color: rgb(24, 119, 242);
+}
+
+.arvostele {
+    display: grid;
+    margin-left: 10%;
+    margin-top: 3%;
+    place-content: center;
+    background: rgb(255, 255, 255);
+    height: 17vw;
+    width: 80%;
+    border-radius: 25px;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.arvostele input[type=text] {
+    border-radius: 8px;
+    height: 2vw;
+    width: 35vw;
+    font-size: 1vw;
+}
+
+.arvostele button[type=submit] {
+    margin-top: 3vw;
+    background-color: rgb(24, 119, 242);
+    color: rgb(255, 255, 255);
+    height: 2.5vw;
+    width: 17vw;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.5vw;
+}
+
+.arvostele button[type=submit]:hover {
+    cursor: pointer;
+    background-color: rgb(31, 126, 252);
+}
+
+.arvostelut {
+    display: grid;
+    margin-left: 10%;
+    margin-top: 3%;
+    place-content: center;
+    background: rgb(255, 255, 255);
+    width: 80%;
+    border-radius: 25px;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.arvostelu {
+    display: grid;
+    margin-top: 3%;
+    place-content: center;
+    background: rgb(107, 107, 107);
+    width: 60vw;
+    border-radius: 25px;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
