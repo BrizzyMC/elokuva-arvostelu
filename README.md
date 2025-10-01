@@ -114,7 +114,7 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 Tehdään edelliset valmiiksi
 
 ### Keskiviikko 1.10
-> - [ ] Elokuva tiedot/arvostelut sivu <mark>Vili</mark>
+> - [X] Elokuva tiedot/arvostelut sivu <mark>Vili</mark>
 
 ### Torstai 2.10
 > - [ ] Profiili sivu <mark>Vili</mark>
