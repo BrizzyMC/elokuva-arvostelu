@@ -7,19 +7,18 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 25.9.2025
+Päivämäärä: 1.10.2025
 Versio:     1.0
 
 Sisältää reitit:
     - /kirjaudu           -> kirjaudu.html
     - /koti/<nimi>        -> koti.html (parametri: käyttäjän nimi)
     - /arvostele          -> arvostelu.html
-    - /muokkaa_kommenttia -> muokkaa_kommenttia.html
 
 =================================================================
 """
 
-from flask import render_template, Blueprint, session, abort, redirect, url_for
+from flask import render_template, Blueprint, session, abort, redirect, url_for, request
 
 # Luodaan blueprint
 sivut = Blueprint('Sivut', __name__)
@@ -77,9 +76,28 @@ def arvostele():
     return render_template('arvostelu.html')
 
 
-@sivut.route('/muokkaa_kommenttia')
-def muokkaa_kommenttia():
-    """Renderöi kommentin muokkaus sivun"""
-    return render_template('muokkaa_kommenttia.html')
 
+@sivut.route('/koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>')
+def elokuvan_tiedot(kayttaja_nimi, nimi):
+    """Renderöi sivun jossa on elokuvan tiedot ja elokuvaa on mahdollisuus arvostella
+
+    Parametrit:
+        - elokuva: elokuvan nimi jotta se voidaan kirjoittaa selaimeen
+    """
+
+    # Poimii elokuvan tiedot url osoitteesta
+    elokuvan_id=request.args.get('id')
+    genret=request.args.get('genret')
+    juoni=request.args.get('juoni')
+    keskiarvo=request.args.get('keskiarvo')
+    julkaisu_vuosi=request.args.get('julkaisu_vuosi')
+    kuva=request.args.get('kuva')
+    
+    # Poimii arvostelut sessioista
+    arvostelut = session['arvostelut']
+    print(arvostelut)
+    session.pop('arvostelut')
+
+    return tarkista_henkilo(kayttaja_nimi, render_template('elokuvan_tiedot.html', nimi=nimi, julkaisu_vuosi=julkaisu_vuosi, keskiarvo=keskiarvo,
+    juoni=juoni, genret=genret, elokuvan_id=elokuvan_id, arvostelut=arvostelut))
     
