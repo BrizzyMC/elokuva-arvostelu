@@ -8,7 +8,7 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
             ylläpitää ja sulkee sql tietokanta yhteyden.
 
 Tekiä:      Viljam Vänskä & Benjamin
-Päivämäärä: 1.10.2025
+Päivämäärä: 2.10.2025
 Versio:     1.2
 
 =================================================================
@@ -446,6 +446,14 @@ class sql_yhteys:
 
         Palauttaa:
             - Palauttaa elokuvan tiedot (dict muodossa)
+
+        Elokuva Dict:
+            - id (int)
+            - julkaisu_vuosi (int)
+            - nimi (str)
+            - keskiarvo (float)
+            - juoni (str)
+            - arvostelu_maara (int)
         """
 
         # Etsii elokuvan tietokannasta
