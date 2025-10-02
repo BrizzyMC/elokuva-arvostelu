@@ -3,8 +3,8 @@
     margin-left: 10%;
     margin-top: 3%;
     place-content: center;
-    background: rgb(255, 255, 255);
-    height: 40vw;
+    background: rgb(85, 85, 85);
+    height: auto;
     width: 80%;
     border-radius: 25px;
     filter: drop-shadow(2rem 2rem 1.5rem #4245);
@@ -12,12 +12,17 @@
     color: rgb(0, 0, 0);
 }
 
+.otsikko {
+    font-size: 3vw;
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+}
+
 .tiedot {
     display: grid;
     margin-left: 10%;
     margin-top: 3%;
     place-content: center;
-    background: rgb(107, 107, 107);
     height: 19vw;
     width: 80%;
     border-radius: 25px;
@@ -93,4 +98,15 @@ h3 {
     filter: drop-shadow(2rem 2rem 1.5rem #4245);
     text-align: center;
     color: rgb(0, 0, 0);
+}
+
+.kuva {
+    height: auto;
+    width: 50%;
+    max-height: 70vw;
+    max-width: 70vw;
+    display: block;
+    margin: auto;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    border-radius: 7px;
 }
