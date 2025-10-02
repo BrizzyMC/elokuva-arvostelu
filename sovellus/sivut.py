@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 1.10.2025
+Päivämäärä: 2.10.2025
 Versio:     1.0
 
 Sisältää reitit:
@@ -59,6 +59,7 @@ def kirjaudu_sisaan():
     return render_template('kirjaudu.html')
 
 
+
 @sivut.route('/koti/<nimi>')
 def koti(nimi:str):
     """Renderöi kotisivun
@@ -68,6 +69,7 @@ def koti(nimi:str):
     """
 
     return tarkista_henkilo(nimi, render_template('koti.html', nimi=nimi))
+
 
 
 @sivut.route('/arvostele')
@@ -89,15 +91,36 @@ def elokuvan_tiedot(kayttaja_nimi, nimi):
     elokuvan_id=request.args.get('id')
     genret=request.args.get('genret')
     juoni=request.args.get('juoni')
-    keskiarvo=request.args.get('keskiarvo')
+    keskiarvo=round(float(request.args.get('keskiarvo')),1) # Float vain yksi desimaali
     julkaisu_vuosi=request.args.get('julkaisu_vuosi')
-    kuva=request.args.get('kuva')
+    kuva=f'https://m.media-amazon.com/images/M/{request.args.get('kuva')}'
     
-    # Poimii arvostelut sessioista
+    # Poimii arvostelut sessioista ja tuhoaa temp session
     arvostelut = session['arvostelut']
-    print(arvostelut)
     session.pop('arvostelut')
 
     return tarkista_henkilo(kayttaja_nimi, render_template('elokuvan_tiedot.html', nimi=nimi, julkaisu_vuosi=julkaisu_vuosi, keskiarvo=keskiarvo,
-    juoni=juoni, genret=genret, elokuvan_id=elokuvan_id, arvostelut=arvostelut))
+    juoni=juoni, genret=genret, kuva=kuva, elokuvan_id=elokuvan_id, arvostelut=arvostelut))
     
+
+
+@sivut.route('/koti/<nimi>/vaihda_nimi')
+def vaihda_nimi(nimi):
+    return tarkista_henkilo(nimi, render_template('vaihda_nimi.html'))
+
+
+
+@sivut.route('/koti/<nimi>/vaihda_salasana')
+def vaihda_salasana(nimi):
+    return tarkista_henkilo(nimi, render_template('vaihda_salasana.html'))
+
+
+@sivut.route('/koti/<nimi>/omat_arvostelut')
+def omat_arvostelut(nimi):
+
+    # Poimii arvostelut sessioista ja tuhoaa temp session
+    arvostelut = session['arvostelut']
+    session.pop('arvostelut')
+
+    return tarkista_henkilo(nimi, render_template('omat_arvostelut.html', arvostelut=arvostelut))
+
