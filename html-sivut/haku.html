@@ -9,32 +9,69 @@
 
 <body>
     <div class="container">
-        <div class="takaisin_nappi">
+        <div class="back_button">
             <a href="koti.html">
                 <button>Takaisin</button>
             </a>
         </div>
         
-        <div class="lista1">
-            <select name="haku_valinta" id="lista1">
-                <option value="Elokuvat">Elokuvat</option>
-                <option value="Käyttäjät">käyttäjät</option>
-            </select>
+        <div class="search-bar">
+            <div class="haku_valinta">
+                <select name="haku_valinta" id="lista1">
+                    <option value="Elokuvat">Elokuvat</option>
+                    <option value="Käyttäjät">käyttäjät</option>
+                </select>
+            </div>
+
+            <form class="topnav" action="http://localhost:5000/haku" method="post">
+                <input type="text" name="etsi" placeholder="Hae.." />
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
         </div>
-    
-        <form class="topnav" action="http://localhost:5000/haku" method = "post">
-            <p><input type = "text" name = "etsi" placeholder="Hae.." /></p>
-            <button type ="submit"><i class="fa fa-search"></i></button>
-        </form>
-        
     </div>
         
-        <ul id="ElokuvaMenu">
-            <li>Elokuva 1</li>
-            <li>Elokuva 2</li>
-            <li>Elokuva 3</li>
-            <li>Elokuva 4</li>
-        </ul>
+    <div id="results-container" class="results-container">
+        <div class="placeholder-movie-card">
+            <div class="movie-image">Kuva</div>
+            <div class="movie-info">
+                <div class="movie-title">Elokuvan nimi</div>
+                <div class="movie-rating">Keskiarvo: -</div>
+                <div class="movie-genres"><span class="genre">Genre</span></div>
+            </div>
+        </div>
+        <div class="placeholder-movie-card">
+            <div class="movie-image">Kuva</div>
+            <div class="movie-info">
+                <div class="movie-title">Elokuvan nimi</div>
+                <div class="movie-rating">Keskiarvo: -</div>
+                <div class="movie-genres"><span class="genre">Genre</span></div>
+            </div>
+        </div>
+        <div class="placeholder-movie-card">
+            <div class="movie-image">Kuva</div>
+            <div class="movie-info">
+                <div class="movie-title">Elokuvan nimi</div>
+                <div class="movie-rating">Keskiarvo: -</div>
+                <div class="movie-genres"><span class="genre">Genre</span></div>
+            </div>
+        </div>
+        <div class="placeholder-movie-card">
+            <div class="movie-image">Kuva</div>
+            <div class="movie-info">
+                <div class="movie-title">Elokuvan nimi</div>
+                <div class="movie-rating">Keskiarvo: -</div>
+                <div class="movie-genres"><span class="genre">Genre</span></div>
+            </div>
+        </div>
+        <div class="placeholder-movie-card">
+            <div class="movie-image">Kuva</div>
+            <div class="movie-info">
+                <div class="movie-title">Elokuvan nimi</div>
+                <div class="movie-rating">Keskiarvo: -</div>
+                <div class="movie-genres"><span class="genre">Genre</span></div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
