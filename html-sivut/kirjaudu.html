@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kirjaudu Sisään</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='kirjaudu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
     <script src="{{ url_for('static', filename='nayta_salasana.js') }}"></script>
 </head>
 <body>
+    <div class="navigointi">
+        <a><div class="pudotusvalikko">
+            <button class="pudotus"><img class="logo" src="{{ url_for('static', filename='profiili_kuva.png') }}"></button>
+            <div class="pudotusvalikko-sisalto">
+            <form action = "/kirjaudu" method = "connect"><input type="submit" value="Kirjaudu Sisään"></form>
+            </div>
+        </div></a>
+        <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
+    </div>
     <div class="laatikko">
     <form action = "/kirjaudu/kirjataan_sisaan" method = "post">
         <h1>Kirjaudu Sisään</h1>
