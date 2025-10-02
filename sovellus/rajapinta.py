@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 1.10.2025
+Päivämäärä: 2.10.2025
 Versio:     1.1
 
 =================================================================
@@ -132,7 +132,7 @@ def kayttaja_tiedot():
 
 
 @rajapinta.route('/paivita_kayttajaa', methods=['POST'])
-def paivita_nimi_salasana(kayttaja_id:int=1):
+def paivita_nimi_salasana():
     """
     POST /paivita_kayttajaa
     ---
@@ -140,17 +140,37 @@ def paivita_nimi_salasana(kayttaja_id:int=1):
 
     HUOM:
         - Jos kenttä on tyhjä niin se jätetään huomiotta
+
+    Ohjaa:
+        - Kirjautumis sivulle (muutetaan tulevaisuudessa?)
     """
 
+    uusi_nimi     = None
+    uusi_salasana = None
+
     if request.method == 'POST':
-        uusi_nimi     = request.form['nimi']
-        uusi_salasana = request.form['salasana']
+        # Laiskan miehen error handling
+        # KeyError tulee jos käyttäjä ei anna arvoa (selaimessa)
+        # Voidaan "pass" koska arvot määritetty tyhjäksi function alussa
+        try:
+            uusi_nimi = request.form['nimi']
+        except KeyError:
+            pass
+
+        try:
+            uusi_salasana = request.form['salasana']
+        except KeyError:
+            pass
 
         if uusi_nimi:
-            __tietokanta.muuta_kayttajanimea(kayttaja_id, uusi_nimi)
+            try:
+                __tietokanta.muuta_kayttajanimea(session['kayttaja_id'], uusi_nimi)
+                session['nimi'] = uusi_nimi
+            except NameError: # Käyttäjänimi viety!!
+                pass
 
         if uusi_salasana:
-            __tietokanta.muuta_salasanaa(kayttaja_id, uusi_nimi)
+            __tietokanta.muuta_salasanaa(session['kayttaja_id'], uusi_nimi)
 
         return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
@@ -223,7 +243,7 @@ def laheta_elokuvan_tiedot(elokuvan_id:int=None):
     """
     POST /lähetä_elokuvan_tiedot
     ---
-    Lähettää elokuvan nimen (str) ja loput tiedot (dict) sivun lataus functiolle
+    Lähettää elokuvan nimen (str) ja loput tiedot (dict) sivun lataus functiolle, arvostelut lähetetään temp sessiossa
 
     Ohjaa:
         - Elokuvan tiedot sivu
@@ -242,10 +262,66 @@ def laheta_elokuvan_tiedot(elokuvan_id:int=None):
         for arvostelu in arvostelut:
             nimi = __tietokanta.kayttajan_tiedot(arvostelu[0])[0]['nimi']
             arvostelut_lista.append({'nimi':nimi, 'arvosana':arvostelu[1], 'kommentti':arvostelu[2]})
-            
+        
+        # Luodaan arvosteluista temp sessio, tämä tehdään koska selaimen url olisi muuten liian pitä
+        # ja pythonin kautta ohjelman haluttu logiikka pettäisi. (sessio tuhotaan kun tiedot ovat kerätty)
         session['arvostelut'] =  arvostelut_lista
 
         return redirect(url_for('Sivut.elokuvan_tiedot', kayttaja_nimi=session['nimi'], **elokuva))
 
 
             
+@rajapinta.route('/vaihda_nimi', methods=['POST'])
+def vaihda_nimi():
+    """
+    POST /vaihda_nimi
+    ---
+    Ohjaa käyttäjän nimen vaihto sivulle antaen url osoitteelle käyttäjänimen
+
+    Ohjaa:
+        - Nimen vaihto sivulle
+    """
+
+    return redirect(url_for('Sivut.vaihda_nimi', nimi=session['nimi']))
+
+
+
+@rajapinta.route('/vaihda_salasana', methods=['POST'])
+def vaihda_salasana():
+    """
+    POST /vaihda_salasana
+    ---
+    Ohjaa käyttäjän salasanan vaihto sivulle antaen url osoitteelle käyttäjänimen
+
+    Ohjaa:
+        - Salasanan vaihto sivulle
+    """
+
+    return redirect(url_for('Sivut.vaihda_salasana', nimi=session['nimi']))
+
+
+
+@rajapinta.route('/lähetä_arvostelut', methods=['POST'])
+def laheta_arvostelut():
+    """
+    POST /lähetä_arvostelut
+    ---
+    Etsii käyttäjän arvostelut tietokannasta ja ohjaa käyttäjän katsomaan omia arvosteluja antaen url osoitteelle käyttäjänimen
+
+    Ohjaa:
+        - Omat arvostelut sivulle
+    """
+
+    # Etsitään arvostelut tietokannasta ja lisätään dict:iin elokuvan nimi
+    arvostelut =__tietokanta.kayttajan_tiedot(session['kayttaja_id'], True)[0]['arvostelut']
+    arvostelut_lista = []
+    for arvostelu in arvostelut:
+        arvostelu['nimi'] = __tietokanta.elokuva_id_dict(arvostelu['elokuvan_id'])['nimi']
+
+    # Luo temp session johon arvostelut tallennetaan
+    session['arvostelut'] = arvostelut
+
+    return redirect(url_for('Sivut.omat_arvostelut', nimi=session['nimi']))
+
+
+
