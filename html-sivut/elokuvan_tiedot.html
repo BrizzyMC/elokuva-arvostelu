@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kotisivu</title>
+    <title>Elokuva: {{nimi}}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='tahti_arvostelu.css') }}">
@@ -14,15 +14,16 @@
             <button class="pudotus"><img class="logo" src="{{ url_for('static', filename='profiili_kuva.png') }}"></button>
             <div class="pudotusvalikko-sisalto">
             <form action = "/arvostelut" method = "post"><input type="submit" value="Arvostelut"></form>
-            <form action = "/muokkaa_kommenttia" method = "post"><input type="submit" value="Vaihda Nimi"></form>
-            <form action = "/muokkaa_kommenttia" method = "post"><input type="submit" value="Vaihda Salasana"></form>
+            <form action = "/vaihda_nimi" method = "post"><input type="submit" value="Vaihda Nimi"></form>
+            <form action = "/vaihda_salasana" method = "post"><input type="submit" value="Vaihda Salasana"></form>
             <form action = "/kirjaudu_ulos" method = "post"><input type="submit" value="kirjaudu Ulos"></form>
             </div>
         </div></a>
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
     <div class="elokuva">
-        <h1>{{nimi}}</h1>
+        <h1 class="otsikko">{{nimi}}</h1>
+        <img class="kuva" src="{{kuva}}">
         <div class="tiedot">
             <h3>Keskiarvo</h3>
             <p>{{keskiarvo}}</p>
@@ -52,7 +53,7 @@
             {% for arvostelu in arvostelut %}
             <li class="arvostelu">
                 <h2>{{arvostelu.nimi}}</h2>
-                <div display="inline-block">
+                <div style="display: inline-block;">
                     <p>{{arvostelu.arvosana}}</p>
                     {% for _ in range(arvostelu.arvosana | int) %}
                     <p>⭐</p>
