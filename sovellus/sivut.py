@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 2.10.2025
+Päivämäärä: 5.10.2025
 Versio:     1.0
 
 Sisältää reitit:
@@ -93,7 +93,7 @@ def elokuvan_tiedot(kayttaja_nimi, nimi):
     juoni=request.args.get('juoni')
     keskiarvo=round(float(request.args.get('keskiarvo')),1) # Float vain yksi desimaali
     julkaisu_vuosi=request.args.get('julkaisu_vuosi')
-    kuva=f'https://m.media-amazon.com/images/M/{request.args.get('kuva')}'
+    kuva=f'https://m.media-amazon.com/images/M/{request.args.get("kuva")}'
     
     # Poimii arvostelut sessioista ja tuhoaa temp session
     arvostelut = session['arvostelut']
