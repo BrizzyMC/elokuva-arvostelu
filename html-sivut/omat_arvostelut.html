@@ -24,16 +24,16 @@
         <ul>
             {% for arvostelu in arvostelut %}
             <li class="arvostelu">
-                <h2>{{arvostelu.nimi}}</h2>
+                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
                 <div style="display: inline-block;">
-                    <p>{{arvostelu.arvosana}}</p>
                     {% for _ in range(arvostelu.arvosana | int) %}
-                    <p>⭐</p>
+                    <p style="display: inline-block;">⭐</p>
                     {% endfor %}
                 </div>
-                <p>{{arvostelu.kommentti}}</p>
-            </li>
+                <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
+                <form action = "/haku" method = "post"><button type="submit" name="_elokuvan_id" value="{{elokuvan_id}}">Muokkaa Kommenttia</button></form>
             {% endfor %}
+            </li>
         </ul>
     </div>
 </body>
