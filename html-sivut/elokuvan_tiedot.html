@@ -22,7 +22,7 @@
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
     <div class="elokuva">
-        <h1 class="otsikko">{{nimi}}</h1>
+        <h1 class="otsikko" style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; letter-spacing: 2px; color: #FFFAF0;">{{nimi}}</h1>
         <img class="kuva" src="{{kuva}}">
         <div class="tiedot">
             <h3>Keskiarvo</h3>
@@ -46,20 +46,18 @@
             <p><input type="text" placeholder="Kirjoita Kommentti" name="kommentti"></p>
             <p><button type="submit" name="_elokuvan_id" value="{{elokuvan_id}}">Lähetä</button></p>
         </form>
-
     </div>
     <div class="arvostelut">
         <ul>
             {% for arvostelu in arvostelut %}
             <li class="arvostelu">
-                <h2>{{arvostelu.nimi}}</h2>
+                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
                 <div style="display: inline-block;">
-                    <p>{{arvostelu.arvosana}}</p>
                     {% for _ in range(arvostelu.arvosana | int) %}
-                    <p>⭐</p>
+                    <p style="display: inline-block;">⭐</p>
                     {% endfor %}
                 </div>
-                <p>{{arvostelu.kommentti}}</p>
+                <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
             </li>
             {% endfor %}
         </ul>
