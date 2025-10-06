@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 5.10.2025
+Päivämäärä: 6.10.2025
 Versio:     1.0
 
 Sisältää reitit:
@@ -106,21 +106,50 @@ def elokuvan_tiedot(kayttaja_nimi, nimi):
 
 @sivut.route('/koti/<nimi>/vaihda_nimi')
 def vaihda_nimi(nimi):
+    """Renderöi salasanan vaihto sivun
+    
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
     return tarkista_henkilo(nimi, render_template('vaihda_nimi.html'))
 
 
 
 @sivut.route('/koti/<nimi>/vaihda_salasana')
 def vaihda_salasana(nimi):
+    """Renderöi salasanan vaihto sivun
+
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
     return tarkista_henkilo(nimi, render_template('vaihda_salasana.html'))
 
 
 @sivut.route('/koti/<nimi>/omat_arvostelut')
 def omat_arvostelut(nimi):
+    """Ottaa arvostelut vastaan sessiossa ja renderöi omat arvostelut sivun
+
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
 
     # Poimii arvostelut sessioista ja tuhoaa temp session
     arvostelut = session['arvostelut']
     session.pop('arvostelut')
 
     return tarkista_henkilo(nimi, render_template('omat_arvostelut.html', arvostelut=arvostelut))
+
+
+@sivut.route('/muokkaa_kommenttia', methods=['POST'])
+def muokkaa_kommenttia():
+    """Renderöi kommentin muokkaus sivun, käyttää post jotta saa elokuvan id:n annettua eteenpäin
+
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
+    if request.method == 'POST':
+        elokuvan_id = request.form['_elokuvan_id']
+        print('Elokuvan id: ', elokuvan_id)
+
+        return tarkista_henkilo(session['nimi'], render_template('muokkaa_kommenttia.html', elokuvan_id=elokuvan_id))
 
