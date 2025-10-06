@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elokuva: {{nimi}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tahti_arvostelu.css') }}">
+</head>
+<body>
+    <div class="navigointi">
+        <div class="napit">
+            <form action = "/koti" method = "connect"><button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button></form>
+        </div>
+        <a><div class="pudotusvalikko">
+            <button class="pudotus"><img class="logo" src="{{ url_for('static', filename='profiili_kuva.png') }}"></button>
+            <div class="pudotusvalikko-sisalto">
+            <form action = "/lähetä_arvostelut" method = "post"><input type="submit" value="Arvostelut"></form>
+            <form action = "/vaihda_nimi" method = "post"><input type="submit" value="Vaihda Nimi"></form>
+            <form action = "/vaihda_salasana" method = "post"><input type="submit" value="Vaihda Salasana"></form>
+            <form action = "/kirjaudu_ulos" method = "post"><input type="submit" value="kirjaudu Ulos"></form>
+            </div>
+        </div></a>
+        <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
+    </div>
+    <div class="elokuva">
+        <h1 class="otsikko" style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; letter-spacing: 2px; color: #FFFAF0;">{{nimi}}</h1>
+        <img class="kuva" src="{{kuva}}">
+        <div class="tiedot">
+            <h3>Keskiarvo</h3>
+            <p>{{keskiarvo}}</p>
+            <h3>Genret</h3>
+            <p>{{genret}}</p>
+            <h3>Juoni</h3>
+            <p>{{juoni}}</p>
+        </div>
+    </div>
+    <div class="arvostele">
+        <h1>Jätä Arvostelu</h1>
+        <form action = "/lisää_arvostelu" method = "post">
+            <div class="tahti_arvostelu">
+                <input type="radio" name="arvosana" value="5" id="tahti_arvostelu-5"><label for="tahti_arvostelu-5">5</label>
+                <input type="radio" name="arvosana" value="4" id="tahti_arvostelu-4"><label for="tahti_arvostelu-4">4</label>
+                <input type="radio" name="arvosana" value="3" id="tahti_arvostelu-3" checked><label for="tahti_arvostelu-3">3</label>
+                <input type="radio" name="arvosana" value="2" id="tahti_arvostelu-2"><label for="tahti_arvostelu-2">2</label>
+                <input type="radio" name="arvosana" value="1" id="tahti_arvostelu-1"><label for="tahti_arvostelu-1">1</label>
+            </div>
+            <p><input type="text" placeholder="Kirjoita Kommentti" name="kommentti"></p>
+            <p><button type="submit" name="_elokuvan_id" value="{{elokuvan_id}}">Lähetä</button></p>
+        </form>
+    </div>
+    <div class="arvostelut">
+        <ul>
+            {% for arvostelu in arvostelut %}
+            <li class="arvostelu">
+                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
+                <div style="display: inline-block;">
+                    {% for _ in range(arvostelu.arvosana | int) %}
+                    <p style="display: inline-block;">⭐</p>
+                    {% endfor %}
+                </div>
+                <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

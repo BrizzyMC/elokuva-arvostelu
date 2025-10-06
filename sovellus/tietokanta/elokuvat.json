@@ -6,7 +6,7 @@
         "keskiarvo": 4.5,
         "juoni": "Kaksi palkkamurhaajaa, nyrkkeilijä, gangsterin vaimo ja ravintolaryöstäjät kohtaavat väkivaltaisessa ja humoristisessa tarinassa.",
         "genret": ["Krimi", "Draama", "Komedia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNTY1MzgzOTYxNV5BMl5BanBnXkFtZTgwMDI4OTEwMjE@._V1_.jpg"
+        "kuva": "MV5BNTY1MzgzOTYxNV5BMl5BanBnXkFtZTgwMDI4OTEwMjE@._V1_.jpg"
     },
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "keskiarvo": 4.8,
         "juoni": "Don Vito Corleonen mafiaperheen tarina keskittyen hänen nuorimman poikansa Michael Corleonen muutokseen.",
         "genret": ["Draama", "Krimi"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@
         "keskiarvo": 4.7,
         "juoni": "Batman taistelee Jokeria vastaan Gotham Cityn sielusta.",
         "genret": ["Toiminta", "Trilleri", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
+        "kuva": "MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "keskiarvo": 4.4,
         "juoni": "Tietokonehakkeri oppii salaperäiseltä kapinalliselta totuuden todellisuudesta ja ihmiskunnan taistelusta koneita vastaan.",
         "genret": ["Scifi", "Toiminta", "Trilleri"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "keskiarvo": 4.9,
         "juoni": "Liikemies Oskar Schindler pelastaa yli tuhat juutalaista holokaustin kauhuilta palkkaamalla heidät tehtaisiinsa.",
         "genret": ["Draama", "Historia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTgwNzg3MDkxM15BMl5BanBnXkFtZTcwMzA2MDAxMw@@._V1_.jpg"
+        "kuva": "MV5BMTgwNzg3MDkxM15BMl5BanBnXkFtZTcwMzA2MDAxMw@@._V1_.jpg"
     },
     {
         "id": 6,
@@ -51,7 +51,7 @@
         "keskiarvo": 4.6,
         "juoni": "Älyllisesti vajavainen Forrest Gump kokee sattumalta useita Yhdysvaltojen merkittäviä historiallisia tapahtumia.",
         "genret": ["Draama", "Komedia", "Romantiikka"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BZTk0ZmUxZTktMDBlNC00YmZhLWJlNzgtMmY4M2NlNWIyYWZhXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BZTk0ZmUxZTktMDBlNC00YmZhLWJlNzgtMmY4M2NlNWIyYWZhXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 7,
@@ -60,7 +60,7 @@
         "keskiarvo": 4.7,
         "juoni": "Nuori hobitti lähtee vaaralliselle matkalle tuhotakseen maagisen sormuksen.",
         "genret": ["Fantasia", "Seikkailu", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjQ4NDg5MTQwNl5BMl5BanBnXkFtZTgwNTQwMTk2MTI@._V1_.jpg"
+        "kuva": "MV5BMjQ4NDg5MTQwNl5BMl5BanBnXkFtZTgwNTQwMTk2MTI@._V1_.jpg"
     },
     {
         "id": 8,
@@ -69,7 +69,7 @@
         "keskiarvo": 4.6,
         "juoni": "Luke Skywalker liittyy kapinallisiin taistelussa Darth Vaderin johtamaa Imperiumia vastaan.",
         "genret": ["Scifi", "Seikkailu"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTk3MTkzNTk3Ml5BMl5BanBnXkFtZTgwOTcyMzQyNDM@._V1_.jpg"
+        "kuva": "MV5BMTk3MTkzNTk3Ml5BMl5BanBnXkFtZTgwOTcyMzQyNDM@._V1_.jpg"
     },
     {
         "id": 9,
@@ -78,7 +78,7 @@
         "keskiarvo": 4.5,
         "juoni": "FBI-harjoittelija yrittää vangita sarjamurhaajan toisen sarjamurhaajan avulla.",
         "genret": ["Trilleri", "Draama", "Mysteeri"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNWFmYTUyN2YtODBhNy00ZjliLWJhOTMtOWMxMGQxYmMzZTIwXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BNWFmYTUyN2YtODBhNy00ZjliLWJhOTMtOWMxMGQxYmMzZTIwXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 10,
@@ -87,7 +87,7 @@
         "keskiarvo": 4.3,
         "juoni": "Varas, joka varastaa yrityssalaisuuksia unien kautta, saa tehtäväkseen istuttaa idean jonkun mieleen.",
         "genret": ["Scifi", "Trilleri", "Toiminta"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjIyNjk1OTgzNV5BMl5BanBnXkFtZTcwOTU0OTk1Mw@@._V1_.jpg"
+        "kuva": "MV5BMjIyNjk1OTgzNV5BMl5BanBnXkFtZTcwOTU0OTk1Mw@@._V1_.jpg"
     },
     {
         "id": 11,
@@ -96,7 +96,7 @@
         "keskiarvo": 4.4,
         "juoni": "Valamiehistön jäsen yrittää vakuuttaa 11 muuta, että syytetty saattaa olla syytön.",
         "genret": ["Draama", "Oikeudellinen"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BY2FiMmU1NzctNWZiYS00ZGU5LTkwNTUtOGVjMjdiNjNlYmI4XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BY2FiMmU1NzctNWZiYS00ZGU5LTkwNTUtOGVjMjdiNjNlYmI4XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 12,
@@ -105,7 +105,7 @@
         "keskiarvo": 4.2,
         "juoni": "Aristokraattinen nainen rakastuu köyhään taiteilijaan Titanicin neitsytmatkalla.",
         "genret": ["Romantiikka", "Draama", "Historia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNzY5MDQzOTAwNV5BMl5BanBnXkFtZTcwNTY0NTk1Nw@@._V1_.jpg"
+        "kuva": "MV5BNzY5MDQzOTAwNV5BMl5BanBnXkFtZTcwNTY0NTk1Nw@@._V1_.jpg"
     },
     {
         "id": 13,
@@ -114,7 +114,7 @@
         "keskiarvo": 4.5,
         "juoni": "Luke Skywalker saa koulutusta Jedi-ritariksi samalla kun hänen ystävänsä joutuvat Darth Vaderin takaa-ajamiksi.",
         "genret": ["Scifi", "Seikkailu"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTU1Mjk0NTEzNV5BMl5BanBnXkFtZTgwNjI4NzUyNDM@._V1_.jpg"
+        "kuva": "MV5BMTU1Mjk0NTEzNV5BMl5BanBnXkFtZTgwNjI4NzUyNDM@._V1_.jpg"
     },
     {
         "id": 14,
@@ -123,7 +123,7 @@
         "keskiarvo": 4.8,
         "juoni": "Gandalf ja Aragorn johtavat ihmisiä Sauronin armeijoita vastaan, kun Frodo ja Sam lähestyvät Tuomiovuorta.",
         "genret": ["Fantasia", "Seikkailu", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNTg3Mzk3NDI0NF5BMl5BanBnXkFtZTcwNDU2MTk2Mw@@._V1_.jpg"
+        "kuva": "MV5BNTg3Mzk3NDI0NF5BMl5BanBnXkFtZTcwNDU2MTk2Mw@@._V1_.jpg"
     },
     {
         "id": 15,
@@ -132,7 +132,7 @@
         "keskiarvo": 4.5,
         "juoni": "Henry Hillin nousu ja tuho mafiassa 1960-1980-luvuilla.",
         "genret": ["Draama", "Krimi"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjI0ODA3NDQ4NV5BMl5BanBnXkFtZTcwMDMwMjMwNA@@._V1_.jpg"
+        "kuva": "MV5BMjI0ODA3NDQ4NV5BMl5BanBnXkFtZTcwMDMwMjMwNA@@._V1_.jpg"
     },
     {
         "id": 16,
@@ -141,7 +141,7 @@
         "keskiarvo": 4.0,
         "juoni": "Poliisipäällikkö, meribiologi ja vanha kalastaja yrittävät tappaa ihmisiä syövän valkohaian.",
         "genret": ["Trilleri", "Jännitys"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BZjM2MGRiNGEtNGYwMC00NjJjLTk1NDctN2QzOWZiOGE2NTgxXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BZjM2MGRiNGEtNGYwMC00NjJjLTk1NDctN2QzOWZiOGE2NTgxXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 17,
@@ -150,7 +150,7 @@
         "keskiarvo": 4.3,
         "juoni": "Kärsimätön toimistotyöntekijä ja huoleton saippuanvalmistaja perustavat maanalaisen tappelukerhon.",
         "genret": ["Draama", "Trilleri"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNDY1MzE3MTI0Nl5BMl5BanBnXkFtZTcwNDIwNTI5Mw@@._V1_.jpg"
+        "kuva": "MV5BNDY1MzE3MTI0Nl5BMl5BanBnXkFtZTcwNDIwNTI5Mw@@._V1_.jpg"
     },
     {
         "id": 18,
@@ -159,7 +159,7 @@
         "keskiarvo": 4.2,
         "juoni": "Avaruusaluksen miehistö kohtaa tappavan olion, joka käyttää ihmisiä isäntinä lisääntyäkseen.",
         "genret": ["Horror", "Scifi", "Jännitys"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTc3YWUzYjYtNmRmZS00NGVlLTg0N2ItN2Q2OTU5M2FlMDE4XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BMTc3YWUzYjYtNmRmZS00NGVlLTg0N2ItN2Q2OTU5M2FlMDE4XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 19,
@@ -168,7 +168,7 @@
         "keskiarvo": 4.1,
         "juoni": "Etsijä jäljittää ja yrittää tuhota neljä replikanttia, jotka ovat varastaneet avaruusaluksen.",
         "genret": ["Scifi", "Noir", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTUzNTU3Nzc3NF5BMl5BanBnXkFtZTgwNjQ3OTI1NTM@._V1_.jpg"
+        "kuva": "MV5BMTUzNTU3Nzc3NF5BMl5BanBnXkFtZTgwNjQ3OTI1NTM@._V1_.jpg"
     },
     {
         "id": 20,
@@ -177,7 +177,7 @@
         "keskiarvo": 4.3,
         "juoni": "Ihmiskunnan evoluution tarina mystisen mustan monoliitin vaikutuksen alaisena.",
         "genret": ["Scifi", "Seikkailu"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BZGRlNjJlNDItODgwNS00ZjhmLTk4MDQtMTA1NTViZmYyNDhiXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BZGRlNjJlNDItODgwNS00ZjhmLTk4MDQtMTA1NTViZmYyNDhiXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 21,
@@ -186,7 +186,7 @@
         "keskiarvo": 4.6,
         "juoni": "Köyhä perhe soluttautuu rikkaan perheen palveluskuntaan, mutta asiat mutkistuvat odottamattomalla tavalla.",
         "genret": ["Draama", "Trilleri", "Mustakomedia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BZDM2MWYyNTUtZjI4Yy00YTgxLWJlMjktMjUyYTQ0YmM3MjI5XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BZDM2MWYyNTUtZjI4Yy00YTgxLWJlMjktMjUyYTQ0YmM3MjI5XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 22,
@@ -195,7 +195,7 @@
         "keskiarvo": 4.5,
         "juoni": "Suojelusenkeli näyttää epätoivoiselle miehelle, miltä elämä olisi, jos hän ei olisi koskaan syntynyt.",
         "genret": ["Draama", "Fantasia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BODEyMjdkZmEtMjJmZC00MzAxLThiZmEtM2JmYzk5ZjY0NTE1XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BODEyMjdkZmEtMjJmZC00MzAxLThiZmEtM2JmYzk5ZjY0NTE1XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 23,
@@ -204,7 +204,7 @@
         "keskiarvo": 4.4,
         "juoni": "Tulevaisuuden Maassa ryhmä astronautteja matkustaa madonreiän läpi etsiäkseen uutta kotia ihmiskunnalle.",
         "genret": ["Scifi", "Seikkailu", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTc0NDQ4MjkyOF5BMl5BanBnXkFtZTgwNDE2NzUzOTE@._V1_.jpg"
+        "kuva": "MV5BMTc0NDQ4MjkyOF5BMl5BanBnXkFtZTgwNDE2NzUzOTE@._V1_.jpg"
     },
     {
         "id": 24,
@@ -213,7 +213,7 @@
         "keskiarvo": 4.2,
         "juoni": "Sihteeri piileskelee syrjäisessä motellissa, jota johtaa häiriintynyt nuori mies.",
         "genret": ["Horror", "Trilleri"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BODk1NzIwYWUtZTc0Ny00MTNlLWFmY2QtYTZmNTdiYTVkZTc3XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BODk1NzIwYWUtZTc0Ny00MTNlLWFmY2QtYTZmNTdiYTVkZTc3XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 25,
@@ -222,7 +222,7 @@
         "keskiarvo": 4.1,
         "juoni": "Poliisi taistelee yksin terroristeja vastaan Los Angelesin pilvenpiirtäjässä.",
         "genret": ["Toiminta", "Trilleri"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMDU4ZmM1NjYtNGY2MS00NmE1LThiMzAtNzU3NWZhYmM0ZjgxXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BMDU4ZmM1NjYtNGY2MS00NmE1LThiMzAtNzU3NWZhYmM0ZjgxXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 26,
@@ -231,7 +231,7 @@
         "keskiarvo": 4.3,
         "juoni": "Mies, joka kärsii lyhytaikaisesta muistinmenetyksestä, yrittää löytää vaimonsa murhaajan.",
         "genret": ["Trilleri", "Mysteeri", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjc5NzUzNzAwOF5BMl5BanBnXkFtZTcwMjY0NzY2NA@@._V1_.jpg"
+        "kuva": "MV5BMjc5NzUzNzAwOF5BMl5BanBnXkFtZTcwMjY0NzY2NA@@._V1_.jpg"
     },
     {
         "id": 27,
@@ -240,7 +240,7 @@
         "keskiarvo": 4.4,
         "juoni": "Kaksi etsivää jahtaa sarjamurhaajaa, joka käyttää seitsemää kuolemansyntiä teemana murhissaan.",
         "genret": ["Trilleri", "Draama", "Mysteeri"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjI3MTU0ODQ2MF5BMl5BanBnXkFtZTcwNTQzNTIwNA@@._V1_.jpg"
+        "kuva": "MV5BMjI3MTU0ODQ2MF5BMl5BanBnXkFtZTcwNTQzNTIwNA@@._V1_.jpg"
     },
     {
         "id": 28,
@@ -249,7 +249,7 @@
         "keskiarvo": 4.2,
         "juoni": "Öljynporaajan tarina 1900-luvun alun Kaliforniassa ja hänen konfliktinsa paikallisen saarnaajan kanssa.",
         "genret": ["Draama", "Historia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNTEwMjQwNzcyNl5BMl5BanBnXkFtZTcwNDYwNjExNA@@._V1_.jpg"
+        "kuva": "MV5BNTEwMjQwNzcyNl5BMl5BanBnXkFtZTcwNDYwNjExNA@@._V1_.jpg"
     },
     {
         "id": 29,
@@ -258,7 +258,7 @@
         "keskiarvo": 4.5,
         "juoni": "Toisen maailmansodan aikana joukkue sotilaita etsii sotilasta, jonka veljet ovat kaikki kuolleet.",
         "genret": ["Sota", "Draama", "Toiminta"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNmZhNjk2NzgtOTc0Yi00ZGM1LWFhNGUtNWY3NzYxOWM0NzkzXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BNmZhNjk2NzgtOTc0Yi00ZGM1LWFhNGUtNWY3NzYxOWM0NzkzXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 30,
@@ -267,7 +267,7 @@
         "keskiarvo": 4.0,
         "juoni": "Kolme lapsuudenystävää ajautuvat erilleen traagisen tapahtuman jälkeen, mutta kohtaavat taas myöhemmin.",
         "genret": ["Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjYyMzQ5ZDMtY2JiOC00NjE4LWIwZTUtMjg4YzI2ZTdmZjhlXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BMjYyMzQ5ZDMtY2JiOC00NjE4LWIwZTUtMjg4YzI2ZTdmZjhlXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 31,
@@ -276,7 +276,7 @@
         "keskiarvo": 4.2,
         "juoni": "Teini-ikäinen poika matkustaa vahingossa aikakoneella 30 vuotta menneisyyteen.",
         "genret": ["Scifi", "Komedia", "Seikkailu"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BZmRmYjYwNDUtNzcxNy00MmRkLWIyOTctNmJkZjk5Nzc4ZjZjXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BZmRmYjYwNDUtNzcxNy00MmRkLWIyOTctNmJkZjk5Nzc4ZjZjXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 32,
@@ -285,7 +285,7 @@
         "keskiarvo": 4.1,
         "juoni": "Kaksi taikuria kilpailee toisiaan vastaan Lontoossa 1800-luvun lopulla.",
         "genret": ["Draama", "Mysteeri"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTUxMDM2ODM3N15BMl5BanBnXkFtZTcwNDk0MTYyNw@@._V1_.jpg"
+        "kuva": "MV5BMTUxMDM2ODM3N15BMl5BanBnXkFtZTcwNDk0MTYyNw@@._V1_.jpg"
     },
     {
         "id": 33,
@@ -294,7 +294,7 @@
         "keskiarvo": 4.0,
         "juoni": "Kyborgi matkustaa vuodesta 2029 vuoteen 1984 tappaakseen naisen, jonka poika tulee johtamaan ihmisten kapinaa koneita vastaan.",
         "genret": ["Scifi", "Toiminta"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTk4MDg3MTMyMl5BMl5BanBnXkFtZTcwNzgzNDQyNA@@._V1_.jpg"
+        "kuva": "MV5BMTk4MDg3MTMyMl5BMl5BanBnXkFtZTcwNzgzNDQyNA@@._V1_.jpg"
     },
     {
         "id": 34,
@@ -303,7 +303,7 @@
         "keskiarvo": 4.3,
         "juoni": "Nuori musta mies vierailee valkoisen tyttöystävänsä vanhempien luona, mutta paljastaa synkän salaisuuden.",
         "genret": ["Horror", "Trilleri", "Mustakomedia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjA4ODYzNDE4NF5BMl5BanBnXkFtZTgwMjYwNjUzMTI@._V1_.jpg"
+        "kuva": "MV5BMjA4ODYzNDE4NF5BMl5BanBnXkFtZTgwMjYwNjUzMTI@._V1_.jpg"
     },
     {
         "id": 35,
@@ -312,7 +312,7 @@
         "keskiarvo": 4.0,
         "juoni": "Köyhtynyt kirjailija rakastuu rikkaaseen tyttöön ja muuttuu vangiksi kultaiseen häkkiin.",
         "genret": ["Draama", "Romantiikka"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjAwOTEzMjAxNF5BMl5BanBnXkFtZTgwNTY3NzM3MDI@._V1_.jpg"
+        "kuva": "MV5BMjAwOTEzMjAxNF5BMl5BanBnXkFtZTgwNTY3NzM3MDI@._V1_.jpg"
     },
     {
         "id": 36,
@@ -321,7 +321,7 @@
         "keskiarvo": 4.2,
         "juoni": "Unettomuudesta kärsivä ja henkisesti epävakaa Vietnam-veteraani työskentelee taksikuskina New Yorkissa.",
         "genret": ["Draama", "Krimi"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BYzEzZDE3N2QtODc2Yy00ZWM4LWI2YTgtZWVhMTZkZjEyYmE0XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BYzEzZDE3N2QtODc2Yy00ZWM4LWI2YTgtZWVhMTZkZjEyYmE0XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 37,
@@ -330,7 +330,7 @@
         "keskiarvo": 4.2,
         "juoni": "Vapautettu orja matkustaa palkkionmetsästäjän kanssa pelastaakseen vaimonsa julmalta plantaasin omistajalta.",
         "genret": ["Draama", "Seikkailu", "Western"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTY2Mzg1ODYyOF5BMl5BanBnXkFtZTcwOTgwMzQ3OA@@._V1_.jpg"
+        "kuva": "MV5BMTY2Mzg1ODYyOF5BMl5BanBnXkFtZTcwOTgwMzQ3OA@@._V1_.jpg"
     },
     {
         "id": 38,
@@ -339,7 +339,7 @@
         "keskiarvo": 4.3,
         "juoni": "Kylän asukkaat palkkaavat seitsemän samuraita puolustamaan heitä ryöstäjiä vastaan.",
         "genret": ["Seikkailu", "Toiminta", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTY3OTI1ODEzNF5BMl5BanBnXkFtZTcwMjA5MTU4Mw@@._V1_.jpg"
+        "kuva": "MV5BMTY3OTI1ODEzNF5BMl5BanBnXkFtZTcwMjA5MTU4Mw@@._V1_.jpg"
     },
     {
         "id": 39,
@@ -348,7 +348,7 @@
         "keskiarvo": 4.1,
         "juoni": "Lahjakkaan nuoren miehen on matkustettava vaarallisimmalle planeetalle universumissa varmistaakseen perheensä ja kansansa tulevaisuuden.",
         "genret": ["Scifi", "Fantasia", "Seikkailu"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTkxMjA5MjI5N15BMl5BanBnXkFtZTcwMTc1Mzg3OA@@._V1_.jpg"
+        "kuva": "MV5BMTkxMjA5MjI5N15BMl5BanBnXkFtZTcwMTc1Mzg3OA@@._V1_.jpg"
     },
     {
         "id": 40,
@@ -357,7 +357,7 @@
         "keskiarvo": 4.2,
         "juoni": "Ellen Ripley liittyy merijalkaväen joukkoon taistelussa avaruusolioita vastaan.",
         "genret": ["Toiminta", "Scifi", "Horror"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTk3NzU5NDE0MF5BMl5BanBnXkFtZTgwNjAxNzE5MDI@._V1_.jpg"
+        "kuva": "MV5BMTk3NzU5NDE0MF5BMl5BanBnXkFtZTgwNjAxNzE5MDI@._V1_.jpg"
     },
     {
         "id": 41,
@@ -366,7 +366,7 @@
         "keskiarvo": 4.0,
         "juoni": "Pianisti ja näyttelijä rakastuvat ja kamppailevat menestyäkseen Los Angelesissa.",
         "genret": ["Musikaali", "Romantiikka", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BZTM0MjIxOTItMDgxMy00MjAwLWE1NDQtYzZhNjUxMjJhYjlmXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BZTM0MjIxOTItMDgxMy00MjAwLWE1NDQtYzZhNjUxMjJhYjlmXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 42,
@@ -375,7 +375,7 @@
         "keskiarvo": 4.4,
         "juoni": "Brittiläisen upseerin tarina, joka yhdisti arabiheimot taistelussa turkkilaisia vastaan ensimmäisen maailmansodan aikana.",
         "genret": ["Historia", "Seikkailu", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BYmE4OGM4ZjItOGE4NS00ODQ0LTgyOTItODZjMjU0ZmFhYzY5XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BYmE4OGM4ZjItOGE4NS00ODQ0LTgyOTItODZjMjU0ZmFhYzY5XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 43,
@@ -384,7 +384,7 @@
         "keskiarvo": 4.1,
         "juoni": "Työväenluokkainen italialainen amerikkalainen kuljettaja vie afroamerikkalaista pianistia kiertueelle etelään 1960-luvulla.",
         "genret": ["Draama", "Komedia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BNDU5YTNmMmItN2QxNy00OGQ0LTg5MTctNzFmYjEzZjcwN2UwXkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BNDU5YTNmMmItN2QxNy00OGQ0LTg5MTctNzFmYjEzZjcwN2UwXkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 44,
@@ -393,7 +393,7 @@
         "keskiarvo": 4.3,
         "juoni": "Timanttiryöstö menee pieleen, ja rikolliset epäilevät jonkun olevan poliisi.",
         "genret": ["Krimi", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMTQ4OTkyNzM4Ml5BMl5BanBnXkFtZTgwODkxOTIwMjE@._V1_.jpg"
+        "kuva": "MV5BMTQ4OTkyNzM4Ml5BMl5BanBnXkFtZTgwODkxOTIwMjE@._V1_.jpg"
     },
     {
         "id": 45,
@@ -402,7 +402,7 @@
         "keskiarvo": 4.3,
         "juoni": "Pari käy läpi toimenpiteen pyyhkiäkseen toisensa muistoistaan eron jälkeen.",
         "genret": ["Romantiikka", "Scifi", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BODkyMTYzNDExNl5BMl5BanBnXkFtZTcwNTAwOTMyMw@@._V1_.jpg"
+        "kuva": "MV5BODkyMTYzNDExNl5BMl5BanBnXkFtZTcwNTAwOTMyMw@@._V1_.jpg"
     },
     {
         "id": 46,
@@ -411,7 +411,7 @@
         "keskiarvo": 4.2,
         "juoni": "William Wallacen tarina 1200-luvun Skotlannissa ja hänen taistelunsa Englannin kuningasta vastaan.",
         "genret": ["Historia", "Toiminta", "Draama"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMGY4MzIzNTItZWI4Zi00NDhjLWJhNjEtMGEwMWIxYWI5NWI0XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BMGY4MzIzNTItZWI4Zi00NDhjLWJhNjEtMGEwMWIxYWI5NWI0XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 47,
@@ -420,7 +420,7 @@
         "keskiarvo": 4.0,
         "juoni": "Naamioitunut vapaustaitelija taistelee fasistista hallitusta vastaan tulevaisuuden Britanniassa.",
         "genret": ["Draama", "Toiminta", "Poliittinen"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BOTI5ODc3NzExNV5BMl5BanBnXkFtZTcwNzYxNzQzMw@@._V1_.jpg"
+        "kuva": "MV5BMTUxMDM2ODM3N15BMl5BanBnXkFtZTcwNDk0MTYyNw@@._V1_1.jpg"
     },
     {
         "id": 48,
@@ -429,7 +429,7 @@
         "keskiarvo": 4.7,
         "juoni": "Tarina jatkaa Michael Corleonen nousua mafiaperheensä johtajaksi ja kertoo Vito Corleonen nuoruudesta.",
         "genret": ["Draama", "Krimi", "Historia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMDIxMzBlZDktZjMxNy00ZGI4LTgxNDEtYWRlNzRjMjJmOGQ1XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BNDYwMjc5NDM5M15BMl5BanBnXkFtZTgwNTM3ODIxNjM@._V1_.jpg"
     },
     {
         "id": 49,
@@ -438,7 +438,7 @@
         "keskiarvo": 4.2,
         "juoni": "Muusikko, joka on menettänyt intohimonsa musiikkiin, päätyy sielujen maailmaan ja yrittää palata takaisin.",
         "genret": ["Animaatio", "Draama", "Perhe"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BZTZkYjA5MDEtMjY1ZC00ODk5LThjOTUtZDYxODEzYWNjMTU2XkEyXkFqcGc@._V1_.jpg"
+        "kuva": "MV5BOTIzZWVjYzMtMTlmOC00ZTZlLTkyY2MtNzQ5ODQxZGI2YWE1XkEyXkFqcGc@._V1_.jpg"
     },
     {
         "id": 50,
@@ -447,6 +447,6 @@
         "keskiarvo": 4.0,
         "juoni": "Halvaantunut merijalkaväen sotilas lähetetään Pandoralle, jossa hän rakastuu paikalliseen ja päätyy taistelemaan ihmisiä vastaan.",
         "genret": ["Scifi", "Seikkailu", "Fantasia"],
-        "kuva": "https://m.media-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_.jpg"
+        "kuva": "MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_.jpg"
     }
 ]

@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muokkaa Kommenttia</title>
+    <title>Vaihda Käyttäjä Nimi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='kirjaudu.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
 </head>
 <body>
@@ -25,11 +24,11 @@
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
     <div class="laatikko" style="display: grid; margin-left: 33%;">
-    <form action = "/muokkaa_kommentti" method = "post">
-        <h1>Muokkaa kommenttia</h1>
-        <p><input type = "text" name = "kommentti" placeholder="Kommentti..."/></p>
-        <p><button type = "submit" name = "_elokuvan_id" value = "{{elokuvan_id}}">Tallenna Muutokset</button></p>
-    </form>
+        <form action = "/paivita_kayttajaa" method = "post">
+            <h1>Vaihda Käyttäjänimi</h1>
+            <p><input type = "text" name = "nimi" placeholder="Uusi Käyttäjänimi"/></p>
+            <p><input type = "submit" value = "Päivitä"/></p>
+        </form>
     </div>
 </body>
 </html>

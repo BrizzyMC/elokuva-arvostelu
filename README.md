@@ -106,15 +106,15 @@ Todo:n aikataulutus [täällä](https://docs.google.com/spreadsheets/d/1DR5zW9wF
 > - [X] TODO Flask kirjastolle ja nettisivulle <mark></mark>
 
 ### Maanatai 29.9
-> - [ ] kirjautumis/käyttäjänluonti sivu  <mark>Vili</mark>
-> - [ ] kotisivu <mark>Vili</mark>
+> - [X] kirjautumis/käyttäjänluonti sivu  <mark>Vili</mark>
+> - [X] kotisivu <mark>Vili</mark>
 > - [ ] Haku sivu <mark>Benjamin</mark>
 
 ### Tiistai 30.9
 Tehdään edelliset valmiiksi
 
 ### Keskiviikko 1.10
-> - [ ] Elokuva tiedot/arvostelut sivu <mark>Vili</mark>
+> - [X] Elokuva tiedot/arvostelut sivu <mark>Vili</mark>
 
 ### Torstai 2.10
 > - [ ] Profiili sivu <mark>Vili</mark>

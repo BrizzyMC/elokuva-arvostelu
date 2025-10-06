@@ -7,20 +7,18 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 25.9.2025
+Päivämäärä: 6.10.2025
 Versio:     1.0
 
 Sisältää reitit:
     - /kirjaudu           -> kirjaudu.html
-    - /luo_käyttäjä       -> luo_kayttaja.html
     - /koti/<nimi>        -> koti.html (parametri: käyttäjän nimi)
     - /arvostele          -> arvostelu.html
-    - /muokkaa_kommenttia -> muokkaa_kommenttia.html
 
 =================================================================
 """
 
-from flask import render_template, Blueprint, session, abort, redirect, url_for
+from flask import render_template, Blueprint, session, abort, redirect, url_for, request
 
 # Luodaan blueprint
 sivut = Blueprint('Sivut', __name__)
@@ -42,7 +40,7 @@ def tarkista_henkilo(nimi:str, palauta):
     
     # Käyttäjä ei ole kirjautunut sisään
     if 'nimi' not in session:
-        return redirect(url_for('Sivut.uusi_kayttaja'))
+        return redirect(url_for('Sivut.kirjaudu_sisaan'))
     
     # Käyttäjä yrittää päästä toisen käyttäjälle
     if session['nimi'] != nimi:
@@ -61,11 +59,6 @@ def kirjaudu_sisaan():
     return render_template('kirjaudu.html')
 
 
-@sivut.route('/luo_käyttäjä')
-def uusi_kayttaja():
-    """Renderöi käyttäjän luonti sivun"""
-    return render_template('luo_kayttaja.html')
-
 
 @sivut.route('/koti/<nimi>')
 def koti(nimi:str):
@@ -75,7 +68,8 @@ def koti(nimi:str):
         - nimi: käyttäjän nimi (str)
     """
 
-    return tarkista_henkilo(nimi, render_template('koti.html'))
+    return tarkista_henkilo(nimi, render_template('koti.html', nimi=nimi))
+
 
 
 @sivut.route('/arvostele')
@@ -84,9 +78,78 @@ def arvostele():
     return render_template('arvostelu.html')
 
 
-@sivut.route('/muokkaa_kommenttia')
-def muokkaa_kommenttia():
-    """Renderöi kommentin muokkaus sivun"""
-    return render_template('muokkaa_kommenttia.html')
 
+@sivut.route('/koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>')
+def elokuvan_tiedot(kayttaja_nimi, nimi):
+    """Renderöi sivun jossa on elokuvan tiedot ja elokuvaa on mahdollisuus arvostella
+
+    Parametrit:
+        - elokuva: elokuvan nimi jotta se voidaan kirjoittaa selaimeen
+    """
+
+    # Poimii elokuvan tiedot url osoitteesta
+    elokuvan_id=request.args.get('id')
+    genret=request.args.get('genret')
+    juoni=request.args.get('juoni')
+    keskiarvo=round(float(request.args.get('keskiarvo')),1) # Float vain yksi desimaali
+    julkaisu_vuosi=request.args.get('julkaisu_vuosi')
+    kuva=f'https://m.media-amazon.com/images/M/{request.args.get("kuva")}'
     
+    # Poimii arvostelut sessioista ja tuhoaa temp session
+    arvostelut = session['arvostelut']
+    session.pop('arvostelut')
+
+    return tarkista_henkilo(kayttaja_nimi, render_template('elokuvan_tiedot.html', nimi=nimi, julkaisu_vuosi=julkaisu_vuosi, keskiarvo=keskiarvo,
+    juoni=juoni, genret=genret, kuva=kuva, elokuvan_id=elokuvan_id, arvostelut=arvostelut))
+    
+
+
+@sivut.route('/koti/<nimi>/vaihda_nimi')
+def vaihda_nimi(nimi):
+    """Renderöi salasanan vaihto sivun
+    
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
+    return tarkista_henkilo(nimi, render_template('vaihda_nimi.html'))
+
+
+
+@sivut.route('/koti/<nimi>/vaihda_salasana')
+def vaihda_salasana(nimi):
+    """Renderöi salasanan vaihto sivun
+
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
+    return tarkista_henkilo(nimi, render_template('vaihda_salasana.html'))
+
+
+@sivut.route('/koti/<nimi>/omat_arvostelut')
+def omat_arvostelut(nimi):
+    """Ottaa arvostelut vastaan sessiossa ja renderöi omat arvostelut sivun
+
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
+
+    # Poimii arvostelut sessioista ja tuhoaa temp session
+    arvostelut = session['arvostelut']
+    session.pop('arvostelut')
+
+    return tarkista_henkilo(nimi, render_template('omat_arvostelut.html', arvostelut=arvostelut))
+
+
+@sivut.route('/muokkaa_kommenttia', methods=['POST'])
+def muokkaa_kommenttia():
+    """Renderöi kommentin muokkaus sivun, käyttää post jotta saa elokuvan id:n annettua eteenpäin
+
+    Parametri:
+        - nimi: Käyttäjän nimi (str)
+    """
+    if request.method == 'POST':
+        elokuvan_id = request.form['_elokuvan_id']
+        print('Elokuvan id: ', elokuvan_id)
+
+        return tarkista_henkilo(session['nimi'], render_template('muokkaa_kommenttia.html', elokuvan_id=elokuvan_id))
+
