@@ -15,16 +15,9 @@
             </a>
         </div>
         
-        <div class="search-bar">
-            <div class="haku_valinta">
-                <select name="haku_valinta" id="lista1">
-                    <option value="Elokuvat">Elokuvat</option>
-                    <option value="Käyttäjät">käyttäjät</option>
-                </select>
-            </div>
 
             <form class="topnav" action="{{ url_for('rajapinta.haku') }}" method="post">
-                <input type="text" name="hakusana" placeholder="Hae.." />
+                <input type="text" name="hakusana" placeholder="Hae elokuva.." />
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -37,6 +30,7 @@
                 <div class="movie-image">
                     {% if elokuva.kuva %}
                         <img src="{{ elokuva.kuva }}" alt="{{ elokuva.nimi }}" class="movie-image">
+
                     {% else %}
                         Kuva
                     {% endif %}
