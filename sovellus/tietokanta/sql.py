@@ -8,7 +8,7 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
             ylläpitää ja sulkee sql tietokanta yhteyden.
 
 Tekiä:      Viljam Vänskä & Benjamin
-Päivämäärä: 2.10.2025
+Päivämäärä: 6.10.2025
 Versio:     1.2
 
 =================================================================
@@ -398,7 +398,7 @@ class sql_yhteys:
         """
 
         # Tarkistaa onko arvostelua tietokannassa
-        self.cursor.execute( valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
+        self.cursor.execute( valitse_arvostelu_id_perusteella(), (arvostelun_id,) )
 
         # Jos arvostelua ei ole tietokannassa niin palautta ValueError
         if not self.cursor.fetchall():
