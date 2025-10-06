@@ -18,21 +18,21 @@ body {
 }
 
 
-p {
+.laatikko p {
     text-align: center;
     margin-top: 3vw;
 }
 
 
-h1 {
+.laatikko h1 {
     text-align: center;
-    margin-top: -10vw;
+    margin-top: -4vw;
     margin-bottom: 7vw;
     color: rgb(24, 119, 242);
 }
 
 
-input[type=text], input[type=password] {
+.laatikko input[type=text], .laatikko input[type=password] {
     border-radius: 5px;
     height: 2.1vw;
     width: 17vw;
@@ -40,7 +40,7 @@ input[type=text], input[type=password] {
 }
 
 
-input[type=submit] {
+.laatikko input[type=submit] {
     margin-top: 3vw;
     background-color: rgb(24, 119, 242);
     color: rgb(255, 255, 255);
@@ -51,7 +51,7 @@ input[type=submit] {
     font-size: 1.5vw;
 }
 
-input[type=submit]:hover {
+.laatikko input[type=submit]:hover {
     cursor: pointer;
     background-color: rgb(31, 126, 252);
 }

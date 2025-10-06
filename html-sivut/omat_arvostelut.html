@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muokkaa Kommenttia</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='kirjaudu.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
+    <title>Omat Arvostelut</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
 </head>
 <body>
     <div class="navigointi">
@@ -24,12 +24,21 @@
         </div></a>
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
-    <div class="laatikko" style="display: grid; margin-left: 33%;">
-    <form action = "/muokkaa_kommentti" method = "post">
-        <h1>Muokkaa kommenttia</h1>
-        <p><input type = "text" name = "kommentti" placeholder="Kommentti..."/></p>
-        <p><button type = "submit" name = "_elokuvan_id" value = "{{elokuvan_id}}">Tallenna Muutokset</button></p>
-    </form>
+    <div class="arvostelut">
+        <ul>
+            {% for arvostelu in arvostelut %}
+            <li class="arvostelu">
+                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
+                <div style="display: inline-block;">
+                    {% for _ in range(arvostelu.arvosana | int) %}
+                    <p style="display: inline-block;">⭐</p>
+                    {% endfor %}
+                </div>
+                <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
+                <form action = "/muokkaa_kommenttia" method = "post"><button type="submit" name="_elokuvan_id" value="{{arvostelu.id}}">Muokkaa Kommenttia</button></form>
+            {% endfor %}
+            </li>
+        </ul>
     </div>
 </body>
 </html>

@@ -8,7 +8,7 @@ kuvaus:     Tänne tiedostoon tulee sql yhteys ja sitä vahvasti
             ylläpitää ja sulkee sql tietokanta yhteyden.
 
 Tekiä:      Viljam Vänskä & Benjamin
-Päivämäärä: 26.9.2025
+Päivämäärä: 6.10.2025
 Versio:     1.2
 
 =================================================================
@@ -78,6 +78,9 @@ class sql_yhteys:
 
         - muuta_salasanaa
             -> Antaa käyttäjän vaihtaa salasanaa tietokannasta.
+
+        - elokuva_id_dict
+            -> Hakee elokuvaa id:n perusteella ja palauttaa sen tiedot dict muodossa
     """
 
 
@@ -395,7 +398,7 @@ class sql_yhteys:
         """
 
         # Tarkistaa onko arvostelua tietokannassa
-        self.cursor.execute( valitse_arvostelu_id_perusteella(), (arvostelu_id,) )
+        self.cursor.execute( valitse_arvostelu_id_perusteella(), (arvostelun_id,) )
 
         # Jos arvostelua ei ole tietokannassa niin palautta ValueError
         if not self.cursor.fetchall():
@@ -432,5 +435,33 @@ class sql_yhteys:
 
         self.conn.commit() # Tallentaa muutokset
 
+
+
+    def elokuva_id_dict(self, elokuvan_id:int) -> dict:
+        """
+        hakee elokuvaa id:n perusteella
+
+        Parametri:
+            - elokuva_id: Elokuvan id (int muodossa)
+
+        Palauttaa:
+            - Palauttaa elokuvan tiedot (dict muodossa)
+
+        Elokuva Dict:
+            - id (int)
+            - julkaisu_vuosi (int)
+            - nimi (str)
+            - keskiarvo (float)
+            - juoni (str)
+            - arvostelu_maara (int)
+        """
+
+        # Etsii elokuvan tietokannasta
+        self.cursor.execute( valitse_elokuva_id_perusteella(), (elokuvan_id,) )
+        elokuva = self.cursor.fetchall()[0]
+
+        # Palauttaa elokuvan tiedot dict muodossa
+        return {'id':elokuva[0], 'julkaisu_vuosi':elokuva[1], 'nimi':elokuva[2], 'keskiarvo':elokuva[3],
+        'juoni':elokuva[4], 'arvostelu_maara':elokuva[5], "genret":elokuva[6], "kuva":elokuva[7]}
 
 

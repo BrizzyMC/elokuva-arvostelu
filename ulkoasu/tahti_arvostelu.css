@@ -1,0 +1,26 @@
+/* Lähde: https://dabblet.com/gist/4352050 */
+
+.tahti_arvostelu {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  text-align: center;
+}
+
+.tahti_arvostelu label {
+  display: inline-block;
+  width: 2vw;
+  height: 2vw;
+  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAyVBMVEXGxsb+/v6zs7O8vLy7u7u6urrCwsL////AwMC5ubm/v7+9vb3Dw8O+vr7ExMS3t7fBwcG4uLi1tbW0tLTFxcW2traysrLg4ODt7e37+/vY2Njn5+fU1NT9/f35+fnr6+v19fXk5OTKysrHx8fi4uLa2trc3Nz39/fv7+/R0dHu7u7Ly8ve3t7Pz8/p6enl5eXT09PNzc38/Pzy8vLJycnZ2dnV1dXj4+Pq6urd3d3b29v09PTm5ubQ0NDIyMjX19fW1tbx8fH///9F+zTWAAAAQ3RSTlP///////////////////////////////////////////////////////////////////////////////////////8AQWIE7wAAAa5JREFUeNqV09dygzAQQNEVanQMGNy7nd57L/r/j0owtpMgiYj7xgyHWRVAqEMToU4HZocNwbHTDPAs6jYCg9i7awROAx83AnEbsusGYBIB4H4DcOEBMLsBICEAJGNjcJDBd2TPGLzjArRCYxD4UGSNDME0gXW0YwhWuAT2whAwBmUpMgK9HDY5MwVAUntkC+w5koLzyKpEfNiGrWp9EGNG2mAWdibFGvgwb4FBIV2MhIDN7wL/5lq3P7vU8/8dC9Pun239yO36cd5Q5RzOYlw3zpN8cFchDXXjkCPlSfct5Vg+nSPN1XhwFGMF6aP+Lo3Alb6PD+ouXzeS5l+JOjCUTpCxWoB9qJb3asB1BlLkpAb0sQxaUANsBnIW0oL9ZLdUau02mC61YPdzesnyCG8f7BstCFubdbpTIdCcllvWTrkGXFnlKp3D8o2TNIAi51wDOnQ9TjYTmz699VjupQYs7GIce1/s4peUAbQjrgQoLca54OJ3nWKs+EwJ7h3wohdR6TkgELwqwbFL2FhI8VPKHBXgST7kQtUyiboKMIgHQtPUHSpApye08ZUEjPsCKj+LDQz5xjYAAAAASUVORK5CYII=) no-repeat 0 0;
+  background-size: 2vw 2vw;
+  font-size:0;
+  cursor: pointer;
+}
+
+.tahti_arvostelu input {
+  display:none;
+}
+
+.tahti_arvostelu input:checked + label,
+.tahti_arvostelu input:checked ~ input + label {
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAABgFBMVEXRXzXs0sT//v779fLu2MzSYTT0akL58e326ePqYkLy4tnmxbPqzb3dYTq6XizYpIntZELhYj37bkPcrpW6XCvCXS3esZrNYTHbZjf1bUDoybjJgVvLhmHZYDnKXjLmaDvNXjPGXi/GeVD9+vjBbUHlwa7Pjmv37Ofw3dPqZUDhZTvaqY7MiWXlZT7CcUb+/v3VnX+8YzPeZDnYYza9ZTbftJ7OXjTQkG/XYTfhuqTsaj7UYjTXoYS/aTvUYDe7YTHwaz/kYz7XYjfXYzXWXzj2a0P0aUP8+Pb2akPxZ0O9XCvzaEPyaEPvZUPyZ0PvZkPuZULsY0LwZkPwZ0P4bEP3a0P5bUP6bUP5bEP8b0Pjvan05d2+ZznAaj39cEPIfVXHfFTRlHTt1cjbq5LEdErFd079+/r15+Drz8HgtqDvaUDy39bqZj/lZzzwaUDHXTDYZDXtZ0DfZzj47+nIf1jJYC/yaULuZ0HTmHnUmXrw28+7Xy7VYTb4bkH5bkP///8s9V56AAAAgHRSTlP/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ADgFS2cAAAIJSURBVHjaldX5V9owAMDxGmBQrtoRUDkqyI2MgUKZ4jyQ6e6NjW2WS0R0p5vTuUPY8q+7duWN1ya1/f7UNPn8kCbvlUL4on2EjwQceYOg3DEGQOHi0hBwzpwxhsCv+bmcEQDav7sRuwHQv+h2Zz0GwNqZIGwuGACxOUEQvDbdIBW5+bfTkm6wOCuC1YBuMNgUwR9o1Qla3jdSlaZO4Dt9LTWf1Ql6q3tSjWFUF0jCxr/2ZhwYsKuqtN2QO0moZyl/8aGiyodX47aVc/CQQrZe5cY9fS13+uIeAANP9Cz/XAla5U0728v3ry3j9vz/Sslvlu/XrK/GzJOfFSzCzI5GXy1Zk+Ic3t2tktcvuX3qgzsPWH48wjeKXeJOGhzCzGNMn6iEiXA1pjqjp6pcw/fku2QNLj1QlM6ltC6fOaIEIx/SAkz1paJb+5ogl36hDCY1gN37TBW1ogE8609UsUENsLD1XJ3bRAQ277QcG4ah8XM4TgQlSl5zpxBP5cYDV4IIAuy0FHXUQiha5rekUXrjmADOYV2M5fJAGq8MQ9ILzk8ATV6crhUdSO7jgBLfhA4IIOuq12m+93bib30QZus0XQRYEHXTtItbA2iy5kaNpr9MYYGDo9eLfqTIPuDpWh4LyiF+34ZUHf/k2A4OgAJkAMIVL0TMGOBsOxGh1hGDAc0kInbbpwAGugICsJ4iKYYBmgAAAABJRU5ErkJggg==);
+}
