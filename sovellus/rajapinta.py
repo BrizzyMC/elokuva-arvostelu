@@ -239,6 +239,11 @@ def haku():
     elif request.method == 'POST':
         hakusana = request.form['hakusana']
         elokuvat = __tietokanta.hae_elokuvia(hakusana)
+
+        # Amazonin linkki eteen
+        for elokuva in elokuvat:
+            elokuva['kuva'] = f'https://m.media-amazon.com/images/M/{elokuva['kuva']}'
+
         return render_template('haku.html', elokuvat=elokuvat)
 
       
