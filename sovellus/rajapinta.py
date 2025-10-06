@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 2.10.2025
+Päivämäärä: 6.10.2025
 Versio:     1.1
 
 =================================================================
@@ -40,6 +40,12 @@ def tarkista_kirjautuminen():
         
     else:
         return redirect(url_for('Sivut.kirjaudu_sisaan'))
+
+
+@rajapinta.route('/koti')
+def koti_sivu():
+    """Ohjaa käyttäjän kotisivulle "tarkista_kirjautuminen" function kautta"""
+    return tarkista_kirjautuminen()
 
 
 
@@ -198,24 +204,25 @@ def lisaa_arvostelu():
 
 
 
-@rajapinta.route('/muokkaa_kommenttia', methods=['POST'])
+@rajapinta.route('/muokkaa_kommentti', methods=['POST'])
 def muokkaa_kommentti():
     """
-    POST /muokkaa_kommenttia
+    POST /muokkaa_kommentti
     ---
     Muokkaa kommenttia
     """
 
     if request.method == 'POST':
         kommentti = request.form['kommentti']
+        elokuvan_id = request.form['_elokuvan_id']
 
         try:
-            __tietokanta.muokkaa_kommenttia(1, kommentti)
+            __tietokanta.muokkaa_kommenttia(elokuvan_id, kommentti)
 
         except ValueError:
             redirect(url_for('Sivut.muokkaa_kommenttia'))
 
-    return [kommentti]
+    return laheta_arvostelut()
 
 
 
