@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaihda Käyttäjä Nimi</title>
+    <title>Vaihda Salasana</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='kirjaudu.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
 </head>
 <body>
     <div class="navigointi">
+        <div class="napit">
+            <form action = "/koti" method = "connect"><button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button></form>
+        </div>
         <a><div class="pudotusvalikko">
             <button class="pudotus"><img class="logo" src="{{ url_for('static', filename='profiili_kuva.png') }}"></button>
             <div class="pudotusvalikko-sisalto">
-            <form action = "/arvostelut" method = "post"><input type="submit" value="Arvostelut"></form>
+            <form action = "/lähetä_arvostelut" method = "post"><input type="submit" value="Arvostelut"></form>
             <form action = "/vaihda_nimi" method = "post"><input type="submit" value="Vaihda Nimi"></form>
             <form action = "/vaihda_salasana" method = "post"><input type="submit" value="Vaihda Salasana"></form>
             <form action = "/kirjaudu_ulos" method = "post"><input type="submit" value="kirjaudu Ulos"></form>
