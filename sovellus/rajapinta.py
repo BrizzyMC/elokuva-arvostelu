@@ -13,7 +13,7 @@ Versio:     1.1
 =================================================================
 """
 
-from flask import redirect, url_for, request, Blueprint, session
+from flask import redirect, url_for, request, Blueprint, session, render_template
 from .tietokanta.sql import sql_yhteys
 
 
@@ -97,24 +97,6 @@ def kirjaudu():
         except TypeError:
             return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
-
-
-@rajapinta.route('/haku', methods=['POST'])
-def hae():
-    """
-    POST /haku
-    ---
-    Hakee elokuvia hakusanan perusteella
-
-    Palauttaa:
-        - Löytyneet elokuvat
-    """
-
-    if request.method == 'POST':
-        hakusana = request.form['hakusana']
-        elokuvat = __tietokanta.hae_elokuvia(hakusana)
-
-        return elokuvat
 
 
 
@@ -244,7 +226,23 @@ def kirjaudu_ulos():
         return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
 
+@rajapinta.route('/haku', methods=['GET', 'POST'])
+def haku():
+    """
+    GET /haku - Renderöi haku sivun
+    POST /haku - Hakee elokuvia hakusanan perusteella
+    """
+    
+    if request.method == 'GET':
+        return render_template('haku.html')
+    
+    elif request.method == 'POST':
+        hakusana = request.form['hakusana']
+        elokuvat = __tietokanta.hae_elokuvia(hakusana)
+        return render_template('haku.html', elokuvat=elokuvat)
 
+      
+      
 @rajapinta.route('/lähetä_elokuvan_tiedot', methods=['POST'])
 def laheta_elokuvan_tiedot(elokuvan_id:int=None):
     """
