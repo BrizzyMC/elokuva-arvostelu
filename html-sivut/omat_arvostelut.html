@@ -6,9 +6,13 @@
     <title>Omat Arvostelut</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
 </head>
 <body>
     <div class="navigointi">
+        <div class="napit">
+            <form action = "/koti" method = "connect"><button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button></form>
+        </div>
         <a><div class="pudotusvalikko">
             <button class="pudotus"><img class="logo" src="{{ url_for('static', filename='profiili_kuva.png') }}"></button>
             <div class="pudotusvalikko-sisalto">
@@ -31,7 +35,7 @@
                     {% endfor %}
                 </div>
                 <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
-                <form action = "/haku" method = "post"><button type="submit" name="_elokuvan_id" value="{{elokuvan_id}}">Muokkaa Kommenttia</button></form>
+                <form action = "/muokkaa_kommenttia" method = "post"><button type="submit" name="_elokuvan_id" value="{{arvostelu.id}}">Muokkaa Kommenttia</button></form>
             {% endfor %}
             </li>
         </ul>
