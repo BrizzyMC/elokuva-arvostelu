@@ -1,3 +1,5 @@
+<!-- Tässä näkymässä on käyttäjän omat kommenttit ja nappi niiden muokkaamiseen -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omat Arvostelut</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigaatio.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
 </head>
 <body>
+    <!-- Navigointi palkki -->
     <div class="navigointi">
         <div class="napit">
             <form action = "/koti" method = "connect"><button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button></form>
@@ -24,6 +27,8 @@
         </div></a>
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
+
+    <!-- Käyttäjän arvostelut -->
     <div class="arvostelut">
         <ul>
             {% for arvostelu in arvostelut %}
