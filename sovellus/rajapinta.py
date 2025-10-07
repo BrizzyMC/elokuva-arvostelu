@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 6.10.2025
+Päivämäärä: 7.10.2025
 Versio:     1.1
 
 =================================================================
@@ -69,8 +69,8 @@ def luo_kayttaja():
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
         except NameError:
-            return redirect(url_for('Sivut.luo_käyttäjä'))
-        
+            return redirect(url_for('Sivut.kirjaudu_sisaan'))
+
 
 
 @rajapinta.route('/kirjaudu/kirjataan_sisaan', methods=['POST'])
