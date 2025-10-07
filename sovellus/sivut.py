@@ -7,13 +7,17 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 6.10.2025
+Päivämäärä: 7.10.2025
 Versio:     1.0
 
 Sisältää reitit:
-    - /kirjaudu           -> kirjaudu.html
-    - /koti/<nimi>        -> koti.html (parametri: käyttäjän nimi)
-    - /arvostele          -> arvostelu.html
+    - /kirjaudu     -> kirjaudu.html
+    - /koti/<nimi>  -> koti.html (parametri: käyttäjän nimi)
+    - /kirjaudu     -> kirjaudu.html
+    - /koti/<nimi>/omat_arvostelut  -> omat_arvostelut.html
+    - /koti/<nimi>/vaihda_salasana  -> vaihda_salasana.html
+    - /koti/<nimi>/vaihda_nimi      -> vaihda_nimi.html
+    - /koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>  -> elokuvan_tiedot.html
 
 =================================================================
 """
@@ -55,8 +59,18 @@ def tarkista_henkilo(nimi:str, palauta):
 
 @sivut.route('/kirjaudu')
 def kirjaudu_sisaan():
-    """Renderöi kirjautumis sivun"""
-    return render_template('kirjaudu.html')
+    """Renderöi kirjautumis sivun, jos error niin poimii sen url osoitteesta ja tulostaa käyttäjälle"""
+    
+    # Käsittelee virheilmoitukset sivun url osoitteesta
+    virheilmoitus_kirjautuminen=request.args.get('virheilmoitus_kirjautuminen')
+    if not virheilmoitus_kirjautuminen:
+        virheilmoitus_kirjautuminen = ''
+
+    virheilmoitus_kayttajan_luominen=request.args.get('virheilmoitus_kayttajan_luominen')
+    if not virheilmoitus_kayttajan_luominen:
+        virheilmoitus_kayttajan_luominen = ''
+
+    return render_template('kirjaudu.html', virheilmoitus_kirjautuminen=virheilmoitus_kirjautuminen, virheilmoitus_kayttajan_luominen=virheilmoitus_kayttajan_luominen)
 
 
 
@@ -72,18 +86,12 @@ def koti(nimi:str):
 
 
 
-@sivut.route('/arvostele')
-def arvostele():
-    """Renderöi arvostelu sivun"""
-    return render_template('arvostelu.html')
-
-
-
 @sivut.route('/koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>')
 def elokuvan_tiedot(kayttaja_nimi, nimi):
     """Renderöi sivun jossa on elokuvan tiedot ja elokuvaa on mahdollisuus arvostella
 
     Parametrit:
+        - kayttaja_nimi: Käyttäjän nimi
         - elokuva: elokuvan nimi jotta se voidaan kirjoittaa selaimeen
     """
 
@@ -111,6 +119,7 @@ def vaihda_nimi(nimi):
     Parametri:
         - nimi: Käyttäjän nimi (str)
     """
+    
     return tarkista_henkilo(nimi, render_template('vaihda_nimi.html'))
 
 
@@ -122,6 +131,7 @@ def vaihda_salasana(nimi):
     Parametri:
         - nimi: Käyttäjän nimi (str)
     """
+
     return tarkista_henkilo(nimi, render_template('vaihda_salasana.html'))
 
 
@@ -147,6 +157,7 @@ def muokkaa_kommenttia():
     Parametri:
         - nimi: Käyttäjän nimi (str)
     """
+
     if request.method == 'POST':
         elokuvan_id = request.form['_elokuvan_id']
         print('Elokuvan id: ', elokuvan_id)
