@@ -33,12 +33,16 @@ def tarkista_kirjautuminen():
         - Kyllä: Ohjataan kotisivulle
         - Ei: Ohjataan käyttäjän luontiin
     """
-    if session.get('kayttaja_id'):
-        kayttaja_nimi = __tietokanta.kayttajan_tiedot(session['kayttaja_id'])[0]['nimi']
-        print(kayttaja_nimi)
-        return redirect(url_for('Sivut.koti', nimi=kayttaja_nimi))
-        
-    else:
+    try:
+        if session.get('kayttaja_id'):
+            kayttaja_nimi = __tietokanta.kayttajan_tiedot(session['kayttaja_id'])[0]['nimi']
+            print(kayttaja_nimi)
+            return redirect(url_for('Sivut.koti', nimi=kayttaja_nimi))
+            
+        else:
+            return redirect(url_for('Sivut.kirjaudu_sisaan'))
+            
+    except TypeError:
         return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
 
