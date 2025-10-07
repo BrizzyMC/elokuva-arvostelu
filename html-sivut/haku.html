@@ -1,3 +1,5 @@
+<!-- Tässä näkymässä käyttäjälle aukeaa leffat joita hän haki hakusanalla -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,28 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="ulkoasu/haku.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigaatio.css') }}">
+    <title>Elokuvat</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="back_button">
-            <a href="{{ url_for('Sivut.koti', nimi=session.nimi) }}">
-                <button>Takaisin</button>
-            </a>
+    <!-- Navigointi palkki -->
+    <div class="navigointi">
+        <div class="napit">
+            <form action = "/koti" method = "connect"><button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button></form>
         </div>
-        
-
-            <form class="topnav" action="{{ url_for('rajapinta.haku') }}" method="post">
-                <input type="text" name="hakusana" placeholder="Hae elokuva.." />
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
+        <a><div class="pudotusvalikko">
+            <button class="pudotus"><img class="logo" src="{{ url_for('static', filename='profiili_kuva.png') }}"></button>
+            <div class="pudotusvalikko-sisalto">
+            <form action = "/lähetä_arvostelut" method = "post"><input type="submit" value="Arvostelut"></form>
+            <form action = "/vaihda_nimi" method = "post"><input type="submit" value="Vaihda Nimi"></form>
+            <form action = "/vaihda_salasana" method = "post"><input type="submit" value="Vaihda Salasana"></form>
+            <form action = "/kirjaudu_ulos" method = "post"><input type="submit" value="kirjaudu Ulos"></form>
+            </div>
+        </div></a>
+        <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
-        
+    
     <div id="results-container" class="results-container">
         {% if elokuvat %}
             {% for elokuva in elokuvat %}
-            <div class="movie-card">
+            <form action = "/lähetä_elokuvan_tiedot" method = "post">
+            <button name="elokuvan_id" value="{{ elokuva.id }}" style="border: none; background: none; cursor: pointer;">
+                <div class="movie-card">
                 <div class="movie-image">
                     {% if elokuva.kuva %}
                         <img src="{{ elokuva.kuva }}" alt="{{ elokuva.nimi }}" class="movie-image">
@@ -49,6 +57,8 @@
                     </div>
                 </div>
             </div>
+        </button>
+        </form>
             {% endfor %}
         {% else %}
             <div class="placeholder-movie-card">

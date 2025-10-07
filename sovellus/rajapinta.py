@@ -33,17 +33,21 @@ def tarkista_kirjautuminen():
         - Kyllä: Ohjataan kotisivulle
         - Ei: Ohjataan käyttäjän luontiin
     """
+
     try:
+        # Kirjataan sisään
         if session.get('kayttaja_id'):
             kayttaja_nimi = __tietokanta.kayttajan_tiedot(session['kayttaja_id'])[0]['nimi']
             print(kayttaja_nimi)
             return redirect(url_for('Sivut.koti', nimi=kayttaja_nimi))
-            
+        
+        # Et ole kirjautunut sisään
         else:
             return redirect(url_for('Sivut.kirjaudu_sisaan'))
-            
+
     except TypeError:
         return redirect(url_for('Sivut.kirjaudu_sisaan'))
+
 
 
 @rajapinta.route('/koti')
@@ -65,6 +69,14 @@ def luo_kayttaja():
         kayttaja = request.form['kayttaja']
         salasana = request.form['salasana']
 
+        # Salasanan tarkistus
+        if not salasana:
+            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Et antanut salasanaa!'}))
+        
+        elif len(salasana) < 4:
+            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Salasana liian lyhyt!'}))
+
+        # Käyttäjä luodaan
         try:
             __tietokanta.lisaa_kayttaja(kayttaja, salasana)
             session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana) # Käyttäjä kirjataan sisään ja id tallennetaan sessioon
@@ -72,8 +84,9 @@ def luo_kayttaja():
 
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
+        # Käyttäjä varattu
         except NameError:
-            return redirect(url_for('Sivut.kirjaudu_sisaan'))
+            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Käyttäjänimi varattu!'}))
 
 
 
@@ -89,18 +102,20 @@ def kirjaudu():
         kayttaja = request.form['kayttaja']
         salasana = request.form['salasana']
 
+        # Kirjataan sisään
         try:
             session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana)
             session['nimi'] = kayttaja
             
             return redirect(url_for('Sivut.koti', nimi=kayttaja))
 
+        # Käyttäjää ei löydy
         except ValueError:
-            return redirect(url_for('Sivut.kirjaudu_sisaan'))
+            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kirjautuminen':'Käyttäjää ei löydy!'}))
 
+        # Väärä salasana
         except TypeError:
-            return redirect(url_for('Sivut.kirjaudu_sisaan'))
-
+            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kirjautuminen':'Väärä Salasana!'}))
 
 
 
@@ -146,11 +161,13 @@ def paivita_nimi_salasana():
         # Voidaan "pass" koska arvot määritetty tyhjäksi function alussa
         try:
             uusi_nimi = request.form['nimi']
+
         except KeyError:
             pass
 
         try:
             uusi_salasana = request.form['salasana']
+
         except KeyError:
             pass
 
@@ -158,6 +175,7 @@ def paivita_nimi_salasana():
             try:
                 __tietokanta.muuta_kayttajanimea(session['kayttaja_id'], uusi_nimi)
                 session['nimi'] = uusi_nimi
+
             except NameError: # Käyttäjänimi viety!!
                 pass
 
@@ -196,6 +214,9 @@ def muokkaa_kommentti():
     POST /muokkaa_kommentti
     ---
     Muokkaa kommenttia
+
+    Palauttaa:
+        - Function joka ohjaa "Omat arvostelut sivulle"
     """
 
     if request.method == 'POST':
@@ -205,6 +226,7 @@ def muokkaa_kommentti():
         try:
             __tietokanta.muokkaa_kommenttia(elokuvan_id, kommentti)
 
+        # Jos id viallinen (Ei pitäisi ikinä tapahtua!)
         except ValueError:
             redirect(url_for('Sivut.muokkaa_kommenttia'))
 
@@ -230,6 +252,7 @@ def kirjaudu_ulos():
         return redirect(url_for('Sivut.kirjaudu_sisaan'))
 
 
+
 @rajapinta.route('/haku', methods=['GET', 'POST'])
 def haku():
     """
@@ -246,7 +269,7 @@ def haku():
 
         # Amazonin linkki eteen
         for elokuva in elokuvat:
-            elokuva['kuva'] = f'https://m.media-amazon.com/images/M/{elokuva['kuva']}'
+            elokuva['kuva'] = f'https://m.media-amazon.com/images/M/{elokuva["kuva"]}'
 
         return render_template('haku.html', elokuvat=elokuvat)
 
