@@ -1,14 +1,17 @@
+<!-- Tässä näkymässä on elokuvan tiedot arvostelut ja käyttäjä voi jättää arvostelun -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elokuva: {{nimi}}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigaatio.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='tahti_arvostelu.css') }}">
 </head>
 <body>
+    <!-- Navigointi lohko -->
     <div class="navigointi">
         <div class="napit">
             <form action = "/koti" method = "connect"><button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button></form>
@@ -24,6 +27,8 @@
         </div></a>
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
+
+    <!-- Elokuvan tiedot -->
     <div class="elokuva">
         <h1 class="otsikko" style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; letter-spacing: 2px; color: #FFFAF0;">{{nimi}}</h1>
         <img class="kuva" src="{{kuva}}">
@@ -36,8 +41,11 @@
             <p>{{juoni}}</p>
         </div>
     </div>
+
+    <!-- Käyttäjä jättää arvostelun -->
     <div class="arvostele">
         <h1>Jätä Arvostelu</h1>
+        <!-- Tähti arvostelu -->
         <form action = "/lisää_arvostelu" method = "post">
             <div class="tahti_arvostelu">
                 <input type="radio" name="arvosana" value="5" id="tahti_arvostelu-5"><label for="tahti_arvostelu-5">5</label>
@@ -46,16 +54,21 @@
                 <input type="radio" name="arvosana" value="2" id="tahti_arvostelu-2"><label for="tahti_arvostelu-2">2</label>
                 <input type="radio" name="arvosana" value="1" id="tahti_arvostelu-1"><label for="tahti_arvostelu-1">1</label>
             </div>
+            <!-- Kommentti -->
             <p><input type="text" placeholder="Kirjoita Kommentti" name="kommentti"></p>
             <p><button type="submit" name="_elokuvan_id" value="{{elokuvan_id}}">Lähetä</button></p>
         </form>
     </div>
+
+    <!-- Muiden arvostelut -->
     <div class="arvostelut">
         <ul>
+            <!-- Silmukka käy läpi arvostelut -->
             {% for arvostelu in arvostelut %}
             <li class="arvostelu">
                 <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
                 <div style="display: inline-block;">
+                    <!-- Silmukka piirtää tähdet -->
                     {% for _ in range(arvostelu.arvosana | int) %}
                     <p style="display: inline-block;">⭐</p>
                     {% endfor %}
