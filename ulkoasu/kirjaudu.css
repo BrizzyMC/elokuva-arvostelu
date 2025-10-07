@@ -20,13 +20,17 @@ body {
 
 .laatikko p {
     text-align: center;
-    margin-top: 3vw;
+    margin-top: 4vw;
+    margin-bottom: -2vw;
+    font-size: 0.9vw;
 }
 
 
 .laatikko h1 {
+    font-size: 1.8vw;
     text-align: center;
-    margin-top: -4vw;
+    margin-top: 2vw;
+    margin-bottom: -5vw;
     margin-bottom: 7vw;
     color: rgb(24, 119, 242);
 }
@@ -37,6 +41,7 @@ body {
     height: 2.1vw;
     width: 17vw;
     font-size: 1.2vw;
+    margin-bottom: -0.5vw;
 }
 
 
