@@ -66,14 +66,14 @@
             <!-- Silmukka käy läpi arvostelut -->
             {% for arvostelu in arvostelut %}
             <li class="arvostelu">
-                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
+                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a;">{{arvostelu.nimi}}</h2>
                 <div style="display: inline-block;">
                     <!-- Silmukka piirtää tähdet -->
                     {% for _ in range(arvostelu.arvosana | int) %}
-                    <p style="display: inline-block;">⭐</p>
+                    <p style="display: inline-block; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a;">⭐</p>
                     {% endfor %}
                 </div>
-                <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
+                <p style="color: #FFFAF0; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; width: 40vw; word-wrap: break-word; margin-bottom: 2vw;">{{arvostelu.kommentti}}</p>
             </li>
             {% endfor %}
         </ul>
