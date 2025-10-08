@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='navigaatio.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nappi.css') }}">
 </head>
 <body>
     <!-- Navigointi palkki -->
@@ -40,7 +41,7 @@
                     {% endfor %}
                 </div>
                 <p style="color: #FFFAF0; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; width: 40vw; word-wrap: break-word; margin-bottom: 2vw; font-size: 1.1vw;">{{arvostelu.kommentti}}</p>
-                <form action = "/muokkaa_kommenttia" method = "post"><button type="submit" name="_elokuvan_id" value="{{arvostelu.id}}">Muokkaa Kommenttia</button></form>
+                <form action = "/muokkaa_kommenttia" method = "post"><button type="submit" name="_elokuvan_id" value="{{arvostelu.id}}" style="margin-bottom: 2vw;">Muokkaa Kommenttia</button></form>
             {% endfor %}
             </li>
         </ul>
