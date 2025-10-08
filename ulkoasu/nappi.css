@@ -1,0 +1,18 @@
+/* Tässä tiedostossa on tyylitykset yleisesti käytettyyn nappiin */
+
+button[type=submit] {
+    margin-top: 3vw;
+    background-color: rgb(24, 119, 242);
+    color: rgb(255, 255, 255);
+    height: 2.5vw;
+    width: 17vw;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.5vw;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+}
+
+button[type=submit]:hover {
+    cursor: pointer;
+    background-color: rgb(31, 126, 252);
+}
