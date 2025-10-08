@@ -105,6 +105,7 @@ body {
     background: #fff;
     padding: 32px 24px;
     min-height: 200px;
+    width: 100%;
 }
 
 .movie-card {
