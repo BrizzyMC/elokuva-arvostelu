@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 8.10.2025
+Päivämäärä: 9.10.2025
 Versio:     1.1
 
 =================================================================
@@ -15,6 +15,8 @@ Versio:     1.1
 
 from flask import redirect, url_for, request, Blueprint, session, render_template
 from .tietokanta.sql import sql_yhteys
+from random import randint # Satunnais elokuva
+
 
 
 __tietokanta = sql_yhteys()
@@ -30,7 +32,7 @@ def tarkista_kirjautuminen():
     Tarkistaa onko käyttäjä kirjautunut sisään, tieto hankitaan sessiota käyttäen
     
     Vaihtoehdot:
-        - Kyllä: Ohjataan kotisivulle
+        - Kyllä: Ohjataan kotisivulle & ladataan sivulle satunnainen elokuva
         - Ei: Ohjataan käyttäjän luontiin
     """
 
@@ -38,7 +40,16 @@ def tarkista_kirjautuminen():
         # Kirjataan sisään
         if session.get('kayttaja_id'):
             kayttaja_nimi = __tietokanta.kayttajan_tiedot(session['kayttaja_id'])[0]['nimi']
-            print(kayttaja_nimi)
+
+            # Satunnainen elokuva
+            elokuva = __tietokanta.elokuva_id_dict(randint(1,49))
+
+            # Amazonin linkki eteen
+            elokuva['kuva'] = f'https://m.media-amazon.com/images/M/{elokuva["kuva"]}'
+
+            # Elokuvasta temp sessio
+            session['elokuva'] = elokuva
+                
             return redirect(url_for('sivut.koti', nimi=kayttaja_nimi))
         
         # Et ole kirjautunut sisään
@@ -46,13 +57,14 @@ def tarkista_kirjautuminen():
             return redirect(url_for('sivut.kirjaudu_sisaan'))
 
     except TypeError:
-        return redirect(url_for('sivut.kirjaudu_sisaan'))
+       return redirect(url_for('sivut.kirjaudu_sisaan'))
 
 
 
 @rajapinta.route('/koti')
 def koti_sivu():
     """Ohjaa käyttäjän kotisivulle "tarkista_kirjautuminen" function kautta"""
+
     return tarkista_kirjautuminen()
 
 
@@ -82,7 +94,7 @@ def luo_kayttaja():
             session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana) # Käyttäjä kirjataan sisään ja id tallennetaan sessioon
             session['nimi'] = kayttaja
 
-            return redirect(url_for('sivut.koti', nimi=kayttaja))
+            return redirect(url_for('rajapinta.koti_sivu', nimi=kayttaja))
 
         # Käyttäjä varattu
         except NameError:
@@ -107,7 +119,7 @@ def kirjaudu():
             session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana)
             session['nimi'] = kayttaja
             
-            return redirect(url_for('sivut.koti', nimi=kayttaja))
+            return redirect(url_for('rajapinta.koti_sivu', nimi=kayttaja))
 
         # Käyttäjää ei löydy
         except ValueError:
@@ -286,6 +298,7 @@ def laheta_elokuvan_tiedot(elokuvan_id:int=None):
         - Elokuvan tiedot sivu
     """
 
+    # Hankkii elokuvan id:n
     if request.method == 'POST':
         if not elokuvan_id:
             elokuvan_id = request.form['elokuvan_id']
