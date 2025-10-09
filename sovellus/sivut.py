@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 8.10.2025
+Päivämäärä: 9.10.2025
 Versio:     1.1
 
 Sisältää reitit:
@@ -81,8 +81,14 @@ def koti(nimi:str):
     Parametri:
         - nimi: käyttäjän nimi (str)
     """
+    try:
+        elokuva = session['elokuva']
+        session.pop('elokuva')
 
-    return tarkista_henkilo(nimi, render_template('koti.html', nimi=nimi))
+        return tarkista_henkilo(nimi, render_template('koti.html', nimi=nimi, elokuva=elokuva))
+
+    except KeyError:
+        return redirect(url_for('rajapinta.koti_sivu'))
 
 
 
