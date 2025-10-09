@@ -30,7 +30,7 @@
 
     <!-- Elokuvan tiedot -->
     <div class="elokuva">
-        <h1 class="otsikko" style="font-family: 'Bebas Neue', sans-serif; font-size: 64px; letter-spacing: 2px; color: #FFFAF0;">{{nimi}}</h1>
+        <h1 class="otsikko" style="font-family: 'Bebas Neue', sans-serif; font-size: 4vw; letter-spacing: 2px; color: #FFFAF0;">{{nimi}}</h1>
         <img class="kuva" src="{{kuva}}">
         <div class="tiedot">
             <h3>Keskiarvo</h3>
@@ -44,7 +44,7 @@
 
     <!-- Käyttäjä jättää arvostelun -->
     <div class="arvostele">
-        <h1>Jätä Arvostelu</h1>
+        <h1 style="font-size: 2vw;">Jätä Arvostelu</h1>
         <!-- Tähti arvostelu -->
         <form action = "/lisää_arvostelu" method = "post">
             <div class="tahti_arvostelu">
@@ -66,14 +66,16 @@
             <!-- Silmukka käy läpi arvostelut -->
             {% for arvostelu in arvostelut %}
             <li class="arvostelu">
-                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
+                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; font-size: 1.4vw;">
+                    {{arvostelu.nimi}}</h2>
                 <div style="display: inline-block;">
                     <!-- Silmukka piirtää tähdet -->
                     {% for _ in range(arvostelu.arvosana | int) %}
-                    <p style="display: inline-block;">⭐</p>
+                    <p style="display: inline-block; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; font-size: 1vw;">⭐</p>
                     {% endfor %}
                 </div>
-                <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
+                <p style="color: #FFFAF0; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; width: 40vw; word-wrap: break-word; margin-bottom: 2vw; font-size: 1.1vw;">
+                    {{arvostelu.kommentti}}</p>
             </li>
             {% endfor %}
         </ul>

@@ -7,7 +7,7 @@ kuvaus:     Tiedosto pitäää sisällään functiot jotka kommunikoivat
             tapahtuvasta tiedon käsittelystä.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 7.10.2025
+Päivämäärä: 8.10.2025
 Versio:     1.1
 
 =================================================================
@@ -39,14 +39,14 @@ def tarkista_kirjautuminen():
         if session.get('kayttaja_id'):
             kayttaja_nimi = __tietokanta.kayttajan_tiedot(session['kayttaja_id'])[0]['nimi']
             print(kayttaja_nimi)
-            return redirect(url_for('Sivut.koti', nimi=kayttaja_nimi))
+            return redirect(url_for('sivut.koti', nimi=kayttaja_nimi))
         
         # Et ole kirjautunut sisään
         else:
-            return redirect(url_for('Sivut.kirjaudu_sisaan'))
+            return redirect(url_for('sivut.kirjaudu_sisaan'))
 
     except TypeError:
-        return redirect(url_for('Sivut.kirjaudu_sisaan'))
+        return redirect(url_for('sivut.kirjaudu_sisaan'))
 
 
 
@@ -71,10 +71,10 @@ def luo_kayttaja():
 
         # Salasanan tarkistus
         if not salasana:
-            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Et antanut salasanaa!'}))
+            return redirect(url_for('sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Et antanut salasanaa!'}))
         
         elif len(salasana) < 4:
-            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Salasana liian lyhyt!'}))
+            return redirect(url_for('sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Salasana liian lyhyt!'}))
 
         # Käyttäjä luodaan
         try:
@@ -82,11 +82,11 @@ def luo_kayttaja():
             session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana) # Käyttäjä kirjataan sisään ja id tallennetaan sessioon
             session['nimi'] = kayttaja
 
-            return redirect(url_for('Sivut.koti', nimi=kayttaja))
+            return redirect(url_for('sivut.koti', nimi=kayttaja))
 
         # Käyttäjä varattu
         except NameError:
-            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Käyttäjänimi varattu!'}))
+            return redirect(url_for('sivut.kirjaudu_sisaan', **{'virheilmoitus_kayttajan_luominen':'Käyttäjänimi varattu!'}))
 
 
 
@@ -107,15 +107,15 @@ def kirjaudu():
             session['kayttaja_id'] = __tietokanta.kirjaudu(kayttaja, salasana)
             session['nimi'] = kayttaja
             
-            return redirect(url_for('Sivut.koti', nimi=kayttaja))
+            return redirect(url_for('sivut.koti', nimi=kayttaja))
 
         # Käyttäjää ei löydy
         except ValueError:
-            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kirjautuminen':'Käyttäjää ei löydy!'}))
+            return redirect(url_for('sivut.kirjaudu_sisaan', **{'virheilmoitus_kirjautuminen':'Käyttäjää ei löydy!'}))
 
         # Väärä salasana
         except TypeError:
-            return redirect(url_for('Sivut.kirjaudu_sisaan', **{'virheilmoitus_kirjautuminen':'Väärä Salasana!'}))
+            return redirect(url_for('sivut.kirjaudu_sisaan', **{'virheilmoitus_kirjautuminen':'Väärä Salasana!'}))
 
 
 
@@ -182,7 +182,7 @@ def paivita_nimi_salasana():
         if uusi_salasana:
             __tietokanta.muuta_salasanaa(session['kayttaja_id'], uusi_nimi)
 
-        return redirect(url_for('Sivut.kirjaudu_sisaan'))
+        return redirect(url_for('sivut.kirjaudu_sisaan'))
 
 
 
@@ -228,7 +228,7 @@ def muokkaa_kommentti():
 
         # Jos id viallinen (Ei pitäisi ikinä tapahtua!)
         except ValueError:
-            redirect(url_for('Sivut.muokkaa_kommenttia'))
+            redirect(url_for('sivut.muokkaa_kommenttia'))
 
     return laheta_arvostelut()
 
@@ -249,7 +249,7 @@ def kirjaudu_ulos():
         session.pop('nimi')
         session.pop('kayttaja_id')
 
-        return redirect(url_for('Sivut.kirjaudu_sisaan'))
+        return redirect(url_for('sivut.kirjaudu_sisaan'))
 
 
 
@@ -275,7 +275,7 @@ def haku():
 
       
       
-@rajapinta.route('/lähetä_elokuvan_tiedot', methods=['POST'])
+@rajapinta.route('/lähetä_elokuvan_tiedot', methods=['POST', 'GET'])
 def laheta_elokuvan_tiedot(elokuvan_id:int=None):
     """
     POST /lähetä_elokuvan_tiedot
@@ -289,22 +289,26 @@ def laheta_elokuvan_tiedot(elokuvan_id:int=None):
     if request.method == 'POST':
         if not elokuvan_id:
             elokuvan_id = request.form['elokuvan_id']
-            
-        # Hankkii elokuvan tiedot dict muodossa
-        elokuva = __tietokanta.elokuva_id_dict(elokuvan_id)
-        
-        # Laitetaan arvostelut listaan
-        arvostelut = __tietokanta.elokuvan_arvostelut(elokuvan_id)
-        arvostelut_lista = []
-        for arvostelu in arvostelut:
-            nimi = __tietokanta.kayttajan_tiedot(arvostelu[0])[0]['nimi']
-            arvostelut_lista.append({'nimi':nimi, 'arvosana':arvostelu[1], 'kommentti':arvostelu[2]})
-        
-        # Luodaan arvosteluista temp sessio, tämä tehdään koska selaimen url olisi muuten liian pitä
-        # ja pythonin kautta ohjelman haluttu logiikka pettäisi. (sessio tuhotaan kun tiedot ovat kerätty)
-        session['arvostelut'] =  arvostelut_lista
 
-        return redirect(url_for('Sivut.elokuvan_tiedot', kayttaja_nimi=session['nimi'], **elokuva))
+    if request.method == 'GET':
+        if not elokuvan_id:
+            elokuvan_id = request.args['elokuvan_id']
+
+    # Hankkii elokuvan tiedot dict muodossa
+    elokuva = __tietokanta.elokuva_id_dict(elokuvan_id)
+    
+    # Laitetaan arvostelut listaan
+    arvostelut = __tietokanta.elokuvan_arvostelut(elokuvan_id)
+    arvostelut_lista = []
+    for arvostelu in arvostelut:
+        nimi = __tietokanta.kayttajan_tiedot(arvostelu[0])[0]['nimi']
+        arvostelut_lista.append({'nimi':nimi, 'arvosana':arvostelu[1], 'kommentti':arvostelu[2]})
+    
+    # Luodaan arvosteluista temp sessio, tämä tehdään koska selaimen url olisi muuten liian pitä ja
+    # pythonin kautta ohjelman haluttu logiikka pettäisi. (sessio tuhotaan kun tiedot ovat kerätty)
+    session['arvostelut'] =  arvostelut_lista
+
+    return redirect(url_for('sivut.elokuvan_tiedot', kayttaja_nimi=session['nimi'], **elokuva))
 
 
             
@@ -319,7 +323,7 @@ def vaihda_nimi():
         - Nimen vaihto sivulle
     """
 
-    return redirect(url_for('Sivut.vaihda_nimi', nimi=session['nimi']))
+    return redirect(url_for('sivut.vaihda_nimi', nimi=session['nimi']))
 
 
 
@@ -334,11 +338,11 @@ def vaihda_salasana():
         - Salasanan vaihto sivulle
     """
 
-    return redirect(url_for('Sivut.vaihda_salasana', nimi=session['nimi']))
+    return redirect(url_for('sivut.vaihda_salasana', nimi=session['nimi']))
 
 
 
-@rajapinta.route('/lähetä_arvostelut', methods=['POST'])
+@rajapinta.route('/lähetä_arvostelut', methods=['POST', 'GET'])
 def laheta_arvostelut():
     """
     POST /lähetä_arvostelut
@@ -349,16 +353,17 @@ def laheta_arvostelut():
         - Omat arvostelut sivulle
     """
 
-    # Etsitään arvostelut tietokannasta ja lisätään dict:iin elokuvan nimi
-    arvostelut =__tietokanta.kayttajan_tiedot(session['kayttaja_id'], True)[0]['arvostelut']
-    arvostelut_lista = []
-    for arvostelu in arvostelut:
-        arvostelu['nimi'] = __tietokanta.elokuva_id_dict(arvostelu['elokuvan_id'])['nimi']
+    if request.method in ['POST', 'GET']:
+        # Etsitään arvostelut tietokannasta ja lisätään dict:iin elokuvan nimi
+        arvostelut =__tietokanta.kayttajan_tiedot(session['kayttaja_id'], True)[0]['arvostelut']
+        arvostelut_lista = []
+        for arvostelu in arvostelut:
+            arvostelu['nimi'] = __tietokanta.elokuva_id_dict(arvostelu['elokuvan_id'])['nimi']
 
-    # Luo temp session johon arvostelut tallennetaan
-    session['arvostelut'] = arvostelut
+        # Luo temp session johon arvostelut tallennetaan
+        session['arvostelut'] = arvostelut
 
-    return redirect(url_for('Sivut.omat_arvostelut', nimi=session['nimi']))
+        return redirect(url_for('sivut.omat_arvostelut', nimi=session['nimi']))
 
 
 

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='elokuvan_tiedot.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='navigaatio.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nappi.css') }}">
 </head>
 <body>
     <!-- Navigointi palkki -->
@@ -33,14 +34,14 @@
         <ul>
             {% for arvostelu in arvostelut %}
             <li class="arvostelu">
-                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0;">{{arvostelu.nimi}}</h2>
+                <h2 style="font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #FFFAF0; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; font-size: 1.4vw;">{{arvostelu.nimi}}</h2>
                 <div style="display: inline-block;">
                     {% for _ in range(arvostelu.arvosana | int) %}
-                    <p style="display: inline-block;">⭐</p>
+                    <p style="display: inline-block; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; font-size: 1vw;">⭐</p>
                     {% endfor %}
                 </div>
-                <p style="color: #FFFAF0;">{{arvostelu.kommentti}}</p>
-                <form action = "/muokkaa_kommenttia" method = "post"><button type="submit" name="_elokuvan_id" value="{{arvostelu.id}}">Muokkaa Kommenttia</button></form>
+                <p style="color: #FFFAF0; text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a; width: 40vw; word-wrap: break-word; margin-bottom: 2vw; font-size: 1.1vw;">{{arvostelu.kommentti}}</p>
+                <form action = "/muokkaa_kommenttia" method = "post"><button type="submit" name="_elokuvan_id" value="{{arvostelu.id}}" style="margin-bottom: 2vw;">Muokkaa Kommenttia</button></form>
             {% endfor %}
             </li>
         </ul>

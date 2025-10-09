@@ -7,17 +7,17 @@ kuvaus:     Tiedosto pitää sisällään sovelluksen reittien
             Flask html sivuihin ("julkiset sivut").
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 7.10.2025
-Versio:     1.0
+Päivämäärä: 8.10.2025
+Versio:     1.1
 
 Sisältää reitit:
     - /kirjaudu     -> kirjaudu.html
     - /koti/<nimi>  -> koti.html (parametri: käyttäjän nimi)
     - /kirjaudu     -> kirjaudu.html
-    - /koti/<nimi>/omat_arvostelut  -> omat_arvostelut.html
-    - /koti/<nimi>/vaihda_salasana  -> vaihda_salasana.html
-    - /koti/<nimi>/vaihda_nimi      -> vaihda_nimi.html
-    - /koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>  -> elokuvan_tiedot.html
+    - /koti/<nimi>/omat_arvostelut  -> omat_arvostelut.html (parametri: käyttäjän nimi)
+    - /koti/<nimi>/vaihda_salasana  -> vaihda_salasana.html (parametri: käyttäjän nimi)
+    - /koti/<nimi>/vaihda_nimi      -> vaihda_nimi.html (parametri: käyttäjän nimi)
+    - /koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>  -> elokuvan_tiedot.html (parametri: käyttäjän nimi, elokuvan_nimi)
 
 =================================================================
 """
@@ -25,7 +25,7 @@ Sisältää reitit:
 from flask import render_template, Blueprint, session, abort, redirect, url_for, request
 
 # Luodaan blueprint
-sivut = Blueprint('Sivut', __name__)
+sivut = Blueprint('sivut', __name__)
 
 
 
@@ -44,7 +44,7 @@ def tarkista_henkilo(nimi:str, palauta):
     
     # Käyttäjä ei ole kirjautunut sisään
     if 'nimi' not in session:
-        return redirect(url_for('Sivut.kirjaudu_sisaan'))
+        return redirect(url_for('sivut.kirjaudu_sisaan'))
     
     # Käyttäjä yrittää päästä toisen käyttäjälle
     if session['nimi'] != nimi:
@@ -86,7 +86,7 @@ def koti(nimi:str):
 
 
 
-@sivut.route('/koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>')
+@sivut.route('/koti/<kayttaja_nimi>/elokuvan_tiedot/<nimi>', methods=['GET', 'POST'])
 def elokuvan_tiedot(kayttaja_nimi, nimi):
     """Renderöi sivun jossa on elokuvan tiedot ja elokuvaa on mahdollisuus arvostella
 
@@ -104,8 +104,13 @@ def elokuvan_tiedot(kayttaja_nimi, nimi):
     kuva=f'https://m.media-amazon.com/images/M/{request.args.get("kuva")}'
     
     # Poimii arvostelut sessioista ja tuhoaa temp session
-    arvostelut = session['arvostelut']
-    session.pop('arvostelut')
+    try:
+        arvostelut = session['arvostelut']
+        session.pop('arvostelut')
+    
+    # Kun sivu ladataan uudelleen (error handling koska session tuhotaan)
+    except KeyError:
+        return redirect(url_for('rajapinta.laheta_elokuvan_tiedot', **{'elokuvan_id':elokuvan_id}))
 
     return tarkista_henkilo(kayttaja_nimi, render_template('elokuvan_tiedot.html', nimi=nimi, julkaisu_vuosi=julkaisu_vuosi, keskiarvo=keskiarvo,
     juoni=juoni, genret=genret, kuva=kuva, elokuvan_id=elokuvan_id, arvostelut=arvostelut))
@@ -135,6 +140,7 @@ def vaihda_salasana(nimi):
     return tarkista_henkilo(nimi, render_template('vaihda_salasana.html'))
 
 
+
 @sivut.route('/koti/<nimi>/omat_arvostelut')
 def omat_arvostelut(nimi):
     """Ottaa arvostelut vastaan sessiossa ja renderöi omat arvostelut sivun
@@ -143,11 +149,16 @@ def omat_arvostelut(nimi):
         - nimi: Käyttäjän nimi (str)
     """
 
-    # Poimii arvostelut sessioista ja tuhoaa temp session
-    arvostelut = session['arvostelut']
-    session.pop('arvostelut')
+    try:
+        # Poimii arvostelut sessioista ja tuhoaa temp session
+        arvostelut = session['arvostelut']
+        session.pop('arvostelut')
 
-    return tarkista_henkilo(nimi, render_template('omat_arvostelut.html', arvostelut=arvostelut))
+        return tarkista_henkilo(nimi, render_template('omat_arvostelut.html', arvostelut=arvostelut))
+
+    except KeyError:
+        return redirect(url_for('rajapinta.laheta_arvostelut'))
+
 
 
 @sivut.route('/muokkaa_kommenttia', methods=['POST'])
