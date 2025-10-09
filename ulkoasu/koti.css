@@ -5,3 +5,52 @@ body {
     background-color: rgb(206, 206, 206);
 }
 
+.oletko_katsonut {
+    display: grid;
+    font-family: 'Roboto';
+    text-align: center;
+    width: 100%;
+}
+
+.elokuva {
+    display: grid;
+    margin-left: 40%;
+    margin-top: 3%;
+    place-content: center;
+    background: rgb(85, 85, 85);
+    height: 20vw;
+    width: 19vw;
+    border-radius: 25px;
+    filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.elokuva img {
+    max-width: 17vw;
+    max-height: 17vw;
+}
+
+.elokuva button {
+    margin-top: 1vw;
+    max-width: 17vw;
+    max-height: 17vw;
+    border: none;
+    background: none;
+}
+
+.oletko_katsonut h3 {
+    color: rgb(49, 36, 8);
+    display: grid;
+    font-family: 'Roboto';
+    font-size: 2vw;
+    border-radius: 7px;
+    text-shadow: 0.2rem 0.5rem 0.5rem#666666;
+}
+
+.elokuva a {
+    font-family: 'Roboto';
+    font-size: 1.3vw;
+    text-shadow: 0.2rem 0.5rem 0.5rem#1a1a1a;
+    color: white;
+}
