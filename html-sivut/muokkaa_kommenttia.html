@@ -1,3 +1,5 @@
+<!-- Tässä näkymässä muokataan kommentteja -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +8,12 @@
     <title>Muokkaa Kommenttia</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='kirjaudu.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='omat_arvostelut.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='koti.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='navigaatio.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nappi.css') }}">
+
 </head>
 <body>
+    <!-- Navigointi palkki -->
     <div class="navigointi">
         <div class="napit">
             <form action = "/koti" method = "connect"><button class="nappi"><img class="logo" src="{{ url_for('static', filename='koti.png') }}"></button></form>
@@ -24,6 +29,8 @@
         </div></a>
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
+
+    <!-- Kommentin muokkaus laatikko -->
     <div class="laatikko" style="display: grid; margin-left: 33%;">
     <form action = "/muokkaa_kommentti" method = "post">
         <h1>Muokkaa kommenttia</h1>

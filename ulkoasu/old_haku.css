@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+    top: 0px;
+    border: 2px solid gray;
+    border-radius: 0.5em;
+    height: 70px;
+    align-items: center;
+    justify-content: center
+}
+
+
+
+.takaisin_nappi {
+    background-color: #04AA6D;
+    border: 1px solid green;
+    color: white;
+    padding: 1px 1px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+}
+
+
+.takaisin_nappi:hover {
+    background-color: black;
+    color:  rgb(100, 188, 28);
+}
+
+
+
+form.topnav input[type=text] {
+    margin: auto;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 80%;
+    max-width: 20%;
+    background: #f1f1f1;
+}
+
+
+form.topnav button {
+    width: 5%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+
+
+.ElokuvaMenu {
+    list-style-type: none;
+}
+

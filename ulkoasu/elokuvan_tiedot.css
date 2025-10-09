@@ -1,3 +1,10 @@
+/* Tiedostossa on css asetukset "elokuvan_tiedot.html" sivulle */
+
+body {
+    background-color: rgb(206, 206, 206);
+}
+
+
 .elokuva {
     display: grid;
     margin-left: 10%;
@@ -12,11 +19,13 @@
     color: rgb(0, 0, 0);
 }
 
+
 .otsikko {
     font-size: 3vw;
     color: rgb(255, 255, 255);
     filter: drop-shadow(2rem 2rem 1.5rem #4245);
 }
+
 
 .tiedot {
     display: grid;
@@ -33,10 +42,12 @@
     font-size: 1vw;
 }
 
+
 h3 {
     margin-bottom: -1vw;
-    color: rgb(24, 119, 242);
+    color: rgb(233, 188, 90);
 }
+
 
 .arvostele {
     display: grid;
@@ -44,7 +55,6 @@ h3 {
     margin-top: 3%;
     place-content: center;
     background: rgb(255, 255, 255);
-    height: 17vw;
     width: 80%;
     border-radius: 25px;
     filter: drop-shadow(2rem 2rem 1.5rem #4245);
@@ -52,12 +62,14 @@ h3 {
     color: rgb(0, 0, 0);
 }
 
+
 .arvostele input[type=text] {
     border-radius: 8px;
     height: 2vw;
     width: 35vw;
     font-size: 1vw;
 }
+
 
 .arvostele button[type=submit] {
     margin-top: 3vw;
@@ -68,12 +80,15 @@ h3 {
     border-radius: 5px;
     outline: none;
     font-size: 1.5vw;
+    margin-bottom: 1vw;;
 }
+
 
 .arvostele button[type=submit]:hover {
     cursor: pointer;
     background-color: rgb(31, 126, 252);
 }
+
 
 .arvostelut {
     display: grid;
@@ -88,6 +103,7 @@ h3 {
     color: rgb(0, 0, 0);
 }
 
+
 .arvostelu {
     display: grid;
     margin-top: 3%;
@@ -99,6 +115,7 @@ h3 {
     text-align: center;
     color: rgb(0, 0, 0);
 }
+
 
 .kuva {
     height: auto;
