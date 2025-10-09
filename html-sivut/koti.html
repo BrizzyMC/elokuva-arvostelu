@@ -26,5 +26,15 @@
         </div></a>
         <a><form action = "/haku" method = "post"><input type="search" placeholder="Hae Elokuvia" name="hakusana"></form></a>
     </div>
+    <div class="oletko_katsonut">
+        <h3>Oletko katsonut jo?</h3>
+        <div class="elokuva">
+            <form action = "/lähetä_elokuvan_tiedot" method = "post">
+                <a><button name="elokuvan_id" value="{{elokuva.id}}" type="submit"><img src="{{elokuva.kuva}}"></button></a>
+            </form>
+            <a>{{elokuva.nimi}}</a>
+        </div>
+        <a style="margin-top: 3vw;" href="https://github.com/BrizzyMC/elokuva-arvostelu"><img class="logo" style="height: 7vw; width: 14vw;" src="{{ url_for('static', filename='github.webp') }}"></a>
+    </div>
 </body>
 </html>
