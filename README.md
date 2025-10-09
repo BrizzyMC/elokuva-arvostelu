@@ -146,21 +146,37 @@ Tiedosto pitää sisällään sqlite3 luokan jossa luodaan sqlite3 yhteys tietok
 
 Tiedostossa on ohjelman kaikki sql komennot, tämä tarkoittaa sitä että "_sql.py_" kutsuu sql käskyt "_sql_komennot_" tiedostosta. Tiedosto siis ylläpitää kaikkia sql käskyjä ja niitä pystyy helposti muokasta sieltä.
 
-> **main.py**
+> **palvelin.py**
 
-Tiedosto pitää sisällään ohjelman pääsilmukan (main loop), tässä silmukassa on kutsuttu kaikki ohjelman toiminnan kannalta tärkeät komponentit kasaan ja luotu niinsanotusti ohjelman sydän.
+Tiedosto pitää sisällään flask palvelimen, tiedostossa luodaan flask olio, annetaan sille asetukset ja käynistetään palvelin.
 
 > **terminaali.py**
 
 Tässä tiedostossa on kaikki tulostus ja input functioit jota ohjelman terminaali (beta) versio tarvitsee ennen kun saamme sen verkko muotoon (main.py saattaa pitää sisällään myös joitain tulostuksia ja input:teja.
 
-> **apu_functiot.py**
+> **hash_salasana.py**
 
-Nimensä mukaan tämä tiedosto pitää sisällään vain functioita jotka on tarkoitettu avustamaan joitain toisia olennaisia functioita. Esimerkiski tiedostossa on functioit salasanan piilottaniseen yms.
+Nimensä mukaan tämä tiedosto pitää sisällään vain salasanan piilottamiseen ja taas lukemiseen tarkoitettu functio.
 
 > **database.db**
 
 Tähän tietokanta tiedostoon tallennetaan kaikki ohjelman data, se tulee kommunikoimaan ohjelman kanssa sqlite3 yhteyden kautta. Tiedosto pitää sisällään kaikki kolme taulua ja niiden datan.
+
+> **_ _init _ _.py**
+
+Tiedosto rekistöröi rajapinta ja sivut blueprintit.
+
+> **sivut.py**
+
+Tiedosto pitää sisällään functiot ja reitit sivujen lataamiseen (html sivujen).
+
+> **rajapinta.py**
+
+Tiedosto pitää sisällään functiot jotka kommunikoivat tietokannan, nettisivujen ja palvelimen välissä.
+
+> **asetukset.py**
+
+Tiedosto pitää sisällään flask palvelimen asetukset helposti muokattavassa muodossa.
 
 ---
 
