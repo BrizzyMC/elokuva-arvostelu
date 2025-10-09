@@ -10,6 +10,8 @@ button[type=submit] {
     outline: none;
     font-size: 1.5vw;
     filter: drop-shadow(2rem 2rem 1.5rem #4245);
+    outline: none;
+    font-family: 'Roboto';
 }
 
 button[type=submit]:hover {
