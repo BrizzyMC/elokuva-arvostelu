@@ -26,7 +26,7 @@ Tietokannassa käytetty elokuvalista on luotu käyttäen [ChatGPT](https://fi.wi
 
 1. **Asenna kirjastot** - ```tarkista_kirjastot.py```
 2. **Käynnistä flask palvelin** - ```palvelin.py```
-3. **Yhdistä flask palvelimelle selaimessa** - Oletus ip ```127.0.0.1:8000```
+3. **Yhdistä flask palvelimelle selaimessa** - ```127.0.0.1:8000``` _(oletus)_
 
 
 ---
