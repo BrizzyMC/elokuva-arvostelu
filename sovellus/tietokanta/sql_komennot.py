@@ -8,7 +8,7 @@ kuvaus:     Tämä tiedosto pitää sisällään pelkästään functioita
             tiedostolle.
 
 Tekiä:      Viljam Vänskä
-Päivämäärä: 11.9.2025
+Päivämäärä: 1.10.2025
 Versio:     1.0
 
 =================================================================
@@ -143,7 +143,7 @@ def valitse_nimi_kommentti_arvosana_tietokannasta() -> str:
         - elokuva_id: Valitun elokuvan id int muodossa
     """
 
-    return "SELECT kayttaja_nimi, arvosana, kommentti FROM arvostelut WHERE elokuva_id = ?"
+    return "SELECT kayttaja_id, arvosana, kommentti FROM arvostelut WHERE elokuva_id = ?"
 
 def valitse_kayttajan_arvostelut_tietokannasta() -> str:
     """
@@ -201,6 +201,17 @@ def valitse_arvostelu_id_perusteella() -> str:
     """
 
     return "SELECT * FROM arvostelut WHERE id = (?)"
+
+
+def valitse_elokuva_id_perusteella() -> str:
+    """
+    Palauttaa sql komennon joka valitsee elokuvan id:n perusteella
+
+    Sql Parametri:
+        - id: Elokuvan id
+    """
+
+    return "SELECT * FROM elokuvat WHERE id = (?)"
 
 
 # * ----------------------------------------------------------------- *
@@ -263,7 +274,7 @@ def paivita_salasana() -> str:
         - uusi_salasana: Uusi salasana joka päivitetään tietokantaan (str muodossa)
     """
 
-    return "UPDATE kayttaja SET salasana = (?) WHERE id = (?)"
+    return "UPDATE kayttajat SET kayttaja_salasana = (?) WHERE id = (?)"
 
 
 # * ----------------------------------------------------------------- *
