@@ -19,49 +19,30 @@ Ohjlema suoritetaan käynnistämällä "_main.py_" tiedosto, tämä aloittaa pä
 
 Tietokannassa käytetty elokuvalista on luotu käyttäen [ChatGPT](https://fi.wikipedia.org/wiki/ChatGPT):tä!
 
+---
+
+### Käyttö ja Käynnistys
+
+
+1. **Asenna kirjastot** - ```tarkista_kirjastot.py```
+2. **Käynnistä flask palvelin** - ```palvelin.py```
+3. **Yhdistä flask palvelimelle selaimessa**
+
 
 ---
 
 ### Ohjelmassa käytetyt kirjastot
 
-Kaikki kirjastot pitäisi tulla pythonin mukanan sitä asentaessa!
-
 _Jos sinulla ei ole python asennettu niin asenna se [täältä](https://www.python.org/downloads/)!_
-
-
-**OS**
-```
-pip install os-sys
-```
-
-**Sqlite3**
-```
-pip install sqlite3
-```
 
 **HashLib**
 ```
 pip install hashlib
 ```
 
-**Json**
-```
-pip install json
-```
-
 **Flask**
 ```
 pip install flask
-```
-
-**python-dotenv**
-```
-pip install python-dotenv
-```
-
-**Flask Socketio**
-```
-pip install flask-socketio
 ```
 
 ---
@@ -117,8 +98,7 @@ Tehdään edelliset valmiiksi
 > - [X] Elokuva tiedot/arvostelut sivu <mark>Vili</mark>
 
 ### Torstai 2.10
-> - [ ] Profiili sivu <mark>Vili</mark>
-> - [ ] Käyttäjätietojen muokkaus sivu <mark>Vili</mark>
+> - [X] Käyttäjätietojen muokkaus sivu <mark>Vili</mark>
 
 ### Perjantai 3.10
 Ohjelman katsaus
